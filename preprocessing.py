@@ -7,6 +7,16 @@ import pandas as pd
 import numpy as np
 
 # FUNCTIONS
+def p0(dataset):
+    '''
+    Calcolo: per ogni colonna determino la frequenza di ogni valore
+    Output:  bow di tipo 'dict' della forma 'colonna:{valore:freq.}'
+    '''
+    bow = {}
+    for column in list(dataset.columns):
+        bow[column] = dataset[column].value_counts().to_dict()
+    return bow
+
 def p1(dataset):
     '''
     Calcolo: Se in una colonna un valore è outlier (sotto media-devst) sostituiscilo con NULL
@@ -60,8 +70,25 @@ def p4(dataset):
     
     Output: Same dataset with possibly less rows
     '''
-    at_least_one_deleted = False
-    return dataset, at_least_one_deleted
+    original_len = len(dataset) # lunghezza del dataset originario
+    dataset = dataset.replace({np.NaN:''}) # rimpiazzo i NaN con vuoto
+
+    # raggruppo il dataset per tutte le colonne così da avere i campioni di ogni riga univoca e calcolo quante righe
+    # (di ogni gruppo di righe uguali) ci sono in ogni bucket con il metodo .size()
+    df_grupped = dataset.groupby(dataset.columns.tolist(), as_index=False).size()
+    
+    # ANOVA
+    mean = df_grupped['size'].mean()
+    std = df_grupped['size'].mean()
+    # tengo le righe che verificano ANOVA
+    df_grupped = df_grupped.loc[mean-std>df_grupped['size'], list(dataset.columns)]
+
+    # tengo solo le righe che hanno i valori che appartengono alle righe sopra trovate
+    for column in list(dataset.columns):
+        dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
+
+    # se la original_len == len(dataset) allora non sono state fatte eliminate righe
+    return dataset, original_len == len(dataset)
 
 def p5(dataset):
     '''
@@ -83,7 +110,10 @@ def p5(dataset):
             # zfill riempie aggiungendo in testa degli 0 fino a raggiungere la lunghezza n
             _map[list_of_values[i]] = format(i, "b").zfill(n)
 
+        _map[np.NaN] = ''
         dataset[column] = dataset[column].replace(_map)
+    
+    # rimuovo i nan
     return dataset
 
 def p6(dataset):
@@ -92,42 +122,69 @@ def p6(dataset):
             and mark it with positive or negative label, when it derives the class/not class respectively
     Output: A set of literals with positive or negative mark, and the mark exemplified
     '''
-    import string
-    variables = string.ascii_lowercase
+    rules = dict()
 
-    # insieme di letterali positivi o negativi
-    result = []
-    
     # per ogni riga del dataset
-    for row in range(len(dataset)):
-        _str = '(' ; i = -1
+    for irow in range(len(dataset)):
+        row = dataset.iloc[[irow]].values.tolist()[0]
+        sgn = '-'
+        if 'class' in row:
+            sgn = '+'
+            row.remove('class')
+        else:
+            row.remove('NON-class')
         
-        # di ogni colonna della riga
-        for column in list(dataset.columns):
-            # incremento l'indice per le lettere
-            i += 1
+        # aggiungo la regola
+        # non posso agginugere ad un insieme un tipo list poiché è mutable
+        rules[tuple(row)] = sgn
+    
+    return rules
 
-            # aggiungiamo l'informazione di classe in fondo
-            if column == 'CLASS':
-                continue
-            
-            bin_string = dataset.iloc[[row]][column].tolist()[0]
-            if pd.isnull(bin_string):
-                continue
-            
-            # analizzo la stringa binaria
-            for j in range(len(bin_string) ):
-                if bin_string[j] == '1':
-                    _str += variables[j] + str(i)
-                else:
-                    _str += '-' + variables[j] + str(i)
-            
-            _str += ', '
 
-        _str = _str[:-2] # tolgo gli ultimi due caratteri ', '
-        _str += ')' + ('+' if dataset.iloc[[row]]['CLASS'].tolist()[0] == 'class' else '-')
-        result.append(_str)
-    return result
+# def p6(dataset):
+#     '''
+#     Calcolo:When the dataset is marked as exemplified, for each row compute the corresponding set of literals, 
+#             and mark it with positive or negative label, when it derives the class/not class respectively
+#     Output: A set of literals with positive or negative mark, and the mark exemplified
+#     '''
+#     import string
+#     variables = string.ascii_lowercase
+
+#     # insieme di letterali positivi o negativi
+#     result = []
+    
+#     # per ogni riga del dataset
+#     for row in range(len(dataset)):
+#         _str = '(' ; i = -1
+        
+#         # di ogni colonna della riga
+#         for column in list(dataset.columns):
+#             # incremento l'indice per le lettere
+#             i += 1
+
+#             # aggiungiamo l'informazione di classe in fondo
+#             if column == 'CLASS':
+#                 continue
+            
+#             bin_string = dataset.iloc[[row]][column].tolist()[0]
+#             if pd.isnull(bin_string):
+#                 continue
+            
+#             # analizzo la stringa binaria
+#             for j in range(len(bin_string) ):
+#                 if bin_string[j] == '1':
+#                     _str += variables[j] + str(i)
+#                 else:
+#                     _str += '-' + variables[j] + str(i)
+            
+#             _str += ', '
+
+#         _str = _str[:-2] # tolgo gli ultimi due caratteri ', '
+#         _str += ')' + ('+' if dataset.iloc[[row]]['CLASS'].tolist()[0] == 'class' else '-')
+#         result.append(_str)
+#     return result
+
+
 
 def p7(dataset):
     '''
@@ -136,6 +193,24 @@ def p7(dataset):
             with the combination
     Output: A bag of rules with positive or negative mark and the mark proportional
     '''
+    bow = dict()
+
+    # per ogni riga del dataset
+    for irow in range(len(dataset)):
+        row = dataset.iloc[[irow]].values.tolist()[0]
+        
+        # creo una tupla dove so che l'ultimo elemento è + o -
+        if 'class' in row:
+            row.remove('class')
+            row.append('+')
+        else:
+            row.remove('NON-class')
+            row.append('-')
+        
+        # non posso agginugere ad un insieme un tipo list poiché è mutable
+        bow[tuple(row)] = bow.get(tuple(row), 0) + 1
+    
+    return bow
 
 # CONSTANT
 # VARIABLES
@@ -152,6 +227,10 @@ if __name__ == "__main__":
 
     print("Originale")
     print(dataset)
+
+    print("Passo 0")
+    bow = p0(dataset)
+
 
     chanings = True
     while chanings:
@@ -176,6 +255,11 @@ if __name__ == "__main__":
         if mark == 'exemplified':
             print(">>", "Passo 5")
             dataset = p5(dataset)
+        elif mark == None:
+            # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
+            # non produce output
+            print("Mark = None. L'algoritmo si ferma e non produce output")
+            exit()
         else:
             print(">>", "Passo 4")
             dataset, changing = p4(dataset)
@@ -193,12 +277,14 @@ if __name__ == "__main__":
     # aggiungo la colonna classe (dovremmo toglierla all'inizio e poi riaggiungerla al dataset)
     class_column = 'CLASS'
     dataset['CLASS'] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
+    
 
-    print(">>", "Passo 6")
     if mark == 'exemplified':
-        dataset = p6(dataset)
-    print(dataset)
+        print(">>", "Passo 6")
+        rules = p6(dataset)
+        print(rules)
 
-    print(">>", "Passo 7")
-    dataset = p7(dataset)
-    print(dataset)
+    if mark == 'proportional':
+        print(">>", "Passo 7")
+        rules = p7(dataset)
+        print(rules)
