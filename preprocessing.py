@@ -3,6 +3,7 @@ Preprocessing: algoritmo da xmls
 '''
 # IMPORT
 import math
+from tabnanny import verbose
 import pandas as pd
 import numpy as np
 
@@ -116,13 +117,17 @@ def p5(dataset):
     # rimuovo i nan
     return dataset
 
-def p6(dataset):
+def p6(dataset, var_name_verbose):
     '''
     Calcolo:When the dataset is marked as exemplified, for each row compute the corresponding set of literals, 
             and mark it with positive or negative label, when it derives the class/not class respectively
     Output: A set of literals with positive or negative mark, and the mark exemplified
     '''
+    import string
+
     rules = dict()
+    columns_name = list(dataset.columns)    # nomi delle colonne del dataset
+    variables = string.ascii_lowercase      # nomi delle variabili
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
@@ -134,9 +139,21 @@ def p6(dataset):
         else:
             row.remove('NON-class')
         
+        # trasformo le stringhe di bit in variabili
+
+        rule = set()
+        i = 0
+        for bitstring in row:
+            # per i NaN che ora sono stringa epsilon non viene eseguito questo ciclo
+            for n in range(len(bitstring)):
+                if var_name_verbose:
+                    rule.add( ('-' if bitstring[n] == '0' else '') + variables[n] + '_' + columns_name[i])
+                else:
+                    rule.add( ('-' if bitstring[n] == '0' else '') + variables[n] + '_' + str(i))
+            i += 1
+
         # aggiungo la regola
-        # non posso agginugere ad un insieme un tipo list poiché è mutable
-        rules[tuple(row)] = sgn
+        rules[frozenset(rule)] = sgn
     
     return rules
 
@@ -186,64 +203,87 @@ def p6(dataset):
 
 
 
-def p7(dataset):
+def p7(dataset, var_name_verbose):
     '''
     Calcolo:For every combination of literals appearing in the input dataset marked as positive (or negative) 
             count the occorrences of the same combination and add the computed number to the bag in correspondence 
             with the combination
     Output: A bag of rules with positive or negative mark and the mark proportional
     '''
+    import string
+
     bow = dict()
+    columns_name = list(dataset.columns)    # nomi delle colonne del dataset
+    variables = string.ascii_lowercase      # nomi delle variabili
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
         row = dataset.iloc[[irow]].values.tolist()[0]
-        
+        sgn = '-'
         # creo una tupla dove so che l'ultimo elemento è + o -
         if 'class' in row:
             row.remove('class')
-            row.append('+')
+            sgn = '+'
         else:
             row.remove('NON-class')
-            row.append('-')
+
+        # trasformo le stringhe di bit in variabili
+        rule = []
+        i = 0
+        for bitstring in row:
+            # per i NaN che ora sono stringa epsilon non viene eseguito questo ciclo
+            for n in range(len(bitstring)):
+                if var_name_verbose:
+                    rule.append( ('-' if bitstring[n] == '0' else '') + variables[n] + '_' + columns_name[i])
+                else:
+                    rule.append( ('-' if bitstring[n] == '0' else '') + variables[n] + '_' + str(i))
+            i += 1
         
-        # non posso agginugere ad un insieme un tipo list poiché è mutable
-        bow[tuple(row)] = bow.get(tuple(row), 0) + 1
+        # chiavi immutable
+        bow[(frozenset(rule), sgn)] = bow.get( (frozenset(rule), sgn), 0) + 1
     
     return bow
 
-# CONSTANT
-# VARIABLES
-dataset_path = './dataset/dataset.csv'
-# MAIN
 
-if __name__ == "__main__":
+def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
     dataset = pd.read_csv(dataset_path)
+
+    print(">> Creazione delle regole iniziata\n")
+
+    ####################### DA TOGLIERE ######################
+    ####################### DA TOGLIERE ######################
+    ####################### DA TOGLIERE ######################
+    ####################### DA TOGLIERE ######################
     dataset = dataset.drop(columns=['timestamp', 'sleep_log_entry_id']) #da togliere poi
 
     # aggiungo una colonna fittizzia che al passo p2 dovrebbe venir eliminata
     dataset['elim'] = np.NaN
 
+    if bool_debug:
+        print("Originale")
+        print(dataset)
 
-    print("Originale")
-    print(dataset)
+    ####################### FINE ######################
+    ####################### FINE ######################
+    ####################### FINE ######################
+    ####################### FINE ######################
 
-    print("Passo 0")
-    bow = p0(dataset)
 
-
-    chanings = True
-    while chanings:
-        chanings = False
+    changings = True
+    mark = None
+    while changings:
+        changings = False
 
         print(">>", "Passo 1")
         dataset = p1(dataset)
-        print(dataset)
+        if bool_debug:
+            print(dataset)
 
         print(">>", "Passo 2")
 
         dataset = p2(dataset)
-        print(dataset)
+        if bool_debug:
+            print(dataset)
 
         print(">>", "Passo 3: ottengo info sul tipo di dataset (se possibile)")
 
@@ -255,36 +295,57 @@ if __name__ == "__main__":
         if mark == 'exemplified':
             print(">>", "Passo 5")
             dataset = p5(dataset)
+
         elif mark == None:
             # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
             # non produce output
             print("Mark = None. L'algoritmo si ferma e non produce output")
-            exit()
+            return None
         else:
             print(">>", "Passo 4")
-            dataset, changing = p4(dataset)
+            dataset, changings = p4(dataset)
             print(">>", "Decisione 2")
             # ### D2 ### # When step P4 has eliminated at least one row, go to P1, otherwise go to P5
-            if changing:
+            if changings:
                 continue # riparte da P1
 
             print(">>", "Passo 5")
             # altrimenti passa a P5
             dataset = p5(dataset)
         
-        print(dataset)
+        if bool_debug:
+            print(dataset)
     
     # aggiungo la colonna classe (dovremmo toglierla all'inizio e poi riaggiungerla al dataset)
     class_column = 'CLASS'
     dataset['CLASS'] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
     
-
+    rules = None
     if mark == 'exemplified':
         print(">>", "Passo 6")
-        rules = p6(dataset)
-        print(rules)
-
-    if mark == 'proportional':
+        rules = p6(dataset, output_var_name_verbose)
+    
+    #if mark == 'proportional':
+    else:
         print(">>", "Passo 7")
-        rules = p7(dataset)
+        rules = p7(dataset, output_var_name_verbose)
+
+    ####### DA TOGLIERE POI ###########
+    rules = p7(dataset, output_var_name_verbose)
+    ###################################
+    
+    if bool_debug:
         print(rules)
+    
+    print("\n>> Creazione delle regole completata\n")
+    
+    return rules, mark
+
+# CONSTANT
+# VARIABLES
+dataset_path = './dataset/dataset.csv'
+output_var_name_verbose = False
+# MAIN
+
+if __name__ == "__main__":
+    main_procedure(dataset_path, output_var_name_verbose, bool_debug=True)
