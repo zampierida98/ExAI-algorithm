@@ -14,7 +14,7 @@ def save_on_file(rules, mark, output_path):
             if mark == 'exemplified':
                 fout.write(f'{tuple(k)}{rules[k]}\n'.replace("'", ""))
             else:
-                fout.write(f'({tuple(k[0])}){k[1]}{rules[k]}\n'.replace("'", ""))
+                fout.write(f'{tuple(k[0])}{k[1]}{rules[k]}\n'.replace("'", ""))
 
 # CONSTANTS
 # VARIABLES
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)
     print("#"*59)
     # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
-    # mark = 'proportional'
+    #mark = 'proportional'
     # #######################################################
 
     if mark == 'exemplified':

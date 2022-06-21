@@ -133,16 +133,6 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE3 aggiunge {mre3_res}, {rules[k]}')
                     
-                    # MRE4
-                    mre4_res = mre4(k[0], k2[0], rules[k], rules[k2], threshold)
-                    if mre4_res != []:
-                        # concat di liste
-                        to_remove += [(x, k[1]) for x in mre4_res]
-
-                        if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove che {mre4_res}')
-                    
-                    
                 else:
                     # MRE2
                     mre2_res = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
@@ -151,6 +141,15 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
 
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE2 indica che {mre2_res} è inferiore')
+                    
+                    # MRE4
+                    mre4_res = mre4(k[0], k2[0], rules[k], rules[k2], threshold)
+                    if mre4_res != []:
+                        # concat di liste
+                        to_remove += [(x, k[1]) for x in mre4_res]
+
+                        if bool_debug:
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove che {mre4_res}')
                     
                     # MRE5
                     mre5_res = mre5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
