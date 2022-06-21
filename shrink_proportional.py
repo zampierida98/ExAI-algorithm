@@ -86,9 +86,8 @@ def mre5(r1,r2, occ_r1, occ_r2, threshold):
     return None
         
 
-def main_shrink_proportional(dataset_path, output_var_name_verbose, bool_debug=False, threshold=1):
-    rules, mark = pp.main_procedure(dataset_path, output_var_name_verbose)
-    print(f"> Procedura di shrinking per {mark} avviata\n")
+def main_shrink_proportional(rules, bool_debug=False, threshold=1):    
+    print(f"> Procedura di shrinking proportional avviata\n")
 
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
@@ -184,15 +183,21 @@ def main_shrink_proportional(dataset_path, output_var_name_verbose, bool_debug=F
 
         i += 1 # incremento l'indice che indica quanto impiega per arrivare alla fine
 
-    print(f"> Procedura di shrinking per {mark} completata")
+    print(f"> Procedura di shrinking proportional completata")
+    return rules
+
 
 # COSTANTS
 # VARIABLES
 dataset_path = './dataset/dataset.csv'
 output_var_name_verbose = False
-bool_debug = True
+class_column_name = 'CLASS'
+pos_class_value = 'class'
+neg_class_value = 'NON-class'
+bool_debug = False
 threshold = 1
 
 # MAIN
 if __name__ == "__main__":
-    main_shrink_proportional(dataset_path, output_var_name_verbose, bool_debug, threshold)
+    rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)
+    main_shrink_proportional(rules, bool_debug, threshold)

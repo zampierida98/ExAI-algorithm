@@ -40,10 +40,8 @@ def mre3(r1, r2):
             return r1.intersection(r2)
     return None
 
-def main_shrink_exemplified(dataset_path, output_var_name_verbose, bool_debug=False):
-    rules, mark = pp.main_procedure(dataset_path, output_var_name_verbose)
-
-    print(f"> Procedura di shrinking per {mark} avviata\n")
+def main_shrink_exemplified(rules, bool_debug=False):
+    print(f"> Procedura di shrinking exemplified avviata\n")
 
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
@@ -119,14 +117,18 @@ def main_shrink_exemplified(dataset_path, output_var_name_verbose, bool_debug=Fa
 
         i += 1 # incremento l'indice che indica quanto impiega per arrivare alla fine
 
-    print(f"> Procedura di shrinking per {mark} completata")
+    print(f"> Procedura di shrinking exemplified completata")
+    return rules
 
 # COSTANTS
 # VARIABLES
 dataset_path = './dataset/dataset.csv'
 output_var_name_verbose = False
+class_column_name = 'CLASS'
+pos_class_value = 'class'
+neg_class_value = 'NON-class'
 bool_debug = False
-
 # MAIN
 if __name__ == "__main__":
-    main_shrink_exemplified(dataset_path, output_var_name_verbose, bool_debug)
+    rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)
+    main_shrink_exemplified(rules, bool_debug)

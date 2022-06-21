@@ -3,7 +3,6 @@ Preprocessing: algoritmo da xmls
 '''
 # IMPORT
 import math
-from tabnanny import verbose
 import pandas as pd
 import numpy as np
 
@@ -117,7 +116,7 @@ def p5(dataset):
     # rimuovo i nan
     return dataset
 
-def p6(dataset, var_name_verbose):
+def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
     '''
     Calcolo:When the dataset is marked as exemplified, for each row compute the corresponding set of literals, 
             and mark it with positive or negative label, when it derives the class/not class respectively
@@ -133,11 +132,11 @@ def p6(dataset, var_name_verbose):
     for irow in range(len(dataset)):
         row = dataset.iloc[[irow]].values.tolist()[0]
         sgn = '-'
-        if 'class' in row:
+        if pos_class_value in row:
             sgn = '+'
-            row.remove('class')
+            row.remove(pos_class_value)
         else:
-            row.remove('NON-class')
+            row.remove(neg_class_value)
         
         # trasformo le stringhe di bit in variabili
 
@@ -157,53 +156,7 @@ def p6(dataset, var_name_verbose):
     
     return rules
 
-
-# def p6(dataset):
-#     '''
-#     Calcolo:When the dataset is marked as exemplified, for each row compute the corresponding set of literals, 
-#             and mark it with positive or negative label, when it derives the class/not class respectively
-#     Output: A set of literals with positive or negative mark, and the mark exemplified
-#     '''
-#     import string
-#     variables = string.ascii_lowercase
-
-#     # insieme di letterali positivi o negativi
-#     result = []
-    
-#     # per ogni riga del dataset
-#     for row in range(len(dataset)):
-#         _str = '(' ; i = -1
-        
-#         # di ogni colonna della riga
-#         for column in list(dataset.columns):
-#             # incremento l'indice per le lettere
-#             i += 1
-
-#             # aggiungiamo l'informazione di classe in fondo
-#             if column == 'CLASS':
-#                 continue
-            
-#             bin_string = dataset.iloc[[row]][column].tolist()[0]
-#             if pd.isnull(bin_string):
-#                 continue
-            
-#             # analizzo la stringa binaria
-#             for j in range(len(bin_string) ):
-#                 if bin_string[j] == '1':
-#                     _str += variables[j] + str(i)
-#                 else:
-#                     _str += '-' + variables[j] + str(i)
-            
-#             _str += ', '
-
-#         _str = _str[:-2] # tolgo gli ultimi due caratteri ', '
-#         _str += ')' + ('+' if dataset.iloc[[row]]['CLASS'].tolist()[0] == 'class' else '-')
-#         result.append(_str)
-#     return result
-
-
-
-def p7(dataset, var_name_verbose):
+def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
     '''
     Calcolo:For every combination of literals appearing in the input dataset marked as positive (or negative) 
             count the occorrences of the same combination and add the computed number to the bag in correspondence 
@@ -221,11 +174,11 @@ def p7(dataset, var_name_verbose):
         row = dataset.iloc[[irow]].values.tolist()[0]
         sgn = '-'
         # creo una tupla dove so che l'ultimo elemento è + o -
-        if 'class' in row:
-            row.remove('class')
+        if pos_class_value in row:
+            row.remove(pos_class_value)
             sgn = '+'
         else:
-            row.remove('NON-class')
+            row.remove(neg_class_value)
 
         # trasformo le stringhe di bit in variabili
         rule = []
@@ -245,7 +198,7 @@ def p7(dataset, var_name_verbose):
     return bow
 
 
-def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
+def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False):
     dataset = pd.read_csv(dataset_path)
 
     print(">> Creazione delle regole iniziata\n")
@@ -259,6 +212,9 @@ def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
     # aggiungo una colonna fittizzia che al passo p2 dovrebbe venir eliminata
     dataset['elim'] = np.NaN
 
+    # aggiungo la colonna classe perchè questo dataset di test non ce l'ha
+    dataset[class_column_name] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
+
     if bool_debug:
         print("Originale")
         print(dataset)
@@ -267,6 +223,10 @@ def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
     ####################### FINE ######################
     ####################### FINE ######################
     ####################### FINE ######################
+
+    # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda
+    class_column = dataset[class_column_name]
+    dataset = dataset.drop([class_column_name], axis=1)
 
 
     changings = True
@@ -300,7 +260,7 @@ def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
             # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
             # non produce output
             print("Mark = None. L'algoritmo si ferma e non produce output")
-            return None
+            return None, None
         else:
             print(">>", "Passo 4")
             dataset, changings = p4(dataset)
@@ -315,29 +275,28 @@ def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
         
         if bool_debug:
             print(dataset)
-    
-    # aggiungo la colonna classe (dovremmo toglierla all'inizio e poi riaggiungerla al dataset)
-    class_column = 'CLASS'
-    dataset['CLASS'] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
+        
+    # riaggiungo la colonna di classe
+    dataset[class_column_name] = class_column
     
     rules = None
     if mark == 'exemplified':
         print(">>", "Passo 6")
-        rules = p6(dataset, output_var_name_verbose)
+        rules = p6(dataset, output_var_name_verbose,  pos_class_value,neg_class_value)
     
     #if mark == 'proportional':
     else:
         print(">>", "Passo 7")
-        rules = p7(dataset, output_var_name_verbose)
+        rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
 
     ####### DA TOGLIERE POI ###########
-    rules = p7(dataset, output_var_name_verbose)
+    #rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
     ###################################
     
     if bool_debug:
         print(rules)
     
-    print("\n>> Creazione delle regole completata\n")
+    print("\n>> Creazione delle regole completata")
     
     return rules, mark
 
@@ -345,7 +304,12 @@ def main_procedure(dataset_path, output_var_name_verbose, bool_debug=False):
 # VARIABLES
 dataset_path = './dataset/dataset.csv'
 output_var_name_verbose = False
+class_column_name = 'CLASS'
+pos_class_value = 'class'
+neg_class_value = 'NON-class'
+bool_debug = False
+
 # MAIN
 
 if __name__ == "__main__":
-    main_procedure(dataset_path, output_var_name_verbose, bool_debug=True)
+    main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)
