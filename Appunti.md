@@ -12,3 +12,24 @@ Dataset (categorico e univariato, ossia con una sola classe) avente la forma di 
 * **P5**: Shannon Map (2 algoritmi diversi a seconda dello stato del dataset, se è *none* l'algoritmo si ferma e non produce output), se in una colonna ci sono *N* valori escluso NULL il primo intero più grande di *log N* è sufficiente per mappare tutti i valori (ogni colonna viene mappata in un certo numero di variabili booleane, se c'è NULL non scriverò il letterale).
 * **P6**: se stato del dataset = *esempi*, calcolo il set di letterali marcandoli positivo/negativo se derivano o meno la classe e li aggiungo all'insieme delle regole della teoria (es.: se un set di letterali compare 12 volte lo aggiungerò una volta sola).
 * **P7**: se stato del dataset = *proporzioni*, calcolo per ogni combinazione di letterali (positiva o negativa) quante volte essa si presenta e costruisco la corrispondente bag of words.
+
+# SHRINKING (per dataset exemplified)
+* **MRE1**: se le due regole sono concordi (portano entrambe alla classe o alla non-classe) e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima (es.: *a,b+* e *a,b,c+*), allora cancello la seconda regola perché inutile.
+* **MRE2**: se le due regole sono discordi (una porta alla classe e l'altra alla non-classe) e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima, allora dico che la regola con più letterali (la seconda) batte l'altra cioè aggiungo una coppia di superiorità.
+* **MRE3**: se le due regole sono concordi e gli antecedenti sono tutti uguali tranne uno che è l'opposto del suo corrispondente (es.: *a,b,c* e *a,b,-c*), allora aggiungo una nuova regola formata dagli antecedenti in comune (es.: *a,b*) senza cancellare le due regole.
+
+# SHRINKING (per dataset proportional)
+* **MRP1**: se le due regole sono concordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima, allora cancello la seconda regola (in realtà devo solo marcarla segnando se ho confrontato quella regola con tutte le regole esistenti e solo in quel caso cancellarla veramente); il numero di volte in cui essa si presenta sarà la somma delle frequenze della prima e della seconda regola.
+* **MRP2**: se le due regole sono discordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima, allora dico che la regola con più letterali (la seconda) batte l'altra cioè aggiungo una coppia di superiorità.
+* **MRP3**: se le due regole sono concordi e gli antecedenti sono tutti uguali tranne uno che è l'opposto del suo corrispondente, allora aggiungo una nuova regola formata dagli antecedenti in comune e con frequenza pari a 0.
+* **MRP4**
+    * *C1*: se le due regole sono discordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con le occorrenze della prima che sono maggiori delle occorrenze della seconda.
+    * *C2*: se il rapporto tra le occorrenze della prima e della seconda regola è più basso di una threshold (almeno pari a 1).
+    * Se *C1 and C2*, allora cancello la seconda regola (perché la prima prevale sulla seconda).
+    * Se *C1 and not C2*, allora cancello sia la prima che la seconda regola (perché sono troppo vicine).
+* **MRP5**: se le due regole sono discordi e gli antecedenti della prima sono sovrapposti agli antecedenti della seconda (es. *a,b,c* e *a,b,c,d*) e se il rapporto tra le occorrenze della prima e della seconda regola è più alto di una threshold (anche la stessa di **MRP4**), allora dico che la prima regola è superiore alla seconda.
+
+# OUTPUT
+File di testo col seguente formato:
+* Per dataset exemplified, *(a,b,-c,-d)+*.
+* Per dataset proportional, *(a,-c,-d)+53*.
