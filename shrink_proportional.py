@@ -116,40 +116,49 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                 # regole concordi
                 if k[1] == k2[1]:
                     # MRE1
-                    mre1_res = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
-                    if mre1_res != None:
-                        to_remove.append((mre1_res, k[1]))
+                    inner_set = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
+                    if inner_set != None:
+                        # devo eliminare l'insieme più grande. Se k2 è il più piccolo elimino k altrimenti k2
+                        to_remove.append((k[0] if inner_set == k2[0] else k2[0], k[1]))
                         
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE1 rimuove {mre1_res}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE1 rimuove {k[0] if inner_set == k2[0] else k2[0]}')
+                        
+                        # non controllo la condizione MRE3 poiché inutile. So che o k è strettamente contenuto in k2
+                        # altrimenti k2 è strettamente contenuto in k quindi è impossibile che entrambi abbiano un letterale
+                        # uno l'opposto dell'altro
+                        continue
                     
                     # MRE3
                     mre3_res = mre3(k[0], k2[0])
                     if mre3_res != None:
+
                         # se già fosse presente 
                         #to_add[(mre3_res, k[1])] = to_add.get( (mre3_res, k[1]), 0) + 1
                         to_add[(mre3_res, k[1])] = 0
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE3 aggiunge {mre3_res}, {rules[k]}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE3 aggiunge {(mre3_res, k[1])}, {0}')
                     
                 else:
                     # MRE2
-                    mre2_res = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
-                    if mre2_res != None:
-                        superior_relation[mre2_res] = k[0] if mre2_res == k2[0] else k2[0]
+                    inner_set = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
+                    if inner_set != None:
+                        superior_relation[inner_set] = k[0] if inner_set == k2[0] else k2[0]
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE2 indica che {mre2_res} è inferiore')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE2 indica che {inner_set} è inferiore')
                     
                     # MRE4
                     mre4_res = mre4(k[0], k2[0], rules[k], rules[k2], threshold)
                     if mre4_res != []:
                         # concat di liste
-                        to_remove += [(x, k[1]) for x in mre4_res]
+                        # Essendo discordi k[0] e k[1] allora quando aggiungo le coppie alla lista 'to_remove'
+                        # aggiungo il segno corrispondente alla regola da aggiungere
+                        to_remove += [(x, k[1] if x == k[0] else k2[1]) for x in mre4_res]
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove che {mre4_res}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove {mre4_res}')
                     
                     # MRE5
                     mre5_res = mre5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
@@ -184,7 +193,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
         i += 1 # incremento l'indice che indica quanto impiega per arrivare alla fine
 
     print(f"> Procedura di shrinking proportional completata")
-    return rules
+    return rules, superior_relation
 
 
 # COSTANTS

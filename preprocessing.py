@@ -33,6 +33,7 @@ def p2(dataset):
     Calcolo: Se in una colonna ci sono solo due valori di cui uno NULL oppure un solo valore, scarta la colonna
     Output: Same dataset with possibly less columns
     '''
+
     col_to_del = []
     for column in list(dataset.columns):
         # <= perché se avessi una colonna di soli NaN non avrei valori e quindi il metodo ritornerebbe 0
@@ -79,13 +80,15 @@ def p4(dataset):
     
     # ANOVA
     mean = df_grupped['size'].mean()
-    std = df_grupped['size'].mean()
+    std = df_grupped['size'].std()
+
     # tengo le righe che verificano ANOVA
-    df_grupped = df_grupped.loc[mean-std>df_grupped['size'], list(dataset.columns)]
+    df_grupped = df_grupped.loc[mean-std<df_grupped['size'], list(dataset.columns)]
 
     # tengo solo le righe che hanno i valori che appartengono alle righe sopra trovate
-    for column in list(dataset.columns):
-        dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
+    # for column in list(dataset.columns):
+    #     dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
+    dataset = dataset[dataset[dataset.columns.tolist()].isin(list(df_grupped[dataset.columns.tolist()].values))]
 
     # se la original_len == len(dataset) allora non sono state fatte eliminate righe
     return dataset, original_len == len(dataset)
@@ -253,29 +256,29 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         print(">>", "Decisione 1")
         # ### D1 ### # When the dataset is marked as exemplified, go to step P5
         if mark == 'exemplified':
-            print(">>", "Passo 5")
-            dataset = p5(dataset)
-
-        elif mark == None:
-            # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
-            # non produce output
-            print("Mark = None. L'algoritmo si ferma e non produce output")
-            return None, None
+            # sapendo che changings = False dall'inizio il continue equivale ad un break
+            continue
         else:
             print(">>", "Passo 4")
             dataset, changings = p4(dataset)
             print(">>", "Decisione 2")
             # ### D2 ### # When step P4 has eliminated at least one row, go to P1, otherwise go to P5
-            if changings:
-                continue # riparte da P1
-
-            print(">>", "Passo 5")
-            # altrimenti passa a P5
-            dataset = p5(dataset)
+            print("Changings =", changings)
         
         if bool_debug:
             print(dataset)
-        
+    
+    print(">>", "Passo 5")
+    if mark == None:
+        # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
+        # non produce output
+        print("Mark = None. L'algoritmo si ferma e non produce output")
+        return None, None
+
+    dataset = p5(dataset)
+    if bool_debug:
+        print(dataset)
+
     # riaggiungo la colonna di classe
     dataset[class_column_name] = class_column
     

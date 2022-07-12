@@ -68,30 +68,36 @@ def main_shrink_exemplified(rules, bool_debug=False):
                 # regole concordi
                 if rules[k] == rules[k2]:
                     # MRE1
-                    mre1_res = get_the_inner_set(k, k2) # ritorna l'insieme contenuto nell'altro
-                    if mre1_res != None:
-                        to_remove.append(mre1_res)
+                    inner_set = get_the_inner_set(k, k2) # ritorna l'insieme contenuto nell'altro
+                    if inner_set != None:
+                        # devo eliminare l'insieme più grande. Se k2 è il più piccolo elimino k altrimenti k2
+                        to_remove.append(k if inner_set == k2 else k2)
                         
                         if bool_debug:
-                            print(f'r1={k}\nr2={k2}\nMRE1 rimuove {mre1_res}')
-                        continue # non controllo la condizione MRE3 poiché inutile
+                            print(f'r1={k}\nr2={k2}\nMRE1 rimuove {k if inner_set == k2 else k2}')
+                        
+                        # non controllo la condizione MRE3 poiché inutile. So che o k è strettamente contenuto in k2
+                        # altrimenti k2 è strettamente contenuto in k quindi è impossibile che entrambi abbiano un letterale
+                        # uno l'opposto dell'altro
+                        continue
                     
                     # MRE3
+                    # mre3_res è l'intersezione delle due regole sse hanno esattamente un letterale uno l'opposto dell'altro
                     mre3_res = mre3(k, k2)
                     if mre3_res != None:
-                        to_add[mre3_res] = rules[k]
+                        to_add[mre3_res] = rules[k] # rules[k] stesso segno
 
                         if bool_debug:
                             print(f'r1={k}\nr2={k2}\nMRE3 aggiunge {mre3_res}, {rules[k]}')
                     
                 else:
                     # MRE2
-                    mre2_res = get_the_inner_set(k, k2) # ritorna l'insieme contenuto nell'altro
-                    if mre2_res != None:
-                        superior_relation[mre2_res] = k if mre2_res == k2 else k2
+                    inner_set = get_the_inner_set(k, k2) # ritorna l'insieme contenuto nell'altro
+                    if inner_set != None:
+                        superior_relation[inner_set] = k if inner_set == k2 else k2
 
                         if bool_debug:
-                            print(f'r1={k}\nr2={k2}\nMRE2 indica che {mre2_res} è inferiore')
+                            print(f'r1={k}\nr2={k2}\nMRE2 indica che {inner_set} è inferiore')
 
             explored.append(k)
         
@@ -118,7 +124,7 @@ def main_shrink_exemplified(rules, bool_debug=False):
         i += 1 # incremento l'indice che indica quanto impiega per arrivare alla fine
 
     print(f"> Procedura di shrinking exemplified completata")
-    return rules
+    return rules, superior_relation
 
 # COSTANTS
 # VARIABLES
