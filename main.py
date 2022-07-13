@@ -33,7 +33,7 @@ if __name__ == "__main__":
     rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug_preprocessing)
     print("#"*59)
     # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
-    #mark = 'proportional'
+    # mark = 'proportional'
     # #######################################################
 
     if mark == 'exemplified':

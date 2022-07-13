@@ -83,15 +83,14 @@ def p4(dataset):
     std = df_grupped['size'].std()
 
     # tengo le righe che verificano ANOVA
-    df_grupped = df_grupped.loc[mean-std<df_grupped['size'], list(dataset.columns)]
+    df_grupped = df_grupped.loc[mean-std<=df_grupped['size'], list(dataset.columns)]
 
     # tengo solo le righe che hanno i valori che appartengono alle righe sopra trovate
-    # for column in list(dataset.columns):
-    #     dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
-    dataset = dataset[dataset[dataset.columns.tolist()].isin(list(df_grupped[dataset.columns.tolist()].values))]
+    for column in list(dataset.columns):
+        dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
 
     # se la original_len == len(dataset) allora non sono state fatte eliminate righe
-    return dataset, original_len == len(dataset)
+    return dataset, original_len != len(dataset)
 
 def p5(dataset):
     '''
@@ -253,6 +252,10 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         mark = p3(dataset)
         print('mark =', mark)
 
+        # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
+        # mark = 'proportional'
+        # #######################################################
+
         print(">>", "Decisione 1")
         # ### D1 ### # When the dataset is marked as exemplified, go to step P5
         if mark == 'exemplified':
@@ -293,7 +296,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
 
     ####### DA TOGLIERE POI ###########
-    #rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
+    # rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
     ###################################
     
     if bool_debug:

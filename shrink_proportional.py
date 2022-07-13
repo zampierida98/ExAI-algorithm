@@ -78,7 +78,7 @@ def mre5(r1,r2, occ_r1, occ_r2, threshold):
     Calcolo: overlap delle premesse di r1 ed r2. In più verifico se r1/r2 > threshold allora output
     Output: ritorna la regola che è superiore all'altra, se nessuna allora None
     '''
-    if len(r1 - r2) >= 0 and len(r2 - r1) >= 0: # overlap (SE SERVE L'INCLUSIONE SI AGGIUNGE >=)
+    if len(r1.intersection(r2)) >= 0:
         if occ_r1 / occ_r2 > threshold:
             return r1
         elif occ_r2 / occ_r1 > threshold:
