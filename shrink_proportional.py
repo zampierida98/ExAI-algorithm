@@ -102,6 +102,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
 
         explored = []   # chiavi già completamente esplorate
         to_remove = []  # regole da eliminare per la metaregola 1
+        multiplicity_after_remove = {}
         to_add = {}     # nuove regole da aggiungere per la metaregola 3
         keys = rules.keys()
 
@@ -115,12 +116,17 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                 
                 # regole concordi
                 if k[1] == k2[1]:
-                    # MRE1
+                    # MRP1
                     inner_set = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
                     if inner_set != None:
                         # devo eliminare l'insieme più grande. Se k2 è il più piccolo elimino k altrimenti k2
                         to_remove.append((k[0] if inner_set == k2[0] else k2[0], k[1]))
                         
+                        # aggiungo la molteplicità della regole eliminata alla regola che sopravvive.
+                        multiplicity_after_remove[((inner_set, k[1]))] = (multiplicity_after_remove.get((inner_set, k[1]), 0) + 
+                                                                            rules[(k[0] if inner_set == k2[0] else k2[0], k[1])] 
+                                                                        )
+
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE1 rimuove {k[0] if inner_set == k2[0] else k2[0]}')
                         
@@ -129,7 +135,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         # uno l'opposto dell'altro
                         continue
                     
-                    # MRE3
+                    # MRP3
                     mre3_res = mre3(k[0], k2[0])
                     if mre3_res != None:
 
@@ -141,7 +147,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE3 aggiunge {(mre3_res, k[1])}, {0}')
                     
                 else:
-                    # MRE2
+                    # MRP2
                     inner_set = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
                     if inner_set != None:
                         superior_relation[inner_set] = k[0] if inner_set == k2[0] else k2[0]
@@ -149,7 +155,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE2 indica che {inner_set} è inferiore')
                     
-                    # MRE4
+                    # MRP4
                     mre4_res = mre4(k[0], k2[0], rules[k], rules[k2], threshold)
                     if mre4_res != []:
                         # concat di liste
@@ -157,10 +163,19 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         # aggiungo il segno corrispondente alla regola da aggiungere
                         to_remove += [(x, k[1] if x == k[0] else k2[1]) for x in mre4_res]
 
+                        if len(mre4_res) == 1:
+                            # chiave della regola che soppravive
+                            k_live = (k2 if mre4_res[0] == k[0] else k)
+                            # chiave della regola da eliminare
+                            k_dead = (k if mre4_res[0] == k[0] else k2)
+
+                            multiplicity_after_remove[k_live] = (multiplicity_after_remove.get(k_live, 0) + 
+                                                                            rules[k_dead] )
+
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove {mre4_res}')
                     
-                    # MRE5
+                    # MRP5
                     mre5_res = mre5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
                     if mre5_res != None:
                         superior_relation[k[0] if mre5_res == k2[0] else k2[0]] = mre5_res
@@ -183,7 +198,12 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
             if k in rules:
                 rules.pop(k)
 
+        # aggiornamento molteplicità delle regole
+        for k in multiplicity_after_remove:
+            rules[k] += multiplicity_after_remove[k]
+        
         print(f"> Update: rimozione regole 'dominate'")
+        print("> Update: aggiornamento molteplicità delle regole")
         
         # procedura di aggiunta delle nuove regole
         rules.update(to_add)

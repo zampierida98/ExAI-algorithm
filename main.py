@@ -18,22 +18,24 @@ def save_on_file(rules, mark, output_path):
 
 # CONSTANTS
 # VARIABLES
-dataset_path = './dataset/dataset.csv'
+dataset_path = './dataset/MushroomDataset/primary_data.csv' #'./dataset/breast-cancer.data', './dataset/dataset.csv'
+sep = ";"
 output_var_name_verbose = False
-class_column_name = 'CLASS'
-pos_class_value = 'class'
-neg_class_value = 'NON-class'
+class_column_name = 'class'#'class', 'CLASS'
+pos_class_value = 'e'# 'no-recurrence-events', 'class'
+neg_class_value = 'p' # 'recurrence-events', 'NON-class'
+
 bool_debug_preprocessing = False # bool_D solo per il preprocessing
-bool_debug = True
+bool_debug = False
 threshold = 1
 output_path = 'results.txt'
 
 # MAIN
 if __name__ == "__main__":
-    rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug_preprocessing)
+    rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug_preprocessing, sep=sep)
     print("#"*59)
     # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
-    # mark = 'proportional'
+    #mark = 'proportional'
     # #######################################################
 
     if mark == 'exemplified':

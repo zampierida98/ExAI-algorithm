@@ -98,7 +98,8 @@ def main_shrink_exemplified(rules, bool_debug=False):
 
                         if bool_debug:
                             print(f'r1={k}\nr2={k2}\nMRE2 indica che {inner_set} è inferiore')
-
+            
+            #print("> ciclo dentro il for", k)
             explored.append(k)
         
         print(f"> Fine procedura di controllo delle regole a coppie")

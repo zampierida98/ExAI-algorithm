@@ -14,7 +14,7 @@ def p0(dataset):
     '''
     bow = {}
     for column in list(dataset.columns):
-        bow[column] = dataset[column].value_counts().to_dict()
+        bow[column] = dataset[column].value_counts()
     return bow
 
 def p1(dataset):
@@ -22,10 +22,13 @@ def p1(dataset):
     Calcolo: Se in una colonna un valore è outlier (sotto media-devst) sostituiscilo con NULL
     Outpit: Same dataset, with some column marked by NULL in places
     '''
+    abs_freq = p0(dataset) # frequenze assolute per ogni colonna
+
     for column in list(dataset.columns):
-        mean = dataset[column].mean()
-        std = dataset[column].std()
-        dataset.loc[mean-std>dataset[column], column] = np.NaN
+        mean = abs_freq[column].mean()
+        std = abs_freq[column].std()
+        tmp = abs_freq[column][abs_freq[column] < mean-std].to_dict()
+        dataset.loc[dataset[column].isin(tmp.keys()), column] = np.NaN
     return dataset
 
 def p2(dataset):
@@ -200,8 +203,8 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
     return bow
 
 
-def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False):
-    dataset = pd.read_csv(dataset_path)
+def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=','):
+    dataset = pd.read_csv(dataset_path, sep=sep)
 
     print(">> Creazione delle regole iniziata\n")
 
@@ -209,13 +212,13 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
     ####################### DA TOGLIERE ######################
     ####################### DA TOGLIERE ######################
     ####################### DA TOGLIERE ######################
-    dataset = dataset.drop(columns=['timestamp', 'sleep_log_entry_id']) #da togliere poi
+    # dataset = dataset.drop(columns=['timestamp', 'sleep_log_entry_id']) #da togliere poi
 
-    # aggiungo una colonna fittizzia che al passo p2 dovrebbe venir eliminata
-    dataset['elim'] = np.NaN
+    # # aggiungo una colonna fittizzia che al passo p2 dovrebbe venir eliminata
+    # dataset['elim'] = np.NaN
 
-    # aggiungo la colonna classe perchè questo dataset di test non ce l'ha
-    dataset[class_column_name] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
+    # # aggiungo la colonna classe perchè questo dataset di test non ce l'ha
+    # dataset[class_column_name] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
 
     if bool_debug:
         print("Originale")
@@ -296,7 +299,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
 
     ####### DA TOGLIERE POI ###########
-    # rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
+    #rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
     ###################################
     
     if bool_debug:
