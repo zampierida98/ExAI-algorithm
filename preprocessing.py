@@ -208,31 +208,13 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
 
     print(">> Creazione delle regole iniziata\n")
 
-    ####################### DA TOGLIERE ######################
-    ####################### DA TOGLIERE ######################
-    ####################### DA TOGLIERE ######################
-    ####################### DA TOGLIERE ######################
-    # dataset = dataset.drop(columns=['timestamp', 'sleep_log_entry_id']) #da togliere poi
-
-    # # aggiungo una colonna fittizzia che al passo p2 dovrebbe venir eliminata
-    # dataset['elim'] = np.NaN
-
-    # # aggiungo la colonna classe perchè questo dataset di test non ce l'ha
-    # dataset[class_column_name] = np.random.choice(['class', 'NON-class'], len(dataset), p=[0.5, 0.5])
-
     if bool_debug:
         print("Originale")
         print(dataset)
 
-    ####################### FINE ######################
-    ####################### FINE ######################
-    ####################### FINE ######################
-    ####################### FINE ######################
-
     # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda
     class_column = dataset[class_column_name]
     dataset = dataset.drop([class_column_name], axis=1)
-
 
     changings = True
     mark = None
@@ -254,10 +236,6 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
 
         mark = p3(dataset)
         print('mark =', mark)
-
-        # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
-        # mark = 'proportional'
-        # #######################################################
 
         print(">>", "Decisione 1")
         # ### D1 ### # When the dataset is marked as exemplified, go to step P5
@@ -298,16 +276,13 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         print(">>", "Passo 7")
         rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
 
-    ####### DA TOGLIERE POI ###########
-    #rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
-    ###################################
-    
     if bool_debug:
         print(rules)
     
     print("\n>> Creazione delle regole completata")
     
     return rules, mark
+
 
 # CONSTANT
 # VARIABLES
@@ -319,6 +294,5 @@ neg_class_value = 'NON-class'
 bool_debug = False
 
 # MAIN
-
 if __name__ == "__main__":
     main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)

@@ -1,11 +1,7 @@
 '''
-Shriking dataset proporzionale
+Shrinking dataset proporzionale
 '''
 # IMPORT
-import math
-import pandas as pd
-import numpy as np
-
 import preprocessing as pp
 
 # FUNCTIONS
@@ -23,8 +19,7 @@ def get_the_inner_set(r1, r2):
     else:
         return None
 
-
-def mre3(r1, r2):
+def mrp3(r1, r2):
     '''
     Calcolo:have antecedents that are all the same but one each, 
             and r1's sole different antecedent is the opposite literal of r2's sole different antecedent
@@ -40,7 +35,7 @@ def mre3(r1, r2):
             return r1.intersection(r2)
     return None
 
-def mre4(r1, r2, occ_r1, occ_r2, threshold):
+def mrp4(r1, r2, occ_r1, occ_r2, threshold):
     '''
     Calcolo: Due condizioni:
     1 - the premises of r1 are the same of the premises of r2, 
@@ -71,9 +66,7 @@ def mre4(r1, r2, occ_r1, occ_r2, threshold):
     else:
         return []
 
-
-
-def mre5(r1,r2, occ_r1, occ_r2, threshold):
+def mrp5(r1,r2, occ_r1, occ_r2, threshold):
     '''
     Calcolo: overlap delle premesse di r1 ed r2. In più verifico se r1/r2 > threshold allora output
     Output: ritorna la regola che è superiore all'altra, se nessuna allora None
@@ -84,7 +77,6 @@ def mre5(r1,r2, occ_r1, occ_r2, threshold):
         elif occ_r2 / occ_r1 > threshold:
             return r2
     return None
-        
 
 def main_shrink_proportional(rules, bool_debug=False, threshold=1):    
     print(f"> Procedura di shrinking proportional avviata\n")
@@ -128,23 +120,23 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                                                                         )
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE1 rimuove {k[0] if inner_set == k2[0] else k2[0]}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRP1 rimuove {k[0] if inner_set == k2[0] else k2[0]}')
                         
-                        # non controllo la condizione MRE3 poiché inutile. So che o k è strettamente contenuto in k2
+                        # non controllo la condizione MRP3 poiché inutile. So che o k è strettamente contenuto in k2
                         # altrimenti k2 è strettamente contenuto in k quindi è impossibile che entrambi abbiano un letterale
                         # uno l'opposto dell'altro
                         continue
                     
                     # MRP3
-                    mre3_res = mre3(k[0], k2[0])
-                    if mre3_res != None:
+                    mrp3_res = mrp3(k[0], k2[0])
+                    if mrp3_res != None:
 
                         # se già fosse presente 
-                        #to_add[(mre3_res, k[1])] = to_add.get( (mre3_res, k[1]), 0) + 1
-                        to_add[(mre3_res, k[1])] = 0
+                        #to_add[(mrp3_res, k[1])] = to_add.get( (mrp3_res, k[1]), 0) + 1
+                        to_add[(mrp3_res, k[1])] = 0
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE3 aggiunge {(mre3_res, k[1])}, {0}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRP3 aggiunge {(mrp3_res, k[1])}, {0}')
                     
                 else:
                     # MRP2
@@ -153,35 +145,35 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         superior_relation[inner_set] = k[0] if inner_set == k2[0] else k2[0]
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE2 indica che {inner_set} è inferiore')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRP2 indica che {inner_set} è inferiore')
                     
                     # MRP4
-                    mre4_res = mre4(k[0], k2[0], rules[k], rules[k2], threshold)
-                    if mre4_res != []:
+                    mrp4_res = mrp4(k[0], k2[0], rules[k], rules[k2], threshold)
+                    if mrp4_res != []:
                         # concat di liste
                         # Essendo discordi k[0] e k[1] allora quando aggiungo le coppie alla lista 'to_remove'
                         # aggiungo il segno corrispondente alla regola da aggiungere
-                        to_remove += [(x, k[1] if x == k[0] else k2[1]) for x in mre4_res]
+                        to_remove += [(x, k[1] if x == k[0] else k2[1]) for x in mrp4_res]
 
-                        if len(mre4_res) == 1:
+                        if len(mrp4_res) == 1:
                             # chiave della regola che soppravive
-                            k_live = (k2 if mre4_res[0] == k[0] else k)
+                            k_live = (k2 if mrp4_res[0] == k[0] else k)
                             # chiave della regola da eliminare
-                            k_dead = (k if mre4_res[0] == k[0] else k2)
+                            k_dead = (k if mrp4_res[0] == k[0] else k2)
 
                             multiplicity_after_remove[k_live] = (multiplicity_after_remove.get(k_live, 0) + 
                                                                             rules[k_dead] )
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE4 rimuove {mre4_res}')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRP4 rimuove {mrp4_res}')
                     
                     # MRP5
-                    mre5_res = mre5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
-                    if mre5_res != None:
-                        superior_relation[k[0] if mre5_res == k2[0] else k2[0]] = mre5_res
+                    mrp5_res = mrp5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
+                    if mrp5_res != None:
+                        superior_relation[k[0] if mrp5_res == k2[0] else k2[0]] = mrp5_res
 
                         if bool_debug:
-                            print(f'r1={k[0]}\nr2={k2[0]}\nMRE5 indica che {mre5_res} è superiore')
+                            print(f'r1={k[0]}\nr2={k2[0]}\nMRP5 indica che {mrp5_res} è superiore')
 
             explored.append(k)
         
@@ -216,7 +208,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
     return rules, superior_relation
 
 
-# COSTANTS
+# CONSTANT
 # VARIABLES
 dataset_path = './dataset/dataset.csv'
 output_var_name_verbose = False

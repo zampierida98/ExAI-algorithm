@@ -1,11 +1,7 @@
 '''
-Shriking dataset esemplificativo
+Shrinking dataset esemplificativo
 '''
 # IMPORT
-import math
-import pandas as pd
-import numpy as np
-
 import preprocessing as pp
 
 # FUNCTIONS
@@ -22,7 +18,6 @@ def get_the_inner_set(r1, r2):
         return r1
     else:
         return None
-
 
 def mre3(r1, r2):
     '''
@@ -127,7 +122,8 @@ def main_shrink_exemplified(rules, bool_debug=False):
     print(f"> Procedura di shrinking exemplified completata")
     return rules, superior_relation
 
-# COSTANTS
+
+# CONSTANT
 # VARIABLES
 dataset_path = './dataset/dataset.csv'
 output_var_name_verbose = False
@@ -135,6 +131,7 @@ class_column_name = 'CLASS'
 pos_class_value = 'class'
 neg_class_value = 'NON-class'
 bool_debug = False
+
 # MAIN
 if __name__ == "__main__":
     rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)

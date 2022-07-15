@@ -6,6 +6,7 @@ Main
 import preprocessing as pp
 import shrink_exemplified as se
 import shrink_proportional as sp
+import argparse
 
 # FUNCTIONS
 def save_on_file(rules, mark, output_path):
@@ -16,37 +17,42 @@ def save_on_file(rules, mark, output_path):
             else:
                 fout.write(f'{tuple(k[0])}{k[1]}{rules[k]}\n'.replace("'", ""))
 
-# CONSTANTS
-# VARIABLES
-dataset_path = './dataset/MushroomDataset/primary_data.csv' #'./dataset/breast-cancer.data', './dataset/dataset.csv'
-sep = ";"
-output_var_name_verbose = False
-class_column_name = 'class'#'class', 'CLASS'
-pos_class_value = 'e'# 'no-recurrence-events', 'class'
-neg_class_value = 'p' # 'recurrence-events', 'NON-class'
-
-bool_debug_preprocessing = False # bool_D solo per il preprocessing
-bool_debug = False
-threshold = 1
-output_path = 'results.txt'
-
 # MAIN
 if __name__ == "__main__":
-    rules, mark = pp.main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug_preprocessing, sep=sep)
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+    parser.add_argument('--dataset_path')
+    parser.add_argument('--sep')
+    parser.add_argument('--output_var_name_verbose', action='store_true')
+    parser.set_defaults(output_var_name_verbose=False)
+    parser.add_argument('--class_column_name')
+    parser.add_argument('--pos_class_value')
+    parser.add_argument('--neg_class_value')
+    parser.add_argument('--bool_debug_preprocessing', action='store_true')
+    parser.set_defaults(bool_debug_preprocessing=False)
+    parser.add_argument('--bool_debug', action='store_true')
+    parser.set_defaults(bool_debug=False)
+    parser.add_argument('--threshold', type=float)
+    parser.add_argument('--output_path')
+    args = parser.parse_args()
+
+    rules, mark = pp.main_preprocessing(args.dataset_path,
+                                        args.output_var_name_verbose,
+                                        args.class_column_name,
+                                        args.pos_class_value,
+                                        args.neg_class_value,
+                                        bool_debug=args.bool_debug_preprocessing,
+                                        sep=args.sep)
     print("#"*59)
-    # DA TOGLIERE la riga sotto PERCHE' SERVE SOLO PER I TEST
-    #mark = 'proportional'
-    # #######################################################
 
     if mark == 'exemplified':
-        rules, superior_relation = se.main_shrink_exemplified(rules, bool_debug)
+        rules, superior_relation = se.main_shrink_exemplified(rules, args.bool_debug)
     elif mark == 'proportional':
-        rules, superior_relation = sp.main_shrink_proportional(rules, bool_debug, threshold)
+        rules, superior_relation = sp.main_shrink_proportional(rules, args.bool_debug, args.threshold)
     else:
         # se il mark è None, per la fase di preprocessing, l'algoritmo deve terminare
         exit()
-    
+
     print("#"*59)
 
-    save_on_file(rules, mark, output_path)
-    print(f"Salvataggio completato in {output_path}")
+    save_on_file(rules, mark, args.output_path)
+    print(f"Salvataggio completato in {args.output_path}")
