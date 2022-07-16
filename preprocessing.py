@@ -213,7 +213,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         print(dataset)
 
     # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda
-    class_column = dataset[class_column_name]
+    class_column = dataset[class_column_name].astype(str)  # conversione a stringa per evitare problemi con pos_class_value,neg_class_value (passati come stringhe)
     dataset = dataset.drop([class_column_name], axis=1)
 
     changings = True

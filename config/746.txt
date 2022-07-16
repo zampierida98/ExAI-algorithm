@@ -1,0 +1,7 @@
+--dataset_path=./dataset/746Data.txt
+--sep=,
+--class_column_name=flag
+--pos_class_value=1
+--neg_class_value=-1
+--threshold=1
+--output_path=./results_746.txt
