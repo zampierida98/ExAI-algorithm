@@ -4,4 +4,4 @@
 --pos_class_value=no-recurrence-events
 --neg_class_value=recurrence-events
 --threshold=1
---output_path=./results_breast-cancer.txt
+--output_path=./results/results_breast-cancer.txt

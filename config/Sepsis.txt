@@ -3,5 +3,6 @@
 --class_column_name=hospital_outcome_1alive_0dead
 --pos_class_value=1
 --neg_class_value=0
+--bool_debug_preprocessing
 --threshold=1
---output_path=./results_Sepsis.txt
+--output_path=./results/results_Sepsis.txt

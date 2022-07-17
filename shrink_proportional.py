@@ -210,7 +210,10 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
 
         # aggiornamento molteplicità delle regole
         for k in multiplicity_after_remove:
-            rules[k] += multiplicity_after_remove[k]
+            try:
+                rules[k] += multiplicity_after_remove[k]
+            except:
+                continue
         
         print(f"> Update: rimozione regole 'dominate'")
         print("> Update: aggiornamento molteplicità delle regole")

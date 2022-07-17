@@ -45,7 +45,7 @@ def p2(dataset):
 
     return dataset.drop(columns=col_to_del)
 
-def p3(dataset):
+def p3(dataset, bool_debug=False):
     '''
     Calcolo:  Compute the number R/r where R is the number of rows and r is the number of combinations in the dataset
             - If R/r is less than N (number of columns), mark the dataset as exemplified
@@ -60,6 +60,9 @@ def p3(dataset):
 
     for column in list(dataset.columns):
         r *= dataset[column].nunique(dropna=True)
+
+    if bool_debug:
+        print(f"R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
 
     if R/r < N:
         mark = 'exemplified'
@@ -95,7 +98,7 @@ def p4(dataset):
     # se la original_len == len(dataset) allora non sono state fatte eliminate righe
     return dataset, original_len != len(dataset)
 
-def p5(dataset):
+def p5(dataset, bool_debug=False):
     '''
     Calcolo: Shannon Map
     Output: A binary univariate dataset with NULL elements and a mark
@@ -117,6 +120,9 @@ def p5(dataset):
 
         _map[np.NaN] = ''
         dataset[column] = dataset[column].replace(_map)
+
+        if bool_debug:
+            print(f"Shannon map per {column}:", _map)
     
     # rimuovo i nan
     return dataset
@@ -234,7 +240,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
 
         print(">>", "Passo 3: ottengo info sul tipo di dataset (se possibile)")
 
-        mark = p3(dataset)
+        mark = p3(dataset, bool_debug=bool_debug)
         print('mark =', mark)
 
         print(">>", "Decisione 1")
@@ -259,7 +265,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         print("Mark = None. L'algoritmo si ferma e non produce output")
         return None, None
 
-    dataset = p5(dataset)
+    dataset = p5(dataset, bool_debug=bool_debug)
     if bool_debug:
         print(dataset)
 

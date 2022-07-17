@@ -5,4 +5,4 @@
 --pos_class_value=e
 --neg_class_value=p
 --threshold=1
---output_path=./results_Mushroom.txt
+--output_path=./results/results_Mushroom.txt

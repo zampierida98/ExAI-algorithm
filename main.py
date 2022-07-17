@@ -20,19 +20,19 @@ def save_on_file(rules, mark, output_path):
 # MAIN
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-    parser.add_argument('--dataset_path')
-    parser.add_argument('--sep')
+    parser.add_argument('--dataset_path', required=True)
+    parser.add_argument('--sep', default=',')
     parser.add_argument('--output_var_name_verbose', action='store_true')
     parser.set_defaults(output_var_name_verbose=False)
-    parser.add_argument('--class_column_name')
-    parser.add_argument('--pos_class_value')
-    parser.add_argument('--neg_class_value')
+    parser.add_argument('--class_column_name', required=True)
+    parser.add_argument('--pos_class_value', required=True)
+    parser.add_argument('--neg_class_value', required=True)
     parser.add_argument('--bool_debug_preprocessing', action='store_true')
     parser.set_defaults(bool_debug_preprocessing=False)
     parser.add_argument('--bool_debug', action='store_true')
     parser.set_defaults(bool_debug=False)
-    parser.add_argument('--threshold', type=float)
-    parser.add_argument('--output_path')
+    parser.add_argument('--threshold', type=float, default=1)
+    parser.add_argument('--output_path', required=True)
     args = parser.parse_args()
 
     rules, mark = pp.main_preprocessing(args.dataset_path,
