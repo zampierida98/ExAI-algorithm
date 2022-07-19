@@ -202,26 +202,32 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
         if len(to_remove) > 0 or len(to_add) > 0:
             changings = True
         
+        # questo aggiornamento viene messo prima della rimozione perché ci possono essere casi come questo:
+        # r1 elimina r2 ed r2 elimina r3. Se faccio prima la eliminazione allora dentro rules non avro' né
+        # r2 né r3 e quindi l'aggiornamento delle molteplicità darà errore perché non trova r2.
+
+        # aggiornamento molteplicità delle regole
+        for k in multiplicity_after_remove:
+            rules[k] += multiplicity_after_remove[k]
+            '''
+            try:
+                rules[k] += multiplicity_after_remove[k]
+            except:
+                continue
+            '''
+        print("> Update: aggiornamento molteplicità delle regole")
+        
         # procedura di rimozione degli elementi
         for k in to_remove:
             # la regola potrebbe già essere stata rimossa. Più regole ne possono eliminare una
             if k in rules:
                 rules.pop(k)
-
-        # aggiornamento molteplicità delle regole
-        for k in multiplicity_after_remove:
-            try:
-                rules[k] += multiplicity_after_remove[k]
-            except:
-                continue
         
-        print(f"> Update: rimozione regole 'dominate'")
-        print("> Update: aggiornamento molteplicità delle regole")
+        print(f"> Update: rimozione regole 'dominate'")        
         
         # procedura di aggiunta delle nuove regole
         rules.update(to_add)
         print(f"> Update: aggiunta nuove regole\n")
-
 
         i += 1 # incremento l'indice che indica quanto impiega per arrivare alla fine
 

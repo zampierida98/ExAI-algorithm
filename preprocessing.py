@@ -15,6 +15,7 @@ def p0(dataset):
     bow = {}
     for column in list(dataset.columns):
         bow[column] = dataset[column].value_counts()
+    print(bow)
     return bow
 
 def p1(dataset):
@@ -27,6 +28,7 @@ def p1(dataset):
     for column in list(dataset.columns):
         mean = abs_freq[column].mean()
         std = abs_freq[column].std()
+        print(mean, std)
         tmp = abs_freq[column][abs_freq[column] < mean-std].to_dict()
         dataset.loc[dataset[column].isin(tmp.keys()), column] = np.NaN
     return dataset
@@ -209,8 +211,10 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
     return bow
 
 
-def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=','):
+def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=',', null_value='?'):
     dataset = pd.read_csv(dataset_path, sep=sep)
+    # sostituisco i null value con NaN. Così si può sfruttare i metodi di pandas
+    dataset = dataset.replace({null_value:np.NaN}) # rimpiazzo i ? con NaN
 
     print(">> Creazione delle regole iniziata\n")
 
@@ -219,7 +223,9 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         print(dataset)
 
     # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda
-    class_column = dataset[class_column_name].astype(str)  # conversione a stringa per evitare problemi con pos_class_value,neg_class_value (passati come stringhe)
+
+    # conversione a stringa per evitare problemi con pos_class_value,neg_class_value (passati come stringhe da parametro)
+    class_column = dataset[class_column_name].astype(str)
     dataset = dataset.drop([class_column_name], axis=1)
 
     changings = True
@@ -298,7 +304,8 @@ class_column_name = 'CLASS'
 pos_class_value = 'class'
 neg_class_value = 'NON-class'
 bool_debug = False
+null_value = '?'
 
 # MAIN
 if __name__ == "__main__":
-    main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug)
+    main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=bool_debug, null_value=null_value)

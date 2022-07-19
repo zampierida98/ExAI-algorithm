@@ -19,7 +19,7 @@ def save_on_file(rules, mark, output_path):
 
 # MAIN
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@') 
     parser.add_argument('--dataset_path', required=True)
     parser.add_argument('--sep', default=',')
     parser.add_argument('--output_var_name_verbose', action='store_true')
@@ -33,6 +33,7 @@ if __name__ == "__main__":
     parser.set_defaults(bool_debug=False)
     parser.add_argument('--threshold', type=float, default=1)
     parser.add_argument('--output_path', required=True)
+    parser.add_argument('--null_value', default='?')
     args = parser.parse_args()
 
     rules, mark = pp.main_preprocessing(args.dataset_path,
@@ -41,7 +42,8 @@ if __name__ == "__main__":
                                         args.pos_class_value,
                                         args.neg_class_value,
                                         bool_debug=args.bool_debug_preprocessing,
-                                        sep=args.sep)
+                                        sep=args.sep,
+                                        null_value=args.null_value)
     print("#"*59)
 
     if mark == 'exemplified':

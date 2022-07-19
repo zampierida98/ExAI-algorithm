@@ -1,0 +1,7 @@
+--dataset_path=./dataset/cell_samples.csv
+--sep=,
+--class_column_name=Class
+--pos_class_value=2
+--neg_class_value=4
+--threshold=1
+--output_path=./results/results_cell_samples.txt
