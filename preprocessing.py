@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 
 # FUNCTIONS
+"""
 def p0(dataset):
     '''
     Calcolo: per ogni colonna determino la frequenza di ogni valore
@@ -16,19 +17,50 @@ def p0(dataset):
     for column in list(dataset.columns):
         bow[column] = dataset[column].value_counts()
     print(bow)
+    return bow"""
+
+def p0(dataset, bool_debug=False):
+    '''
+    Calcolo: per ogni colonna determino la frequenza di ogni valore
+    Output:  bow di tipo 'dict' della forma 'colonna:{valore:freq.}'
+    '''
+    # definisco l'universo finito di oggetti
+    universe = set()
+    for column in list(dataset.columns):
+        universe = universe.union( set(dataset[column].dropna().unique()) )
+    
+    # rimuovo i nan perché non devono essere tenuti in considerazione in ANOVA. 
+    # Non verrà aggiunto il nan alle colonne che non lo hanno al suo interno.
+    if 'nan' in universe:   universe.remove('nan')
+
+    if bool_debug:
+        print(">>> Universo:",universe)
+    
+    bow = {}
+    for column in list(dataset.columns):
+        diff = universe - set(dataset[column].dropna().unique())
+        counts = dataset[column].value_counts()
+        
+        # togliamo i nan se presenti dalla pandas.Series perché non devono essere tenuti in considerazione in ANOVA
+        counts = counts[~counts.index.isin(['nan'])]
+
+        bow[column] = counts.append(pd.Series([0]*len(diff), index=diff))
+
+    print(bow)
     return bow
 
-def p1(dataset):
+def p1(dataset, bool_debug=False):
     '''
     Calcolo: Se in una colonna un valore è outlier (sotto media-devst) sostituiscilo con NULL
     Outpit: Same dataset, with some column marked by NULL in places
     '''
-    abs_freq = p0(dataset) # frequenze assolute per ogni colonna
+    abs_freq = p0(dataset, bool_debug=bool_debug) # frequenze assolute per ogni colonna
 
     for column in list(dataset.columns):
         mean = abs_freq[column].mean()
         std = abs_freq[column].std()
-        print(mean, std)
+        if bool_debug:
+            print(f">>> colonna={column} -- media:{mean}, std:{std}")
         tmp = abs_freq[column][abs_freq[column] < mean-std].to_dict()
         dataset.loc[dataset[column].isin(tmp.keys()), column] = np.NaN
     return dataset
@@ -38,7 +70,6 @@ def p2(dataset):
     Calcolo: Se in una colonna ci sono solo due valori di cui uno NULL oppure un solo valore, scarta la colonna
     Output: Same dataset with possibly less columns
     '''
-
     col_to_del = []
     for column in list(dataset.columns):
         # <= perché se avessi una colonna di soli NaN non avrei valori e quindi il metodo ritornerebbe 0
@@ -47,6 +78,7 @@ def p2(dataset):
 
     return dataset.drop(columns=col_to_del)
 
+"""
 def p3(dataset, bool_debug=False):
     '''
     Calcolo:  Compute the number R/r where R is the number of rows and r is the number of combinations in the dataset
@@ -64,13 +96,43 @@ def p3(dataset, bool_debug=False):
         r *= dataset[column].nunique(dropna=True)
 
     if bool_debug:
-        print(f"R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
+        print(f">>> R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
 
     if R/r < N:
         mark = 'exemplified'
     elif R/r > N**2:
         mark = 'proportional'
     return mark
+"""
+
+def p3(dataset, bool_debug=False):
+    '''
+    Calcolo:  Compute the number R/r where R is the number of rows and r is the number of combinations in the dataset
+            - If R/r is less than N (number of columns), mark the dataset as exemplified
+            - If R/r is greater than N^2, mark the dataset as proportional
+    
+    Output: Same dataset with  possibly a mark
+    '''
+    mark = None
+    R = len(dataset)
+    r = 1 # combinazioni di valori. Combinazione nel senso di calcolo combinatorio
+    N = len(list(dataset.columns))
+
+    universe = set()
+    for column in list(dataset.columns):
+        universe = universe.union( set(dataset[column].dropna().unique()) )
+    
+    r = len(universe) ** N
+
+    if bool_debug:
+        print(f">>> R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
+
+    if R/r < N:
+        mark = 'exemplified'
+    elif R/r > N**2:
+        mark = 'proportional'
+    return mark
+
 
 def p4(dataset):
     '''
@@ -124,7 +186,7 @@ def p5(dataset, bool_debug=False):
         dataset[column] = dataset[column].replace(_map)
 
         if bool_debug:
-            print(f"Shannon map per {column}:", _map)
+            print(f">>> Shannon map per {column}:", _map)
     
     # rimuovo i nan
     return dataset
@@ -212,29 +274,34 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
 
 def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=',', null_value='?'):
-    dataset = pd.read_csv(dataset_path, sep=sep)
     # sostituisco i null value con NaN. Così si può sfruttare i metodi di pandas
-    dataset = dataset.replace({null_value:np.NaN}) # rimpiazzo i ? con NaN
-
+    dataset = pd.read_csv(dataset_path, sep=sep)
+    
     print(">> Creazione delle regole iniziata\n")
 
     if bool_debug:
         print("Originale")
         print(dataset)
-
-    # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda
-
+    
     # conversione a stringa per evitare problemi con pos_class_value,neg_class_value (passati come stringhe da parametro)
-    class_column = dataset[class_column_name].astype(str)
+    for column in list(dataset.columns):
+        dataset[column] = dataset[column].astype(str)
+
+    # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda    
+    class_column = dataset[class_column_name]
     dataset = dataset.drop([class_column_name], axis=1)
 
+    # rimpiazzo i null value con NaN
+    dataset = dataset.replace({null_value:np.NaN})
+
+    # variabili di ciclo (changings) e tipo del dataset (mark)
     changings = True
     mark = None
     while changings:
         changings = False
 
         print(">>", "Passo 1")
-        dataset = p1(dataset)
+        dataset = p1(dataset, bool_debug=bool_debug)
         if bool_debug:
             print(dataset)
 
