@@ -274,7 +274,6 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
 
 def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=',', null_value='?'):
-    # sostituisco i null value con NaN. Così si può sfruttare i metodi di pandas
     dataset = pd.read_csv(dataset_path, sep=sep)
     
     print(">> Creazione delle regole iniziata\n")
