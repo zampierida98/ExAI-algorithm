@@ -1,6 +1,3 @@
-(-a_size, -a_color)+
-(-a_age, -a_act)+
-(a_size, a_age)-
-(a_size, a_act)-
-(a_age, a_color)-
-(a_act, a_color)-
+(a_act, a_age)-
+(-a_act,)+
+(-a_age,)+

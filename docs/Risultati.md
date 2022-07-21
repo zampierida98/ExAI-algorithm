@@ -68,7 +68,7 @@ Hanno tutti gli stessi attributi:
 - `inflated`: T, F (classe)
 
 Output:
-- Nel dataset `adult-stretch.data` la classe è `T` se `age=adult` e `act=stretch`.
+- Nel dataset `adult+stretch.data` la classe è `T` se `age=adult` e `act=stretch`.
     ```
     Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
     Shannon map per size: {'SMALL': '0', 'LARGE': '1', nan: ''}
@@ -81,7 +81,7 @@ Output:
     ```
     Si può vedere che l'algoritmo ritorna come regola per la classe positiva `(-a_age, -a_act)` ossia: primo bit di `age` pari a 0 e primo bit di `act` pari a 0.
 
-- Nel dataset `adult+stretch.data` la classe è `T` se `age=adult` oppure `act=stretch`.
+- Nel dataset `adult-stretch.data` la classe è `T` se `age=adult` oppure `act=stretch`.
     ```
     Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
     Shannon map per size: {'SMALL': '0', 'LARGE': '1', nan: ''}
