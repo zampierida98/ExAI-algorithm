@@ -1,0 +1,61 @@
+"""
+def p0(dataset, bool_debug=False):
+    '''
+    Calcolo: per ogni colonna determino la frequenza di ogni valore
+    Output:  bow di tipo 'dict' della forma 'colonna:{valore:freq.}'
+    '''
+    # definisco l'universo finito di oggetti
+    universe = set()
+    for column in list(dataset.columns):
+        universe = universe.union( set(dataset[column].dropna().unique()) )
+    
+    # rimuovo i nan perché non devono essere tenuti in considerazione in ANOVA. 
+    # Non verrà aggiunto il nan alle colonne che non lo hanno al suo interno.
+    if 'nan' in universe:   universe.remove('nan')
+
+    if bool_debug:
+        print(">>> Universo:",universe)
+    
+    bow = {}
+    for column in list(dataset.columns):
+        diff = universe - set(dataset[column].dropna().unique())
+        counts = dataset[column].value_counts()
+        
+        # togliamo i nan se presenti dalla pandas.Series perché non devono essere tenuti in considerazione in ANOVA
+        counts = counts[~counts.index.isin(['nan'])]
+
+        bow[column] = counts.append(pd.Series([0]*len(diff), index=diff))
+
+    print(bow)
+    return bow
+"""
+
+"""
+def p3(dataset, bool_debug=False):
+    '''
+    Calcolo:  Compute the number R/r where R is the number of rows and r is the number of combinations in the dataset
+            - If R/r is less than N (number of columns), mark the dataset as exemplified
+            - If R/r is greater than N^2, mark the dataset as proportional
+    
+    Output: Same dataset with  possibly a mark
+    '''
+    mark = None
+    R = len(dataset)
+    r = 1 # combinazioni di valori. Combinazione nel senso di calcolo combinatorio
+    N = len(list(dataset.columns))
+
+    universe = set()
+    for column in list(dataset.columns):
+        universe = universe.union( set(dataset[column].dropna().unique()) )
+    
+    r = len(universe) ** N
+
+    if bool_debug:
+        print(f">>> R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
+
+    if R/r < N:
+        mark = 'exemplified'
+    elif R/r > N**2:
+        mark = 'proportional'
+    return mark
+"""

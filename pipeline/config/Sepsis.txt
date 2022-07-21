@@ -1,0 +1,8 @@
+--dataset_path=./dataset/sepsis_survival_dataset/s41598-020-73558-3_sepsis_survival_study_cohort.csv
+--sep=,
+--class_column_name=hospital_outcome_1alive_0dead
+--pos_class_value=1
+--neg_class_value=0
+--bool_debug_preprocessing
+--threshold=1
+--output_path=./results/results_Sepsis.txt

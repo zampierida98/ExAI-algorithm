@@ -108,7 +108,8 @@ def p5(dataset, bool_debug=False):
     Calcolo: Shannon Map
     Output: A binary univariate dataset with NULL elements and a mark
     '''
-    
+    shannon_map = {}
+
     for column in list(dataset.columns):
         # genero la lista di valori di ogni colonna
         list_of_values = list(dataset[column].unique())
@@ -125,12 +126,13 @@ def p5(dataset, bool_debug=False):
 
         _map[np.NaN] = ''
         dataset[column] = dataset[column].replace(_map)
+        shannon_map[column] = _map
 
         if bool_debug:
             print(f">>> Shannon map per {column}:", _map)
     
     # rimuovo i nan
-    return dataset
+    return dataset, shannon_map
 
 def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
     '''
@@ -214,9 +216,7 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
     return bow
 
 
-def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=',', null_value='?'):
-    dataset = pd.read_csv(dataset_path, sep=sep)
-    
+def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, null_value='?'):
     print(">> Creazione delle regole iniziata\n")
 
     if bool_debug:
@@ -276,9 +276,9 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
         # non produce output
         print("Mark = None. L'algoritmo si ferma e non produce output")
-        return None, None
+        return None, None, None
 
-    dataset = p5(dataset, bool_debug=bool_debug)
+    dataset, shannon_map = p5(dataset, bool_debug=bool_debug)
     if bool_debug:
         print(dataset)
 
@@ -300,7 +300,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
     
     print("\n>> Creazione delle regole completata")
     
-    return rules, mark
+    return rules, mark, shannon_map
 
 
 # CONSTANT
