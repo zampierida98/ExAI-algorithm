@@ -29,7 +29,7 @@ def evaluation(testset, rules, superior_relation, shannon_map, class_column_name
     conf_matrix = [[0, 0]]*3 # una riga per ognuno dei risultati di classificazione
     for irow in range(len(testset)):
         row = dataset.iloc[[irow]].values.tolist()[0]
-        _map = shannon_map[]
+        _map = shannon_map#[]
         _class = '-'
         if pos_class_value in row:
             _class = '+'
@@ -61,7 +61,29 @@ if __name__ == "__main__":
     import pandas as pd
     from sklearn.model_selection import train_test_split
     dataset = pd.read_csv(args.dataset_path, sep=args.sep)
-    train, test = train_test_split(dataset, test_size = 0.1) # , stratify=dataset[list(dataset.columns)[1:]]
+    #train, test = train_test_split(dataset, test_size = 0.1) # , stratify=dataset[list(dataset.columns)[1:]]
+
+    # https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html
+    from sklearn.model_selection import StratifiedShuffleSplit
+
+    X = dataset.drop(columns=args.class_column_name)
+    y = dataset[args.class_column_name]
+
+    sss = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=0)
+    for train_index, test_index in sss.split(X, y):
+        print("split")
+        X_train, X_test = X.loc[train_index], X.loc[test_index]
+        y_train, y_test = y.loc[train_index], y.loc[test_index]
+    print(len(X_train), len(X_test), len(y_train), len(y_test))
+
+    train = X_train.copy()
+    train[args.class_column_name] = y_train
+    print(X_train.shape, y_train.shape, train.shape)
+
+    test = X_test.copy()
+    test[args.class_column_name] = y_test
+    print(X_test.shape, y_test.shape, test.shape)
+
 
     rules, mark, shannon_map = pp.main_preprocessing(train,
                                         True,                   # output_verbose
