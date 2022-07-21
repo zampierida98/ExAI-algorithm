@@ -12,7 +12,7 @@ import shrink_proportional as sp
 import argparse
 
 # FUNCTIONS
-def split_procedure(dataset):
+def split_procedure(dataset, test_size=0.1):
     '''
     Calcolo: esegue lo split del dataset
     Output: ritorna il train e il test set
@@ -20,7 +20,8 @@ def split_procedure(dataset):
     X = dataset.drop(columns=args.class_column_name)
     y = dataset[args.class_column_name]
 
-    sss = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=0)
+    sss = StratifiedShuffleSplit(n_splits=1, test_size=test_size, random_state=0)
+
     for train_index, test_index in sss.split(X, y):
         X_train, X_test = X.loc[train_index], X.loc[test_index]
         y_train, y_test = y.loc[train_index], y.loc[test_index]
@@ -33,11 +34,11 @@ def split_procedure(dataset):
 
     return X_train, X_test
 
-def rules_from_test_set(testset, shannon_map, class_column_name, pos_class_value):
+def adapt_test_set(testset, shannon_map, class_column_name, pos_class_value, null_value):
     '''
-    Calcolo: dato il testset si va a generare un dizionario dove la chiave è il classico frozenset che rappresenta
-            l'istanza mentre la chiave è la sua classe.
-    Output: dizionario della forma {frozenset(letterali dell'istanza) : classe, ...}
+    Calcolo: dato il testset si va a generare una lista di coppie dove il primo elemento è il classico frozenset che rappresenta
+            l'istanza mentre il secondo è la sua classe.
+    Output: lista di coppie della forma (frozenset(letterali dell'istanza), classe)
     '''
     def get_rule_from_binary(bitstring, col_name):
         '''
@@ -52,30 +53,51 @@ def rules_from_test_set(testset, shannon_map, class_column_name, pos_class_value
             rule.add( ('-' if bitstring[n] == '0' else '') + variables[n] + '_' + col_name)    
         return rule
     
-    res = {}
-    # per ogni istanza del test set    
+    res = []
+    # adatto il test alla procedura del train
+
+    # conversione a stringa per evitare problemi con pos_class_value,neg_class_value (passati come stringhe da parametro)
+    for column in list(testset.columns):
+        testset[column] = testset[column].astype(str)
+
+    # variabile che conta quante istanze non riescono ad essere convertite
+    n_instance_not_transformed = 0
+
+    # per ogni istanza del test set
     for k in range(len(testset)):
         row = set()
         row_index = int(testset.iloc[[k]].index.values) # indice della riga
         
-        # la riga viene creata solo sulle colonne della shannon map perché sono quelle mantenute durante le fasi
-        # del preprocessing da p1 a p4
-        for column in shannon_map:
-            _map = shannon_map[column]
-            row = row.union(get_rule_from_binary(_map[ testset._get_value(row_index, column) ], column))
+        # la shannon map potenzialemente non ha la corrispondenza per tutti i valori di tutte le istanze
+        try:
+            # la riga viene creata solo sulle colonne della shannon map perché sono quelle mantenute durante le fasi
+            # del preprocessing da p1 a p4  
+            for column in shannon_map:
+                _map = shannon_map[column]
+                col_value = testset._get_value(row_index, column)
 
-        raw_class = testset._get_value(row_index, class_column_name)
+                if col_value != null_value:
+                    row = row.union( get_rule_from_binary(_map[ str( testset._get_value(row_index, column) ) ], column) )
 
-        res[frozenset(row)] = '+' if raw_class == pos_class_value else '-'
-        
+            raw_class = testset._get_value(row_index, class_column_name)
+
+            res.append( (frozenset(row), '+' if raw_class == pos_class_value else '-') )
+
+        except:
+            n_instance_not_transformed += 1
+
+    if n_instance_not_transformed > 0:
+        print("\nNella shannon map è assente uno o più valori per la conversione delle istanze")
+        print(f"Non sono state trasformate {n_instance_not_transformed} su un tot. di {len(testset)}.\n")
+
     return res
 
-def evaluation(test_rules, rules, superior_relation, mark):
-    # risultato dell'applicazione delle regole
-    evaluation = {}
+def evaluation(test_adapted, rules, superior_relation, mark):
+    # evaluation mantiene lo stesso ordine di test_adapted
+    evaluation = []
 
     # per ogni istanza del test set    
-    for instance in test_rules:
+    for instance, _ in test_adapted:
         # tengo due variabili per la stima della classe di una istanza. Pos è per regole positive mentre neg per le negative
         pos_evaluation = {}
         neg_evaluation = {}
@@ -96,11 +118,11 @@ def evaluation(test_rules, rules, superior_relation, mark):
                     neg_evaluation[k[0]] = 1
         
         if len(pos_evaluation) > 0 and len(neg_evaluation) == 0:
-            evaluation[instance] = '+'
+            evaluation.append('+')
         elif len(neg_evaluation) > 0 and len(pos_evaluation) == 0:
-            evaluation[instance] = '-'
+            evaluation.append('-')
         elif len(neg_evaluation) == 0 and len(pos_evaluation) == 0:
-            evaluation[instance] = '?'
+            evaluation.append('?')
         else:
             class_estimation = '?'
             # ciclo sui positivi per trovarne uno che batte tutti i negativi
@@ -131,12 +153,12 @@ def evaluation(test_rules, rules, superior_relation, mark):
                         class_estimation = '-'
                         break # rompe il ciclo for esterno
             
-            evaluation[instance] = class_estimation
+            evaluation.append(class_estimation)
     return evaluation
 
 def confusion_matrix(test_rules, evaluation):
     '''
-    Calcolo: utilizza le regole per determinare la classe delle istanze
+    Calcolo: utilizza il testset adattato per determinare la classe delle istanze
     Output: la confusion matrix
     '''
     
@@ -147,10 +169,8 @@ def confusion_matrix(test_rules, evaluation):
     conf_matrix = np.zeros((3,2)) # una riga per ognuno dei risultati di classificazione    
 
     # per ogni istanza del test set    
-    for instance in test_rules:
-        print(instance)
-        ground_truth = test_rules[instance]
-        prediction = evaluation[instance]
+    for ind, (instance, ground_truth) in enumerate(test_rules):
+        prediction = evaluation[ind]
         conf_matrix[SIGN_map[prediction] ][SIGN_map[ground_truth]] += 1
 
     print("Confusion matrix generata")
@@ -184,8 +204,11 @@ def metrics(matrix):
     return ACC, PREC, REC
 
 
-# COSTANTI
+# CONSTANTS
 SIGN_map = {'+': 0, '-':1, '?':2} # per le righe della matrice
+
+# VARIABLES
+test_size = 0.05
 
 # MAIN
 if __name__ == "__main__":
@@ -204,14 +227,15 @@ if __name__ == "__main__":
     parser.add_argument('--null_value', default='?')
     args = parser.parse_args()
 
-    
+    # Creazione del dataset
     dataset = pd.read_csv(args.dataset_path, sep=args.sep)
     
+    # Splitting. Ottengo il train e il test set
     print("Splitting del dataset")
-    train, test = split_procedure(dataset)
-    
+    train, test = split_procedure(dataset, test_size=test_size)
     print("Splitting completato")
 
+    # Preprocessing
     rules, mark, shannon_map = pp.main_preprocessing(train,
                                         True,                   # output_verbose
                                         args.class_column_name,
@@ -221,6 +245,7 @@ if __name__ == "__main__":
                                         null_value=args.null_value)
     print("#"*59)
 
+    # Shrinking esemplificativo o proporzionale
     if mark == 'exemplified':
         rules, superior_relation = se.main_shrink_exemplified(rules, args.bool_debug)
     elif mark == 'proportional':
@@ -231,20 +256,18 @@ if __name__ == "__main__":
 
     print("#"*59)
 
-
     # Fase di valutazione
-    print("Fase di valutazione")
+    print("FASE DI VALUTAZIONE")
 
     # trasformo il test set usando lo stesso formato per il train set. Dizionario dove le chiavi sono le istanze 
     # e i valori la classe dell'instanza
-    test_rules = rules_from_test_set(test, shannon_map, args.class_column_name, args.pos_class_value)
-
+    test_adapted = adapt_test_set(test, shannon_map, args.class_column_name, args.pos_class_value, args.null_value)
     # faccio le previsioni col modello ritornando un dizionario con chiave l'istanza trasformata e come valore la classe
     # predetta
-    evaluation = evaluation(test_rules, rules, superior_relation, mark)
+    evaluation = evaluation(test_adapted, rules, superior_relation, mark)
 
     # genero la confusion matrix
-    conf_matrix = confusion_matrix(test_rules, evaluation)
+    conf_matrix = confusion_matrix(test_adapted, evaluation)
     
     # calcolo le metriche
     ACC, PREC, REC = metrics(conf_matrix)
@@ -253,5 +276,3 @@ if __name__ == "__main__":
     print("Confusion matrix")
     print(conf_matrix)
     print(f"ACCURACY={ACC}, PRECISION={PREC}, RECALL={REC}")
-
-    print(f"Salvataggio completato in {args.output_path}")

@@ -1,6 +1,5 @@
 --dataset_path=./dataset/MushroomDataset/primary_data.csv
 --sep=;
---output_var_name_verbose
 --class_column_name=class
 --pos_class_value=e
 --neg_class_value=p
