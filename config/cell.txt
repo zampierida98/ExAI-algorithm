@@ -6,3 +6,4 @@
 --threshold=1
 --output_path=./results/results_cell_samples.txt
 --bool_debug_preprocessing
+--output_path_sup_rel=./results/sup_rel_cell_samples.txt

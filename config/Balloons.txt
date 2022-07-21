@@ -7,3 +7,4 @@
 --bool_debug_preprocessing
 --threshold=1
 --output_path=./results/results_Balloons.txt
+--output_path_sup_rel=./results/sup_rel_Balloons.txt

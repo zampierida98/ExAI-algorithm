@@ -5,3 +5,4 @@
 --neg_class_value=p
 --threshold=1
 --output_path=./results/results_Mushroom.txt
+--output_path_sup_rel=./results/sup_rel_Mushroom.txt

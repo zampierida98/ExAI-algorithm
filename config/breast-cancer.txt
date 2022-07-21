@@ -5,3 +5,4 @@
 --neg_class_value=recurrence-events
 --threshold=1
 --output_path=./results/results_breast-cancer.txt
+--output_path_sup_rel=./results/sup_rel_breast-cancer.txt

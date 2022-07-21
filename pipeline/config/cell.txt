@@ -5,4 +5,3 @@
 --neg_class_value=4
 --threshold=1
 --output_path=./results/results_cell_samples.txt
---bool_debug_preprocessing

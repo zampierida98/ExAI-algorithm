@@ -17,6 +17,11 @@ def save_on_file(rules, mark, output_path):
             else:
                 fout.write(f'{tuple(k[0])}{k[1]}{rules[k]}\n'.replace("'", ""))
 
+def save_on_file_superior_relation(superioor_relation, output_path):
+    with open(output_path, 'w') as fout:
+        for (inf, sup) in superioor_relation:
+            fout.write(f'{tuple(inf)} > {tuple(sup)}\n'.replace("'", ""))
+
 # MAIN
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@') 
@@ -33,6 +38,7 @@ if __name__ == "__main__":
     parser.set_defaults(bool_debug=False)
     parser.add_argument('--threshold', type=float, default=1)
     parser.add_argument('--output_path', required=True)
+    parser.add_argument('--output_path_sup_rel', required=True)
     parser.add_argument('--null_value', default='?')
     args = parser.parse_args()
 
@@ -57,4 +63,8 @@ if __name__ == "__main__":
     print("#"*59)
 
     save_on_file(rules, mark, args.output_path)
+    print(superior_relation)
+    save_on_file_superior_relation(superior_relation, args.output_path_sup_rel)
+
     print(f"Salvataggio completato in {args.output_path}")
+    print(f"Salvataggio completato in {args.output_path_sup_rel}")

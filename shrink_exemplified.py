@@ -41,8 +41,8 @@ def main_shrink_exemplified(rules, bool_debug=False):
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
 
-    # è un dizionario. Se r2 è sup di r1 allora sarà {r1: r2}
-    superior_relation = {}
+    # è un lista. Se r2 è sup di r1 allora ci sarà (r1, r2)
+    superior_relation = []
 
     while changings:
         print(f"> ciclo #{i}")
@@ -89,7 +89,7 @@ def main_shrink_exemplified(rules, bool_debug=False):
                     # MRE2
                     inner_set = get_the_inner_set(k, k2) # ritorna l'insieme contenuto nell'altro
                     if inner_set != None:
-                        superior_relation[inner_set] = k if inner_set == k2 else k2
+                        superior_relation.append((inner_set, k if inner_set == k2 else k2))
 
                         if bool_debug:
                             print(f'r1={k}\nr2={k2}\nMRE2 indica che {inner_set} è inferiore')

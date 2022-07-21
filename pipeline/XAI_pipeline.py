@@ -12,6 +12,22 @@ import shrink_proportional as sp
 import argparse
 
 # FUNCTIONS
+def get_parser():
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@') 
+    parser.add_argument('--dataset_path', required=True)
+    parser.add_argument('--sep', default=',')
+    parser.add_argument('--class_column_name', required=True)
+    parser.add_argument('--pos_class_value', required=True)
+    parser.add_argument('--neg_class_value', required=True)
+    parser.add_argument('--bool_debug_preprocessing', action='store_true')
+    parser.set_defaults(bool_debug_preprocessing=False)
+    parser.add_argument('--bool_debug', action='store_true')
+    parser.set_defaults(bool_debug=False)
+    parser.add_argument('--threshold', type=float, default=1)
+    parser.add_argument('--output_path', required=True)
+    parser.add_argument('--null_value', default='?')
+    return parser
+
 def split_procedure(dataset, test_size=0.1):
     '''
     Calcolo: esegue lo split del dataset
@@ -99,23 +115,24 @@ def evaluation(test_adapted, rules, superior_relation, mark):
     # per ogni istanza del test set    
     for instance, _ in test_adapted:
         # tengo due variabili per la stima della classe di una istanza. Pos è per regole positive mentre neg per le negative
-        pos_evaluation = {}
-        neg_evaluation = {}
+        pos_evaluation = []
+        neg_evaluation = []
+
         for k in rules:
             inner_set = None
             if mark == 'exemplified':
                 inner_set = se.get_the_inner_set(instance, k)
                 if inner_set == k:
                     if rules[k] == '+':
-                        pos_evaluation[k] = 1
+                        pos_evaluation.append(k)
                     else:
-                        neg_evaluation[k] = 1
+                        neg_evaluation.append(k)
             else:
                 inner_set = se.get_the_inner_set(instance, k[0])
                 if rules[k[0]] == '+':
-                    pos_evaluation[k[0]] = 1
+                    pos_evaluation.append(k[0])
                 else:
-                    neg_evaluation[k[0]] = 1
+                    neg_evaluation.append(k[0])
         
         if len(pos_evaluation) > 0 and len(neg_evaluation) == 0:
             evaluation.append('+')
@@ -161,19 +178,14 @@ def confusion_matrix(test_rules, evaluation):
     Calcolo: utilizza il testset adattato per determinare la classe delle istanze
     Output: la confusion matrix
     '''
-    
-    # FASE DI GENERAZIONE DELLA CONFUSION MATRIX
-    print("Generazione della confusion matrix")
-
     # matrice di confusione 3x2 P,N,? 
     conf_matrix = np.zeros((3,2)) # una riga per ognuno dei risultati di classificazione    
 
     # per ogni istanza del test set    
-    for ind, (instance, ground_truth) in enumerate(test_rules):
+    for ind, (_, ground_truth) in enumerate(test_rules):
         prediction = evaluation[ind]
         conf_matrix[SIGN_map[prediction] ][SIGN_map[ground_truth]] += 1
 
-    print("Confusion matrix generata")
     return conf_matrix
 
 def metrics(matrix):
@@ -208,24 +220,13 @@ def metrics(matrix):
 SIGN_map = {'+': 0, '-':1, '?':2} # per le righe della matrice
 
 # VARIABLES
-test_size = 0.05
+test_size = 0.5
 
 # MAIN
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@') 
-    parser.add_argument('--dataset_path', required=True)
-    parser.add_argument('--sep', default=',')
-    parser.add_argument('--class_column_name', required=True)
-    parser.add_argument('--pos_class_value', required=True)
-    parser.add_argument('--neg_class_value', required=True)
-    parser.add_argument('--bool_debug_preprocessing', action='store_true')
-    parser.set_defaults(bool_debug_preprocessing=False)
-    parser.add_argument('--bool_debug', action='store_true')
-    parser.set_defaults(bool_debug=False)
-    parser.add_argument('--threshold', type=float, default=1)
-    parser.add_argument('--output_path', required=True)
-    parser.add_argument('--null_value', default='?')
-    args = parser.parse_args()
+    # argomenti estratti tramite il parser
+    args = get_parser().parse_args()
+
 
     # Creazione del dataset
     dataset = pd.read_csv(args.dataset_path, sep=args.sep)
@@ -262,17 +263,19 @@ if __name__ == "__main__":
     # trasformo il test set usando lo stesso formato per il train set. Dizionario dove le chiavi sono le istanze 
     # e i valori la classe dell'instanza
     test_adapted = adapt_test_set(test, shannon_map, args.class_column_name, args.pos_class_value, args.null_value)
-    # faccio le previsioni col modello ritornando un dizionario con chiave l'istanza trasformata e come valore la classe
-    # predetta
+
+    # faccio le previsioni col modello ritornando un dizionario con chiave l'istanza trasformata e come valore 
+    # la classe predetta
     evaluation = evaluation(test_adapted, rules, superior_relation, mark)
 
     # genero la confusion matrix
     conf_matrix = confusion_matrix(test_adapted, evaluation)
-    
+    print("Confusion matrix generata")
+
     # calcolo le metriche
     ACC, PREC, REC = metrics(conf_matrix)
 
-    print("Risultati ###############")
+    print("\nRisultati", "#"*49)
     print("Confusion matrix")
     print(conf_matrix)
     print(f"ACCURACY={ACC}, PRECISION={PREC}, RECALL={REC}")
