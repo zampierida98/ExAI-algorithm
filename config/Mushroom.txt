@@ -1,5 +1,5 @@
---dataset_path=./dataset/MushroomDataset/primary_data.csv
---sep=;
+--dataset_path=./dataset/agaricus-lepiota.data
+--sep=,
 --class_column_name=class
 --pos_class_value=e
 --neg_class_value=p
