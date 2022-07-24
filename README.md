@@ -16,6 +16,7 @@ Il file di configurazione deve contenere i seguenti argomenti:
 - `bool_debug`, se presente indica all'algoritmo di stampare in console ulteriori informazioni durante la fase di shrinking.
 - `threshold`, valore della soglia (di default è 1) utilizzata nelle regole `MRP4` e `MRP5` (shrinking per dataset proportional).
 - `output_path`, percorso in cui si desidera salvare l'output dell'algoritmo.
+- `output_path_sup_rel`, percorso in cui si desiderano salvare le coppie di superiorità prodotte dall'algoritmo.
 - `null_value`, valore nullo utilizzato all'interno del dataset (di default è `?`).
 
 # Scopo
