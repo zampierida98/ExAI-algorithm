@@ -20,7 +20,7 @@ def save_on_file(rules, mark, output_path):
 def save_on_file_superior_relation(superioor_relation, output_path):
     with open(output_path, 'w') as fout:
         for (inf, sup) in superioor_relation:
-            fout.write(f'{tuple(inf)} > {tuple(sup)}\n'.replace("'", ""))
+            fout.write(f'{tuple(inf)} < {tuple(sup)}\n'.replace("'", ""))
 
 # MAIN
 if __name__ == "__main__":
