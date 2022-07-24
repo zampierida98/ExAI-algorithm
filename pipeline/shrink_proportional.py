@@ -110,10 +110,10 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
 
         changings = False
 
-        explored = []   # chiavi già completamente esplorate
-        to_remove = []  # regole da eliminare per la metaregola 1
+        explored = set()    # chiavi già completamente esplorate (il tipo set permette di effettuare l'operazione 'in' in O(1))
+        to_remove = []      # regole da eliminare per la metaregola 1
+        to_add = {}         # nuove regole da aggiungere per la metaregola 3
         multiplicity_after_remove = {}
-        to_add = {}     # nuove regole da aggiungere per la metaregola 3
         keys = rules.keys()
 
         print(f"> Inzio procedura di controllo delle regole a coppie")
@@ -193,7 +193,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRP5 indica che {mrp5_res} è superiore')
 
-            explored.append(k)
+            explored.add(k)
         
         print(f"> Fine procedura di controllo delle regole a coppie")
 

@@ -70,6 +70,13 @@ Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di pa
 ## Risultati sul dataset `agaricus-lepiota`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene descrizioni corrispondenti a 23 specie di funghi della famiglia Agaricus-Lepiota. Il dataset è formato da 22 attributi (tutti categorici) più l'informazione della classe: commestibile (edible=e) o velenoso (poisonous=p).
 
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+```
+[[  29.    0.]
+ [   0.   19.]
+ [1214. 1152.]]
+```
+
 
 ## Risultati sul dataset `car`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
@@ -177,3 +184,10 @@ R=19051, r=1010, R/r=18.862376237623764, N=3, N^2=9
 mark = proportional
 ```
 L'applicazione dell'algoritmo permette di passare da 19051 a 544 regole.
+
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+```
+[[2224. 535.]
+ [   2.   0.]
+ [2408. 547.]]
+```

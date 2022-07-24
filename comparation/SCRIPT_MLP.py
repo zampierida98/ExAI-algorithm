@@ -33,6 +33,11 @@ CLASS_COLUMN = "inflated"
 DATASET_PATH = "../dataset/car.data"
 CLASS_COLUMN = "class"
 
+DATASET_PATH = "../dataset/sepsis_survival_dataset/s41598-020-73558-3_sepsis_survival_study_cohort.csv"
+CLASS_COLUMN = "hospital_outcome_1alive_0dead"
+POS_CLASS = 1
+NEG_CLASS = 0
+
 
 if __name__ == "__main__":
     df = pd.read_csv(DATASET_PATH)

@@ -49,9 +49,9 @@ def main_shrink_exemplified(rules, bool_debug=False):
 
         changings = False
 
-        explored = []   # chiavi già completamente esplorate
-        to_remove = []  # regole da eliminare per la metaregola 1
-        to_add = {}     # nuove regole da aggiungere per la metaregola 3
+        explored = set()    # chiavi già completamente esplorate (il tipo set permette di effettuare l'operazione 'in' in O(1))
+        to_remove = []      # regole da eliminare per la metaregola 1
+        to_add = {}         # nuove regole da aggiungere per la metaregola 3
         keys = rules.keys()
 
         print(f"> Inzio procedura di controllo delle regole a coppie")
@@ -95,7 +95,7 @@ def main_shrink_exemplified(rules, bool_debug=False):
                             print(f'r1={k}\nr2={k2}\nMRE2 indica che {inner_set} è inferiore')
             
             #print("> ciclo dentro il for", k)
-            explored.append(k)
+            explored.add(k)
         
         print(f"> Fine procedura di controllo delle regole a coppie")
 

@@ -36,6 +36,12 @@ CLASS_COLUMN = "class"
 POS_CLASS = "acc"
 NEG_CLASS = "unacc"
 
+""" # RecursionError: maximum recursion depth exceeded while calling a Python object
+DATASET_PATH = "../dataset/sepsis_survival_dataset/s41598-020-73558-3_sepsis_survival_study_cohort.csv"
+CLASS_COLUMN = "hospital_outcome_1alive_0dead"
+POS_CLASS = 1
+NEG_CLASS = 0 """
+
 
 if __name__ == "__main__":
     df = pd.read_csv(DATASET_PATH)

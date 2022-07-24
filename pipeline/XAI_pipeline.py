@@ -143,10 +143,11 @@ def evaluation(test_adapted, rules, superior_relation, mark):
                         neg_evaluation.append(k)
             else:
                 inner_set = se.get_the_inner_set(instance, k[0])
-                if rules[k[0]] == '+':
-                    pos_evaluation.append(k[0])
-                else:
-                    neg_evaluation.append(k[0])
+                if inner_set == k[0]:
+                    if k[1] == '+':
+                        pos_evaluation.append(k[0])
+                    else:
+                        neg_evaluation.append(k[0])
         
         if len(pos_evaluation) > 0 and len(neg_evaluation) == 0:
             evaluation.append('+')
