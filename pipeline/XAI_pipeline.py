@@ -12,6 +12,19 @@ import shrink_proportional as sp
 import argparse
 
 # FUNCTIONS
+def save_on_file(rules, mark, output_path):
+    with open(output_path, 'w') as fout:
+        for k in rules:
+            if mark == 'exemplified':
+                fout.write(f'{tuple(k)}{rules[k]}\n'.replace("'", ""))
+            else:
+                fout.write(f'{tuple(k[0])}{k[1]}{rules[k]}\n'.replace("'", ""))
+
+def save_on_file_superior_relation(superioor_relation, output_path):
+    with open(output_path, 'w') as fout:
+        for (inf, sup) in superioor_relation:
+            fout.write(f'{tuple(inf)} > {tuple(sup)}\n'.replace("'", ""))
+
 def get_parser():
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@') 
     parser.add_argument('--dataset_path', required=True)
@@ -25,6 +38,7 @@ def get_parser():
     parser.set_defaults(bool_debug=False)
     parser.add_argument('--threshold', type=float, default=1)
     parser.add_argument('--output_path', required=True)
+    parser.add_argument('--output_path_sup_rel', required=True)
     parser.add_argument('--null_value', default='?')
     return parser
 
@@ -220,7 +234,7 @@ def metrics(matrix):
 SIGN_map = {'+': 0, '-':1, '?':2} # per le righe della matrice
 
 # VARIABLES
-test_size = 0.5
+test_size = 0.3
 
 # MAIN
 if __name__ == "__main__":
@@ -256,6 +270,13 @@ if __name__ == "__main__":
         exit()
 
     print("#"*59)
+
+    """ save_on_file(rules, mark, args.output_path)
+    print(superior_relation)
+    save_on_file_superior_relation(superior_relation, args.output_path_sup_rel)
+
+    print(f"Salvataggio completato in {args.output_path}")
+    print(f"Salvataggio completato in {args.output_path_sup_rel}") """
 
     # Fase di valutazione
     print("FASE DI VALUTAZIONE")

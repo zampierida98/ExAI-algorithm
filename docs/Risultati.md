@@ -18,7 +18,7 @@ Questo dataset presenta i seguenti attributi (da [Original Wisconsin Breast Canc
 - Bland Chromatin: 1 - 10
 - Normal Nucleoli: 1 - 10
 - Mitoses: 1 - 10
-- Class: 2 for benign, 4 for malignant
+- Class: 2 (benign), 4 (malignant)
 
 Applicazione dell'algoritmo:
 - Il passo `P2` ha eliminato la colonna in cui era presente il solo valore nullo.
@@ -51,7 +51,35 @@ Applicazione dell'algoritmo:
 
     ...
     ```
-    Nel file di output le lettere rappresentano i vari bit dei numeri binari su cui sono mappati i valori delle colonne (`a` è il più significativo), ed i numeri rappresentano le colonne stesse. La presenza del segno `-` davanti al letterale indica che il bit corrispondente vale 1. Ad esempio, `-c_0, -b_0, -a_0` indica il valore 10 per la colonna Clump.
+    Nel file di output le lettere rappresentano i vari bit dei numeri binari su cui sono mappati i valori delle colonne (`a` è il più significativo), ed i numeri rappresentano le colonne stesse. La presenza del segno `-` davanti al letterale indica che il bit corrispondente vale 0. Ad esempio, `-c_0, -b_0, -a_0` indica il valore 5 per la colonna Clump.
+
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+```
+[[82.  0.]
+ [ 0.  0.]
+ [56. 67.]]
+```
+
+
+## Risultati sul dataset `kr-vs-kp`
+Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) è una sequenza di 36 attributi che formano una descrizione della scacchiera. L'ultimo attributo (il 37esimo) è la classe: White-can-win ("won"), White-cannot-win ("nowin").
+
+Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1758 regole (più 8 coppie di superiorità).
+
+
+## Risultati sul dataset `agaricus-lepiota`
+Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene descrizioni corrispondenti a 23 specie di funghi della famiglia Agaricus-Lepiota. Il dataset è formato da 22 attributi (tutti categorici) più l'informazione della classe: commestibile (edible=e) o velenoso (poisonous=p).
+
+
+## Risultati sul dataset `car`
+Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
+
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+```
+[[ 24.   0.]
+ [  3. 118.]
+ [ 43.   5.]]
+```
 
 
 ## Altri risultati
@@ -148,4 +176,4 @@ Output:
 R=19051, r=1010, R/r=18.862376237623764, N=3, N^2=9
 mark = proportional
 ```
-L'applicazione dell'algoritmo ha permesso di passare da 19051 a 544 regole.
+L'applicazione dell'algoritmo permette di passare da 19051 a 544 regole.

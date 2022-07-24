@@ -18,11 +18,20 @@ MISSING = "?"
 POS_CLASS = 2
 NEG_CLASS = 4
 
-""" DATASET_PATH = "../dataset/Balloons/adult+stretch.data"
-CLASS_COLUMN = "inflated"
-MISSING = "?"
 POS_CLASS = 0  # dopo il Label Encoding
-NEG_CLASS = 1  # dopo il Label Encoding """
+NEG_CLASS = 1  # dopo il Label Encoding
+
+DATASET_PATH = "../dataset/kr-vs-kp.data"
+CLASS_COLUMN = "class"
+
+DATASET_PATH = "../dataset/agaricus-lepiota.data"
+CLASS_COLUMN = "class"
+
+DATASET_PATH = "../dataset/Balloons/yellow-small+adult-stretch.data"
+CLASS_COLUMN = "inflated"
+
+DATASET_PATH = "../dataset/car.data"
+CLASS_COLUMN = "class"
 
 
 if __name__ == "__main__":
@@ -47,12 +56,11 @@ if __name__ == "__main__":
     X = df.drop(columns=CLASS_COLUMN)
     y = df[CLASS_COLUMN]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y)
-    print(len(X_train), len(X_test), len(y_train), len(y_test))
 
     # Create model object
     clf = MLPClassifier(hidden_layer_sizes=(6,5),
                         random_state=5,
-                        verbose=True,
+                        verbose=False,
                         learning_rate_init=0.01)
 
     # Fit data onto the model
