@@ -53,7 +53,7 @@ Applicazione dell'algoritmo:
     ```
     Nel file di output le lettere rappresentano i vari bit dei numeri binari su cui sono mappati i valori delle colonne (`a` è il più significativo), ed i numeri rappresentano le colonne stesse. La presenza del segno `-` davanti al letterale indica che il bit corrispondente vale 0. Ad esempio, `-c_0, -b_0, -a_0` indica il valore 5 per la colonna Clump.
 
-Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[82.  0.]
  [ 0.  0.]
@@ -64,13 +64,24 @@ Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colo
 ## Risultati sul dataset `kr-vs-kp`
 Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) è una sequenza di 36 attributi che formano una descrizione della scacchiera. L'ultimo attributo (il 37esimo) è la classe: White-can-win ("won"), White-cannot-win ("nowin").
 
-Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1758 regole (più 8 coppie di superiorità).
+Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1758 regole (più 3 coppie di superiorità).
+
+Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza:
+```
+[[1607.    0.]
+ [   0. 1428.]
+ [  62.   99.]]
+
+ACCURACY=0.9496245306633292
+PRECISION=1.0
+RECALL=0.9628520071899341
+```
 
 
 ## Risultati sul dataset `agaricus-lepiota`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene descrizioni corrispondenti a 23 specie di funghi della famiglia Agaricus-Lepiota. Il dataset è formato da 22 attributi (tutti categorici) più l'informazione della classe: commestibile (edible=e) o velenoso (poisonous=p).
 
-Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[  29.    0.]
  [   0.   19.]
@@ -81,7 +92,7 @@ Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colo
 ## Risultati sul dataset `car`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
 
-Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[ 24.   0.]
  [  3. 118.]
@@ -103,45 +114,6 @@ Hanno tutti gli stessi attributi:
 - `inflated`: T, F (classe)
 
 Output:
-- Nel dataset `adult+stretch.data` la classe è `T` se `age=adult` e `act=stretch`.
-    ```
-    Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
-    Shannon map per size: {'SMALL': '0', 'LARGE': '1', nan: ''}
-    Shannon map per act: {'STRETCH': '0', 'DIP': '1', nan: ''}
-    Shannon map per age: {'ADULT': '0', 'CHILD': '1', nan: ''}
-
-    (-a_age, -a_act)+
-    (a_age,)-
-    (a_act,)-
-    ```
-    Si può vedere che l'algoritmo ritorna come regola per la classe positiva `(-a_age, -a_act)` ossia: primo bit di `age` pari a 0 e primo bit di `act` pari a 0.
-
-- Nel dataset `adult-stretch.data` la classe è `T` se `age=adult` oppure `act=stretch`.
-    ```
-    Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
-    Shannon map per size: {'SMALL': '0', 'LARGE': '1', nan: ''}
-    Shannon map per act: {'STRETCH': '0', 'DIP': '1', nan: ''}
-    Shannon map per age: {'ADULT': '0', 'CHILD': '1', nan: ''}
-
-    (a_act, a_age)-
-    (-a_act,)+
-    (-a_age,)+
-    ```
-    Si può vedere che l'algoritmo ritorna come regole per la classe positiva `(-a_age)` e `(-a_act)` rispettivamente: primo bit di `age` pari a 0 e primo bit di `act` pari a 0.
-
-- Nel dataset `yellow-small.data` la classe è `T` se `color=yellow` e `size=small`.
-    ```
-    Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
-    Shannon map per size: {'SMALL': '0', 'LARGE': '1', nan: ''}
-    Shannon map per act: {'STRETCH': '0', 'DIP': '1', nan: ''}
-    Shannon map per age: {'ADULT': '0', 'CHILD': '1', nan: ''}
-
-    (-a_color, -a_size)+
-    (a_size,)-
-    (a_color,)-
-    ```
-    Si può vedere che l'algoritmo ritorna come regola per la classe positiva `(-a_color, -a_size)` ossia: primo bit di `color` pari a 0 e primo bit di `size` pari a 0.
-
 - Nel dataset `yellow-small+adult-stretch.data` la classe è `T` se `age=adult` e `act=stretch` oppure se `color=yellow` e `size=small`.
     ```
     Shannon map per color: {'YELLOW': '0', 'PURPLE': '1', nan: ''}
@@ -156,7 +128,11 @@ Output:
     (a_color, a_age)-
     (a_color, a_act)-
     ```
-    Si può vedere che l'algoritmo ritorna giustamente come regole per la classe positiva `(-a_size, -a_color)` e `(-a_act, -a_age)`.
+    Si può vedere che l'algoritmo ritorna come regole per la classe positiva `(-a_size, -a_color)` e `(-a_act, -a_age)` rispettivamente:
+    - Primo bit di `color` pari a 0 e primo bit di `size` pari a 0.
+    - Primo bit di `age` pari a 0 e primo bit di `act` pari a 0.
+
+- Per gli altri tre dataset è possibile fare ragionamenti analoghi. In particolare, tutti i dataset sono stati fatti in maniera tale che si possa estrarre questo tipo di regole come spiegazione; essi contengono infatti tutte le combinazioni degli attributi.
 
 ### Dataset non marcato
 [HIV-1 protease cleavage Data Set](https://archive.ics.uci.edu/ml/datasets/HIV-1+protease+cleavage): elenco di ottameri (8 aminoacidi) e un flag di classe (-1 o 1 a seconda che la proteasi dell'HIV-1 si scinderà o meno in posizione centrale).
@@ -185,7 +161,7 @@ mark = proportional
 ```
 L'applicazione dell'algoritmo permette di passare da 19051 a 544 regole.
 
-Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F):
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[2224. 535.]
  [   2.   0.]
