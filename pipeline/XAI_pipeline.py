@@ -6,6 +6,7 @@ Pipeline main
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedShuffleSplit
+
 import preprocessing as pp
 import shrink_exemplified as se
 import shrink_proportional as sp
@@ -17,7 +18,8 @@ def get_parser():
     parser.add_argument('--dataset_path', required=True)
     parser.add_argument('--sep', default=',')
     parser.add_argument('--output_var_name_verbose', action='store_true')
-    parser.set_defaults(output_var_name_verbose=False)
+    # output_verbose obbligatorio nella pipeline
+    parser.set_defaults(output_var_name_verbose=True)
     parser.add_argument('--class_column_name', required=True)
     parser.add_argument('--pos_class_value', required=True)
     parser.add_argument('--neg_class_value', required=True)
@@ -30,7 +32,10 @@ def get_parser():
     parser.add_argument('--output_path_sup_rel', required=True)
     parser.add_argument('--null_value', default='?')
     # aggiungo l'argomento test_size per realizzare una pipeline automatizzata e generale
-    parser.add_argument('--test_size', type=float, default=0.2)
+    parser.add_argument('--test_size', type=float, default=0.3)
+    # opzione per salvare le regole in formato più chiaro
+    parser.add_argument('--output_path_clear_rules', default=None)
+
     return parser
 
 def save_on_file(rules, mark, output_path):
@@ -46,7 +51,91 @@ def save_on_file_superior_relation(superior_relation, output_path):
         for (inf, sup) in superior_relation:
             fout.write(f'{tuple(inf)} < {tuple(sup)}\n'.replace("'", ""))
 
-def split_procedure(dataset, test_size=0.1):
+def clear_rules(rules,shannon_map, mark):
+    # Trasformazione delle regole in chiaro
+    import string
+    import itertools
+
+    def incomplete_to_complete_bitstring(incomplete_bitstring):
+        '''
+        E' una funzione che converte stringhe di questo tipo '0x0' generando tutte le possibili
+        combinazioni sostituendo x con 0 e 1
+        '''
+        res = []
+
+        for i, b in enumerate(incomplete_bitstring):
+            if b == 'x':
+                tmp0 = list(incomplete_bitstring)
+                tmp1 = list(incomplete_bitstring)
+                tmp0[i] = '0'
+                tmp1[i] = '1'
+                res += incomplete_to_complete_bitstring("".join(tmp0))
+                res += incomplete_to_complete_bitstring("".join(tmp1))
+
+                break # si deve fermare al primo x
+
+        # manteniamo solo le stringhe completamente istanziate 
+        if incomplete_bitstring.find('x') < 0:
+            res.append(incomplete_bitstring)
+
+        return res
+
+    # variabile da ritornare
+    res_rules = []
+
+    #reverse shannon map. Invece di avere per ogni colonna dizionari valore:stringabin adesso è stringabin:valore
+    rev_shann_map = {col: {v:k for k,v in shannon_map[col].items()} for col in shannon_map}
+
+    # mappa variabile posizione all'interno della stringa binaria
+    map_var_pos = {v:i for i,v in enumerate(string.ascii_lowercase)}
+    # mappa colonna posizione all'interno della regola in chiaro
+    map_colname_pos = {col: ind for ind, col in enumerate(shannon_map.keys())}
+    # caso di default di tutte le regole
+    default_istance = {col:('x' * len(shannon_map[col][next(iter(shannon_map[col])) ]) ) for col in shannon_map}
+
+    for k in rules:
+        # faccio una copia del caso di default
+        clear_rule = default_istance.copy()
+        for var in (k if mark == 'exemplified' else k[0]):
+            
+            v = var.split("_")[0] # variabile
+            c = var.split("_")[1] # colonna
+            b = '1'
+
+            # se ho variabili di questo tipo '-c' allora cambio b a 0 e imposto v ad 'c'
+            if len(v) == 2: v = v[1]; b = '0'
+
+            # cambio la stringa in clear_rule e la salvo in tmp
+            tmp = list(clear_rule[c])
+            tmp[map_var_pos[v]] = b
+            clear_rule[c] = "".join(tmp)
+
+        # rimpiazzo le stringhe binarie incomplete con i valori nella shannon map.
+        # Genero tutte le possibili combinazioni dalla stringa binaria incompleta e poi
+        # converto le stringhe binarie con la mappa associata alla colonna
+        for col in clear_rule:
+            tmp_map = rev_shann_map[col]
+            clear_rule[col] = [tmp_map[bitstring] for bitstring in incomplete_to_complete_bitstring(clear_rule[col])]
+        
+        # uso il metodo statico di itertools product che esegue un prodotto cartesiano.
+        res_rules += list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ])))
+    
+    # ritorno le regole in chiaro con anche le chiavi
+    return res_rules, list(clear_rule.keys()) + ['class']
+
+def save_clear_rules(clear_rules, colnames, output_path):
+    with open(output_path, 'w') as fout:
+        for ennupla in clear_rules:
+            line = '('
+            for i, v in enumerate(ennupla):
+                # sappiamo che è il valore di classe è l'ultimo per come è stato formattata la lista in 'clear_rules'
+                if i == len(colnames) - 1:
+                    line = f'{line[0:-2]}){v}'# v è classe
+                else:
+                    line += f'{colnames[i]}={v}, '
+            fout.write(line + '\n')
+
+def split_procedure(dataset, test_size=0.3):
     '''
     Calcolo: esegue lo split del dataset
     Output: ritorna il train e il test set
@@ -256,7 +345,6 @@ SIGN_map = {'+': 0, '-':1, '?':2} # per le righe della matrice
 # MAIN
 if __name__ == "__main__":
     # argomenti estratti tramite il parser
-    parser = get_parser()
     args = get_parser().parse_args()
 
     # Creazione del dataset
@@ -269,7 +357,7 @@ if __name__ == "__main__":
 
     # Preprocessing
     rules, mark, shannon_map = pp.main_preprocessing(train,
-                                        True,                   # output_verbose obbligatorio nella pipeline
+                                        args.output_var_name_verbose,
                                         args.class_column_name,
                                         args.pos_class_value,
                                         args.neg_class_value,
@@ -293,6 +381,12 @@ if __name__ == "__main__":
 
     print(f"Salvataggio completato in {args.output_path}")
     print(f"Salvataggio completato in {args.output_path_sup_rel}")
+
+    if args.output_path_clear_rules:
+        clear_rules, colnames = clear_rules(rules, shannon_map, mark)
+        save_clear_rules(clear_rules, colnames, args.output_path_clear_rules)
+        print(f"Salvataggio completato in {args.output_path_clear_rules}")
+
     print("#"*59)
 
     # Fase di valutazione
@@ -317,98 +411,3 @@ if __name__ == "__main__":
     print("Confusion matrix")
     print(conf_matrix)
     print(f"ACCURACY={ACC}, PRECISION={PREC}, RECALL={REC}")
-
-    ####################### ####################### ####################### ####################### #######################
-    ####################### ####################### ####################### ####################### #######################
-    ####################### ####################### ####################### ####################### #######################
-    # Trasformazione delle regole in chiaro
-    
-
-
-    def clear_rules(rules,shannon_map, mark):
-        import string
-        import itertools
-
-        def incomplete_to_complete_bitstring(incomplete_bitstring):
-            '''
-            E' una funzione che converte stringhe di questo tipo '0x0' generando tutte le possibili
-            combinazioni sostituendo x con 0 e 1
-            '''
-            res = []
-
-            for i, b in enumerate(incomplete_bitstring):
-                if b == 'x':
-                    tmp0 = list(incomplete_bitstring)
-                    tmp1 = list(incomplete_bitstring)
-                    tmp0[i] = '0'
-                    tmp1[i] = '1'
-                    res += incomplete_to_complete_bitstring("".join(tmp0))
-                    res += incomplete_to_complete_bitstring("".join(tmp1))
-
-                    break # si deve fermare al primo x
-
-            # manteniamo solo le stringhe completamente istanziate 
-            if incomplete_bitstring.find('x') < 0:
-                res.append(incomplete_bitstring)
-
-            return res
-
-        # variabile da ritornare
-        res_rules = []
-
-        #reverse shannon map. Invece di avere per ogni colonna dizionari valore:stringabin adesso è stringabin:valore
-        rev_shann_map = {col: {v:k for k,v in shannon_map[col].items()} for col in shannon_map}
-
-        # mappa variabile posizione all'interno della stringa binaria
-        map_var_pos = {v:i for i,v in enumerate(string.ascii_lowercase)}
-        # mappa colonna posizione all'interno della regola in chiaro
-        map_colname_pos = {col: ind for ind, col in enumerate(shannon_map.keys())}
-        # caso di default di tutte le regole
-        default_istance = {col:('x' * len(shannon_map[col][next(iter(shannon_map[col])) ]) ) for col in shannon_map}
-
-        for k in rules:
-            # faccio una copia del caso di default
-            clear_rule = default_istance.copy()
-            for var in (k if mark == 'exemplified' else k[0]):
-                
-                v = var.split("_")[0] # variabile
-                c = var.split("_")[1] # colonna
-                b = '1'
-
-                # se ho variabili di questo tipo '-c' allora cambio b a 0 e imposto v ad 'c'
-                if len(v) == 2: v = v[1]; b = '0'
-
-                # cambio la stringa in clear_rule e la salvo in tmp
-                tmp = list(clear_rule[c])
-                tmp[map_var_pos[v]] = b
-                clear_rule[c] = "".join(tmp)
-
-            # rimpiazzo le stringhe binarie incomplete con i valori nella shannon map.
-            # Genero tutte le possibili combinazioni dalla stringa binaria incompleta e poi
-            # converto le stringhe binarie con la mappa associata alla colonna
-            for col in clear_rule:
-                tmp_map = rev_shann_map[col]
-                clear_rule[col] = [tmp_map[bitstring] for bitstring in incomplete_to_complete_bitstring(clear_rule[col])]
-            
-            # uso il metodo statico di itertools product che esegue un prodotto cartesiano.
-            res_rules += list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ])))
-        
-        # ritorno le regole in chiaro con anche le chiavi
-        return res_rules, list(clear_rule.keys()) + ['class']
-    
-    def save_clear_rules(clear_rules, colnames, output_path):
-        with open(output_path, 'w') as fout:
-            for ennupla in clear_rules:
-                line = '('
-                for i, v in enumerate(ennupla):
-                    # sappiamo che è il valore di classe è l'ultimo per come è stato formattata la lista in 'clear_rules'
-                    if i == len(colnames) - 1:
-                        line = f'{line[0:-2]}){v}'# v è classe
-                    else:
-                        line += f'{colnames[i]}={v}, '
-                fout.write(line + '\n')
-
-    clear_rules, colnames = clear_rules(rules, shannon_map, mark)
-    save_clear_rules(clear_rules, colnames, "filepath.txt")
-    print("Salvate le regole in chiaro")
-

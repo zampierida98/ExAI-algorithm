@@ -102,8 +102,8 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
 
-    # è un lista. Se r2 è sup di r1 allora ci sarà (r1, r2)
-    superior_relation = []
+    # Se r2 è sup di r1 allora ci sarà (r1, r2)
+    superior_relation = set()
 
     while changings:
         print(f"> ciclo #{i}")
@@ -160,7 +160,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                     # MRP2
                     inner_set = get_the_inner_set(k[0], k2[0]) # ritorna l'insieme contenuto nell'altro
                     if inner_set != None:
-                        superior_relation.append((inner_set, k[0] if inner_set == k2[0] else k2[0]))
+                        superior_relation.add((inner_set, k[0] if inner_set == k2[0] else k2[0]))
 
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRP2 indica che {inner_set} è inferiore')
@@ -188,7 +188,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                     # MRP5
                     mrp5_res = mrp5(k[0], k2[0], rules[k], rules[k2], threshold) # ritorna il superiore
                     if mrp5_res != None:
-                        superior_relation.append((k[0] if mrp5_res == k2[0] else k2[0], mrp5_res))
+                        superior_relation.add((k[0] if mrp5_res == k2[0] else k2[0], mrp5_res))
 
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRP5 indica che {mrp5_res} è superiore')
