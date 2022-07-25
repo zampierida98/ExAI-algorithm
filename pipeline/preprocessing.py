@@ -148,13 +148,12 @@ def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
-        row = dataset.iloc[[irow]].values.tolist()[0]
+        row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
-        if pos_class_value in row:
+        # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
+        if pos_class_value == row[-1]:
             sgn = '+'
-            row.remove(pos_class_value)
-        else:
-            row.remove(neg_class_value)
+        row = row[:-1] # tolgo l'ultimo elemento che è la classe
         
         # trasformo le stringhe di bit in variabili
 
@@ -189,14 +188,12 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
-        row = dataset.iloc[[irow]].values.tolist()[0]
+        row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
-        # creo una tupla dove so che l'ultimo elemento è + o -
-        if pos_class_value in row:
-            row.remove(pos_class_value)
+        # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
+        if pos_class_value == row[-1]:
             sgn = '+'
-        else:
-            row.remove(neg_class_value)
+        row = row[:-1] # tolgo l'ultimo elemento che è la classe
 
         # trasformo le stringhe di bit in variabili
         rule = []
@@ -283,12 +280,13 @@ def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_
         print(dataset)
 
     # riaggiungo la colonna di classe
-    dataset[class_column_name] = class_column
+    # inserisco la classe come ultima colonna del DataFrame
+    dataset.insert(len(dataset.columns), class_column_name, class_column) # dataset[class_column_name] = class_column
     
     rules = None
     if mark == 'exemplified':
         print(">>", "Passo 6")
-        rules = p6(dataset, output_var_name_verbose,  pos_class_value,neg_class_value)
+        rules = p6(dataset, output_var_name_verbose, pos_class_value, neg_class_value)
     
     #if mark == 'proportional':
     else:

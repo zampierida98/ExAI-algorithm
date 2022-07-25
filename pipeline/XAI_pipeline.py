@@ -51,7 +51,7 @@ def save_on_file_superior_relation(superior_relation, output_path):
         for (inf, sup) in superior_relation:
             fout.write(f'{tuple(inf)} < {tuple(sup)}\n'.replace("'", ""))
 
-def clear_rules(rules,shannon_map, mark):
+def clear_rules(rules, shannon_map, mark):
     # Trasformazione delle regole in chiaro
     import string
     import itertools
@@ -88,8 +88,6 @@ def clear_rules(rules,shannon_map, mark):
 
     # mappa variabile posizione all'interno della stringa binaria
     map_var_pos = {v:i for i,v in enumerate(string.ascii_lowercase)}
-    # mappa colonna posizione all'interno della regola in chiaro
-    map_colname_pos = {col: ind for ind, col in enumerate(shannon_map.keys())}
     # caso di default di tutte le regole
     default_istance = {col:('x' * len(shannon_map[col][next(iter(shannon_map[col])) ]) ) for col in shannon_map}
 
@@ -98,8 +96,8 @@ def clear_rules(rules,shannon_map, mark):
         clear_rule = default_istance.copy()
         for var in (k if mark == 'exemplified' else k[0]):
             
-            v = var.split("_")[0] # variabile
-            c = var.split("_")[1] # colonna
+            #variabile, colonna
+            v,c = var.split("_", 1) # splitto solo al primo '_' in modo che se la colonna ha nel nome _ tengo l'intero nome
             b = '1'
 
             # se ho variabili di questo tipo '-c' allora cambio b a 0 e imposto v ad 'c'
@@ -114,8 +112,17 @@ def clear_rules(rules,shannon_map, mark):
         # Genero tutte le possibili combinazioni dalla stringa binaria incompleta e poi
         # converto le stringhe binarie con la mappa associata alla colonna
         for col in clear_rule:
-            tmp_map = rev_shann_map[col]
-            clear_rule[col] = [tmp_map[bitstring] for bitstring in incomplete_to_complete_bitstring(clear_rule[col])]
+            # non tutte le stringhe binarie sono presenti. Se ho xxxx e ho solo 10 valori gli altri 6 non esistono.
+            # Non saranno presenti nella mappa
+            tmp = []
+            for bitstring in incomplete_to_complete_bitstring(clear_rule[col]):
+                # aggiungo il valore corrispondente alla codifica binaria solo se la stringa binaria esiste
+                # la stringa binaria nella mappa
+                try:
+                    tmp.append(rev_shann_map[col][bitstring])
+                except:
+                    pass
+            clear_rule[col] = tmp
         
         # uso il metodo statico di itertools product che esegue un prodotto cartesiano.
         res_rules += list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ])))
