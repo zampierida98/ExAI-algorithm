@@ -51,7 +51,7 @@ Applicazione dell'algoritmo:
 
     ...
     ```
-    Nel file di output le lettere rappresentano i vari bit dei numeri binari su cui sono mappati i valori delle colonne (`a` è il più significativo), ed i numeri rappresentano le colonne stesse. La presenza del segno `-` davanti al letterale indica che il bit corrispondente vale 0. Ad esempio, `-c_0, -b_0, -a_0` indica il valore 5 per la colonna Clump.
+    Nel file di output le lettere rappresentano i vari bit dei numeri binari  che codificano i valori delle colonne (`a` è il più significativo), ed i numeri rappresentano le colonne stesse. La presenza del segno `-` davanti al letterale indica che il bit corrispondente vale 0. Ad esempio, `-c_0, -b_0, -a_0` indica il valore 5 per la colonna Clump.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
