@@ -4,6 +4,6 @@
 --pos_class_value=1
 --neg_class_value=0
 --bool_debug_preprocessing
---threshold=1
+--threshold=4
 --output_path=./results/results_Sepsis.txt
 --output_path_sup_rel=./results/sup_rel_Sepsis.txt

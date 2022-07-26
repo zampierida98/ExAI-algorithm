@@ -108,7 +108,8 @@ def p5(dataset, bool_debug=False):
     Calcolo: Shannon Map
     Output: A binary univariate dataset with NULL elements and a mark
     '''
-    
+    shannon_map = {}
+
     for column in list(dataset.columns):
         # genero la lista di valori di ogni colonna
         list_of_values = list(dataset[column].unique())
@@ -125,12 +126,13 @@ def p5(dataset, bool_debug=False):
 
         _map[np.NaN] = ''
         dataset[column] = dataset[column].replace(_map)
+        shannon_map[column] = _map
 
         if bool_debug:
             print(f">>> Shannon map per {column}:", _map)
     
     # rimuovo i nan
-    return dataset
+    return dataset, shannon_map
 
 def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
     '''
@@ -146,13 +148,13 @@ def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
-        row = dataset.iloc[[irow]].values.tolist()[0]
+        row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
         # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
         if pos_class_value == row[-1]:
             sgn = '+'
         row = row[:-1] # tolgo l'ultimo elemento che è la classe
-
+        
         # trasformo le stringhe di bit in variabili
 
         rule = set()
@@ -186,7 +188,7 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
-        row = dataset.iloc[[irow]].values.tolist()[0]
+        row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
         # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
         if pos_class_value == row[-1]:
@@ -273,9 +275,9 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
         # Shannon Map sul dataset None non deve applicarsi anzi. Se none l'algoritmo si ferma e
         # non produce output
         print("Mark = None. L'algoritmo si ferma e non produce output")
-        return None, None
+        return None, None, None
 
-    dataset = p5(dataset, bool_debug=bool_debug)
+    dataset, shannon_map = p5(dataset, bool_debug=bool_debug)
     if bool_debug:
         print(dataset)
 
@@ -286,19 +288,19 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
     rules = None
     if mark == 'exemplified':
         print(">>", "Passo 6")
-        rules = p6(dataset, output_var_name_verbose,  pos_class_value,neg_class_value)
+        rules = p6(dataset, output_var_name_verbose, pos_class_value, neg_class_value)
     
     #if mark == 'proportional':
     else:
         print(">>", "Passo 7")
-        rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
+        rules = p7(dataset, output_var_name_verbose, pos_class_value, neg_class_value)
 
     if bool_debug:
         print(rules)
     
     print("\n>> Creazione delle regole completata")
     
-    return rules, mark
+    return rules, mark, shannon_map
 
 
 # CONSTANT

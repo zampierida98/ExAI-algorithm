@@ -24,7 +24,7 @@ Applicazione dell'algoritmo:
 - Il passo `P2` ha eliminato la colonna in cui era presente il solo valore nullo.
 - Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
     ```
-    R=699, r=1000000000, R/r=6.99e-07, N=9, N^2=81
+    R=699, r=720000000, R/r=9.708333333333333e-07, N=9, N^2=81
     mark = exemplified
     ```
 - Il passo `P5` ha calcolato la Shannon Map secondo cui ogni colonna viene mappata in un certo numero di variabili booleane.
@@ -66,20 +66,11 @@ Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/data
 
 Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1758 regole (più 3 coppie di superiorità).
 
-Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza:
-```
-[[1607.    0.]
- [   0. 1428.]
- [  62.   99.]]
-
-ACCURACY=0.9496245306633292
-PRECISION=1.0
-RECALL=0.9628520071899341
-```
-
 
 ## Risultati sul dataset `agaricus-lepiota`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene descrizioni corrispondenti a 23 specie di funghi della famiglia Agaricus-Lepiota. Il dataset è formato da 22 attributi (tutti categorici) più l'informazione della classe: commestibile (edible=e) o velenoso (poisonous=p).
+
+Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 8124 a 173 regole.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
@@ -91,6 +82,8 @@ Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colo
 
 ## Risultati sul dataset `car`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
+
+Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 1728 a 91 regole.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
@@ -163,7 +156,7 @@ L'applicazione dell'algoritmo permette di passare da 19051 a 544 regole.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
-[[2224. 535.]
- [   2.   0.]
- [2408. 547.]]
+[[ 437.   52.]
+ [  85.   13.]
+ [4112. 1017.]]
 ```

@@ -6,4 +6,3 @@
 --threshold=1
 --output_path=./results/results_TEST.txt
 --output_path_sup_rel=./results/sup_rel_TEST.txt
---output_path_clear_rules=./results/clear_rules_TEST.txt

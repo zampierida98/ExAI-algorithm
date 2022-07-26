@@ -81,7 +81,7 @@ def clear_rules(rules, shannon_map, mark):
         return res
 
     # variabile da ritornare
-    res_rules = []
+    res_rules = set()
 
     #reverse shannon map. Invece di avere per ogni colonna dizionari valore:stringabin adesso è stringabin:valore
     rev_shann_map = {col: {v:k for k,v in shannon_map[col].items()} for col in shannon_map}
@@ -125,7 +125,9 @@ def clear_rules(rules, shannon_map, mark):
             clear_rule[col] = tmp
         
         # uso il metodo statico di itertools product che esegue un prodotto cartesiano.
-        res_rules += list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ])))
+        #res_rules += list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ])))
+        for r in list(itertools.product(* (list(clear_rule.values()) + [ [(rules[k] if mark == 'exemplified' else k[1])] ]))):
+            res_rules.add(r)
     
     # ritorno le regole in chiaro con anche le chiavi
     return res_rules, list(clear_rule.keys()) + ['class']
