@@ -12,9 +12,11 @@ def get_the_inner_set(r1, r2):
 
     Output: la regola contenuta nell'altra, None se non vale il contenimento
     '''
-    if len(r1 - r2) > 0 and len(r2 - r1) == 0:
+    diff1 = r1 - r2
+    diff2 = r2 - r1
+    if len(diff1) > 0 and len(diff2) == 0:
         return r2
-    elif len(r2 - r1) > 0 and len(r1 - r2) == 0:
+    elif len(diff2) > 0 and len(diff1) == 0:
         return r1
     else:
         return None

@@ -164,7 +164,21 @@ def model(dataset, output_var_name_verbose, class_column_name, pos_class_value, 
         threshold, output_path, output_path_sup_rel, output_path_clear_rules, bool_debug_preprocessing, bool_debug):
     '''
     Calcolo: Richiamo i metodi da altri moduli per costruire il modello. Preprocessing -> Shrinking
+    Input: DataFrame che rappresenta il dataset (letto in formato csv)
     Output: teoria NM, tipo di dataset, relazione di superiorità, shannon map (per la fase di validazione)
+
+    Parametri:
+    - `output_var_name_verbose`, indica all'algoritmo di usare il nome completo delle colonne nell'output.
+    - `class_column_name`, nome della colonna che indica la classe all'interno del dataset.
+    - `pos_class_value`, valore corrispondente alla classe positiva.
+    - `neg_class_value`, valore corrispondente alla classe negativa.
+    - `null_value`, valore nullo utilizzato all'interno del dataset.
+    - `threshold`, valore della soglia da utilizzare nello shrinking per dataset proportional.
+    - `output_path`, percorso in cui salvare l'output.
+    - `output_path_sup_rel`, percorso in cui salvare le coppie di superiorità.
+    - `output_path_clear_rules`, percorso in cui salvare la riscrittura delle regole secondo la Shannon Map.
+    - `bool_debug_preprocessing`, se True indica all'algoritmo di stampare in console ulteriori informazioni durante la fase di preprocessing.
+    - `bool_debug`, se True indica all'algoritmo di stampare in console ulteriori informazioni durante la fase di shrinking.
     '''
 
     rules, mark, shannon_map = pp.main_preprocessing(dataset,
@@ -176,13 +190,14 @@ def model(dataset, output_var_name_verbose, class_column_name, pos_class_value, 
                                         null_value=null_value)
     
     print("#"*59)
+    superior_relation = set()
     if mark == 'exemplified':
         rules, superior_relation = se.main_shrink_exemplified(rules, bool_debug)
     elif mark == 'proportional':
         rules, superior_relation = sp.main_shrink_proportional(rules, bool_debug, threshold)
     else:
         # se il mark è None, per la fase di preprocessing, l'algoritmo deve terminare
-        None, None, None, None
+        return None, None, None, None
 
     save_model(rules,mark,superior_relation, shannon_map, output_path, output_path_sup_rel,
                 output_path_clear_rules, bool_debug)

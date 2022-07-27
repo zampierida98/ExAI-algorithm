@@ -213,9 +213,7 @@ def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
     return bow
 
 
-def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, sep=',', null_value='?'):
-    dataset = pd.read_csv(dataset_path, sep=sep)
-    
+def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_class_value,neg_class_value, bool_debug=False, null_value='?'):
     print(">> Creazione delle regole iniziata\n")
 
     if bool_debug:
@@ -293,7 +291,7 @@ def main_preprocessing(dataset_path, output_var_name_verbose, class_column_name,
     #if mark == 'proportional':
     else:
         print(">>", "Passo 7")
-        rules = p7(dataset, output_var_name_verbose, pos_class_value, neg_class_value)
+        rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
 
     if bool_debug:
         print(rules)

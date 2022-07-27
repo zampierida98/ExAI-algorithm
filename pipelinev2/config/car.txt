@@ -6,4 +6,5 @@
 --threshold=1
 --output_path=./results/results_car.txt
 --output_path_sup_rel=./results/sup_rel_car.txt
+--output_var_name_verbose
 --output_path_clear_rules=./results/clear_rules_car.txt
