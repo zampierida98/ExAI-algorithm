@@ -1,520 +1,520 @@
-(e_age_years, -g_age_years, -a_age_years, d_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, b_age_years, b_episode_number, -a_episode_number)-1
-(g_age_years, a_episode_number, a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, a_sex_0male_1female)-1
-(e_age_years, g_age_years, a_age_years, -b_age_years, -d_age_years, c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, b_episode_number, -a_episode_number)-1
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, c_age_years, b_age_years, -e_age_years, a_sex_0male_1female)-1
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, b_age_years)-0
-(-g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, a_sex_0male_1female)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_age_years, -d_age_years, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(a_episode_number, g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years)-0
-(-f_age_years, e_age_years, g_age_years, a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, c_age_years, a_sex_0male_1female)+1
-(e_age_years, g_age_years, -a_age_years, -d_age_years, f_age_years, -c_age_years, b_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, c_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, b_episode_number, -a_episode_number)-0
-(e_age_years, g_age_years, a_age_years, d_age_years, -b_age_years, c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_age_years, -d_age_years, c_episode_number, c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-3
-(g_age_years, a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(-f_age_years, -g_age_years, a_age_years, -d_age_years, c_episode_number, -c_age_years, b_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, c_episode_number, -d_age_years, -c_age_years, b_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -e_age_years, c_episode_number, -d_age_years, -c_age_years, b_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -g_age_years, a_age_years, c_episode_number, -d_age_years, -c_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, a_episode_number, g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)-1
-(e_age_years, -g_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -e_age_years, -b_age_years, c_episode_number, f_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, a_age_years, -b_age_years, -d_age_years, c_episode_number, f_age_years, -c_age_years, b_episode_number, -a_episode_number)-0
-(-g_age_years, a_age_years, -b_age_years, -d_age_years, c_episode_number, f_age_years, c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -d_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years)-0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years)-0
-(-f_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)-0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -e_age_years)-0
-(-f_age_years, e_age_years, g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years)-0
-(-f_age_years, e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, c_age_years, a_sex_0male_1female)+0
-(-f_age_years, -g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, c_age_years, -e_age_years, a_sex_0male_1female)+0
-(b_episode_number, -a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, b_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female)-0
-(-f_age_years, g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years)-0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, d_age_years, -b_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, a_sex_0male_1female)-0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years)-0
-(e_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female)-0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)-0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -c_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, -c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, b_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, b_age_years, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -d_age_years, c_episode_number, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female)-0
-(g_age_years, -a_age_years, -b_episode_number, c_episode_number, -a_sex_0male_1female, c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -b_age_years, -d_age_years, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, c_age_years, b_age_years, a_sex_0male_1female)+0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, b_age_years, a_sex_0male_1female)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female)-0
-(-f_age_years, e_age_years, g_age_years, d_age_years, -b_age_years, c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, d_age_years, -c_episode_number, c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -g_age_years, -b_episode_number, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, b_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female)-0
-(g_age_years, a_age_years, -b_age_years, -d_age_years, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years)+0
-(-f_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female)-0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female)-0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female)-0
-(e_age_years, -g_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female)-0
-(e_age_years, -g_age_years, a_age_years, -b_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female)+0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, c_age_years, b_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, b_age_years, -e_age_years)-0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, c_age_years, b_episode_number, -a_episode_number)-0
-(-f_age_years, g_age_years, a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female)+0
-(-g_age_years, -a_age_years, -b_episode_number, c_episode_number, f_age_years, -a_sex_0male_1female, b_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, -e_age_years)+0
-(e_age_years, -g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female)+0
-(-f_age_years, g_age_years, a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female)+0
-(g_age_years, -a_age_years, -d_age_years, -c_episode_number, c_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, c_episode_number, f_age_years, c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female)+0
-(-f_age_years, -g_age_years, a_age_years, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)-0
-(-g_age_years, a_age_years, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, a_age_years, -b_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, a_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, -c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, b_episode_number, -a_age_years, -d_age_years, b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -d_age_years, c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, b_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, b_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, b_age_years, -e_age_years)+0
-(-g_age_years, -a_age_years, d_age_years, -b_age_years, c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)-0
-(-f_age_years, -g_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years)+0
-(-f_age_years, -b_episode_number, -b_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years)+0
-(-f_age_years, -g_age_years, -b_age_years, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years)+0
-(-g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, f_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, f_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_age_years, -d_age_years, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years)+0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female)+0
-(-g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female)+0
-(e_age_years, g_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -b_episode_number, -b_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years)+0
-(-g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, f_age_years, -e_age_years, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_episode_number, -b_age_years, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(-g_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_age_years, c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -g_age_years, -a_age_years, d_age_years, -b_age_years, c_episode_number, f_age_years, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -e_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, a_sex_0male_1female)+0
-(g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years, a_sex_0male_1female)+0
-(g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_age_years, -d_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, a_sex_0male_1female)+0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female)+0
-(e_age_years, g_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female)+0
-(g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female)+0
-(-f_age_years, g_age_years, -a_age_years, -b_age_years, c_episode_number, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, f_age_years, c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, a_sex_0male_1female)+0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(e_age_years, -a_age_years, d_age_years, -b_age_years, c_episode_number, f_age_years, c_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, d_age_years, -b_age_years, c_episode_number, -a_sex_0male_1female, c_age_years, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, c_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_episode_number)-0
-(-f_age_years, -g_age_years, -a_age_years, d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, b_age_years, -e_age_years)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, b_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -c_episode_number, -d_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-a_age_years, -d_age_years, -a_sex_0male_1female, f_age_years, -c_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, b_age_years, -e_age_years)+0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, f_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, b_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, b_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years, b_age_years, a_sex_0male_1female)+0
-(e_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years, b_age_years, a_sex_0male_1female)+0
-(e_age_years, g_age_years, -a_age_years, -d_age_years, -c_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -c_age_years, b_age_years, a_sex_0male_1female)+0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -c_episode_number, f_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, f_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_sex_0male_1female, c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, b_age_years, -e_age_years)+0
-(-f_age_years, -a_age_years, -b_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, c_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -d_age_years, c_episode_number, b_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -c_episode_number, f_age_years, c_age_years, b_age_years, -e_age_years, a_sex_0male_1female)+0
-(g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -a_sex_0male_1female, b_age_years, -e_age_years)+0
-(g_age_years, -a_age_years, -b_age_years, c_episode_number, -a_sex_0male_1female, c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years)-0
-(-g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, f_age_years, c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -g_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, f_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, d_age_years, -c_episode_number, c_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, b_age_years, -e_age_years, a_sex_0male_1female)+0
-(g_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_age_years, -a_sex_0male_1female, c_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -b_age_years, -d_age_years, c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -d_age_years, c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -d_age_years, c_episode_number, -a_sex_0male_1female, -c_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -b_episode_number, -b_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_episode_number, c_episode_number, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, f_age_years, c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, -d_age_years, c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, d_age_years, -b_episode_number, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, d_age_years, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, -c_episode_number, f_age_years, c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -b_age_years, -d_age_years, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(e_age_years, -g_age_years, a_age_years, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, -d_age_years, -c_episode_number, -c_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, a_age_years, -b_age_years, -d_age_years, -c_episode_number, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, a_age_years, -b_episode_number, -b_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, -a_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female)+0
-(-f_age_years, -g_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -b_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, -a_age_years, -b_episode_number, -c_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, -a_age_years, -b_age_years, -d_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_age_years, -d_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -e_age_years)+0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, -g_age_years, -b_episode_number, -c_episode_number, -d_age_years, -c_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -c_episode_number, -d_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -b_episode_number, -d_age_years, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -b_episode_number, -d_age_years, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -b_age_years, -d_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-b_age_years, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -e_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -e_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -c_age_years, -a_episode_number)-0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_episode_number)-0
-(-f_age_years, -g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, -b_episode_number, -c_episode_number, -d_age_years, -c_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years)+0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -c_age_years)+0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -b_age_years, -c_age_years, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(e_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years)+0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -d_age_years, -c_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -b_age_years, -d_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -c_age_years)+0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years)+0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, -c_age_years)+0
-(e_age_years, -g_age_years, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(e_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)+0
-(e_age_years, -g_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -g_age_years, -a_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(e_age_years, -g_age_years, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, f_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -a_episode_number)-0
-(e_age_years, g_age_years, -a_age_years, -b_episode_number, -b_age_years, f_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, -b_episode_number, -d_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(g_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(g_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -e_age_years)+0
-(-f_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female)+0
-(-f_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years)+0
-(-a_age_years, d_age_years, -b_episode_number, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years, -a_episode_number)-0
-(g_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years, -a_episode_number)-0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_age_years, -a_episode_number)-0
-(-a_age_years, d_age_years, -c_episode_number, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, f_age_years, -c_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -e_age_years)+0
-(g_age_years, -a_age_years, d_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -e_age_years)+0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female)+0
-(g_age_years, -a_age_years, d_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, d_age_years, -b_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -b_age_years, -c_episode_number, -a_episode_number)+0
-(-f_age_years, e_age_years, -a_age_years, d_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -c_episode_number, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, d_age_years, -b_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(e_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, -a_sex_0male_1female, -c_age_years)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, -c_age_years)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, -c_episode_number, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, c_episode_number, f_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, d_age_years, -b_age_years, c_episode_number, -a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, -a_age_years, -b_age_years, -d_age_years, c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years)+0
-(-a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, c_age_years, -e_age_years)+0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, c_age_years, -e_age_years)+0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, -b_episode_number, -b_age_years, -c_episode_number, -d_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, c_age_years, -e_age_years)+0
-(g_age_years, -a_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -d_age_years, -a_sex_0male_1female, c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, c_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, c_age_years, -e_age_years)+0
-(g_age_years, -b_age_years, -d_age_years, -c_episode_number, c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)+0
-(-a_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years)+0
-(-a_age_years, -d_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, c_age_years, -e_age_years)+0
-(g_age_years, -a_age_years, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, f_age_years, c_age_years)+0
-(g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, c_age_years, -a_episode_number)+0
-(g_age_years, -b_age_years, -d_age_years, -c_episode_number, f_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, -c_episode_number, a_sex_0male_1female)+0
-(-f_age_years, e_age_years, -g_age_years, -a_age_years, -d_age_years, -c_episode_number, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -c_episode_number, -d_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -c_episode_number, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -b_episode_number, -b_age_years, c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, a_sex_0male_1female)+0
-(e_age_years, -g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, a_sex_0male_1female)+0
-(-g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, -b_age_years, -c_episode_number, f_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, -g_age_years, -a_age_years, -b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)+0
-(e_age_years, -a_age_years, d_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years)+0
-(-g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female)+0
-(-b_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -b_age_years, -d_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_episode_number, f_age_years, -e_age_years)+0
-(-g_age_years, -a_age_years, -d_age_years, -c_episode_number, f_age_years, -e_age_years, -a_episode_number)+0
-(e_age_years, g_age_years, -a_age_years, d_age_years, -b_episode_number, -b_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, g_age_years, -a_age_years, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -b_episode_number, -d_age_years, -c_age_years, -a_episode_number)-0
-(-a_age_years, -c_episode_number, f_age_years, -a_sex_0male_1female, -c_age_years, b_age_years, -a_episode_number)+0
-(-a_age_years, -d_age_years, -c_episode_number, f_age_years, -c_age_years, b_age_years, -a_episode_number)+0
-(-a_age_years, -d_age_years, -c_episode_number, f_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -d_age_years, -c_episode_number, -c_age_years, b_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -d_age_years, c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -c_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -c_episode_number, f_age_years, b_age_years, a_sex_0male_1female)+0
-(g_age_years, -a_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, b_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -d_age_years, -c_age_years, b_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, f_age_years, -a_sex_0male_1female, c_age_years, -e_age_years, -a_episode_number)-0
-(-a_age_years, -b_episode_number, -c_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)-0
-(-a_age_years, d_age_years, -b_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)-0
-(-g_age_years, -a_age_years, -b_episode_number, f_age_years, c_age_years, -e_age_years, -a_episode_number)-0
-(g_age_years, -a_age_years, -d_age_years, -a_sex_0male_1female, b_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -c_episode_number, -d_age_years, b_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, f_age_years, c_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, f_age_years, c_age_years, b_age_years, -e_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, -c_episode_number, -d_age_years, b_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, e_age_years, -a_age_years, -c_episode_number, -d_age_years, b_age_years, -a_episode_number)+0
-(g_age_years, -d_age_years, -a_sex_0male_1female, -c_age_years, b_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -a_age_years, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-f_age_years, -g_age_years, -b_episode_number, -b_age_years, -e_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years)+0
-(-g_age_years, -a_age_years, -b_age_years, -c_age_years, -e_age_years, -a_episode_number)+0
-(-f_age_years, -b_age_years, -c_episode_number, -d_age_years, -e_age_years, -a_episode_number)+0
-(-b_episode_number, -d_age_years, -c_episode_number, -c_age_years, -e_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_age_years, -d_age_years, -c_episode_number, -a_episode_number)+0
-(-f_age_years, g_age_years, -a_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-a_age_years, -b_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-f_age_years, -b_episode_number, -b_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -b_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -d_age_years, -c_episode_number, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -d_age_years, -c_episode_number, -c_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)-0
-(-b_episode_number, -b_age_years, f_age_years, -a_sex_0male_1female, -e_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_age_years, -a_episode_number)-0
-(-f_age_years, e_age_years, -a_age_years, -b_episode_number, -c_age_years, -a_episode_number)-0
-(-f_age_years, -a_age_years, -b_episode_number, -b_age_years, -c_age_years, -a_episode_number)-0
-(e_age_years, -a_age_years, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -c_episode_number, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-f_age_years, e_age_years, -a_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(e_age_years, -a_age_years, -d_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_age_years, f_age_years, -c_age_years, -a_episode_number)+0
-(e_age_years, -g_age_years, -b_episode_number, -b_age_years, f_age_years, -a_episode_number)+0
-(e_age_years, -g_age_years, -a_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_episode_number, -b_age_years, -c_episode_number, -c_age_years)+0
-(-f_age_years, -g_age_years, -a_age_years, d_age_years, -b_episode_number, -a_episode_number)+0
-(-a_age_years, d_age_years, -b_age_years, -c_episode_number, a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -a_age_years, -b_age_years, -c_episode_number, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -b_age_years, -c_episode_number, f_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-a_age_years, -c_episode_number, c_age_years, -e_age_years, a_sex_0male_1female, -a_episode_number)+0
-(g_age_years, -a_age_years, -c_episode_number, b_age_years, -e_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -c_episode_number, -c_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -c_age_years, -e_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -c_episode_number, -e_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -a_sex_0male_1female, -c_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -c_episode_number, -a_sex_0male_1female, -a_episode_number)+0
-(-g_age_years, -b_episode_number, -b_age_years, -a_sex_0male_1female, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -d_age_years, -c_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -d_age_years, -c_episode_number, -a_episode_number)+0
-(-f_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -d_age_years, -e_age_years, -a_episode_number)+0
-(-g_age_years, -b_episode_number, -b_age_years, -d_age_years, -a_episode_number)+0
-(g_age_years, -b_episode_number, -b_age_years, -c_episode_number, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, -d_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -d_age_years, a_sex_0male_1female, -a_episode_number)+0
-(-b_episode_number, -b_age_years, f_age_years, -c_age_years, -a_episode_number)+0
-(g_age_years, -a_age_years, -b_episode_number, f_age_years, -a_episode_number)+0
-(-a_age_years, -b_episode_number, -d_age_years, f_age_years, -a_episode_number)+0
-(-b_episode_number, -b_age_years, -c_episode_number, f_age_years, -a_episode_number)+0
-(-a_age_years, -a_episode_number, -b_episode_number, -b_age_years)+0
-(-a_age_years, -c_age_years, -a_episode_number, -b_episode_number)+0
-(-c_episode_number, -a_age_years, -a_episode_number, -b_episode_number)+0
-(-a_age_years, -e_age_years, -a_episode_number, -b_episode_number)+0
-(-a_age_years, -a_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(b_age_years, f_age_years, b_episode_number, -a_age_years, c_age_years, -g_age_years, e_age_years, -a_episode_number, -c_episode_number, -a_sex_0male_1female, d_age_years)-1
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, a_age_years, a_episode_number, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)-1
+(-b_age_years, f_age_years, a_age_years, b_episode_number, c_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, g_age_years, -a_sex_0male_1female)-1
+(a_sex_0male_1female, -e_age_years, f_age_years, b_age_years, -a_age_years, c_age_years, -g_age_years, -c_episode_number, -d_age_years, -b_episode_number)-1
+(b_age_years, -f_age_years, -a_age_years, c_age_years, -c_episode_number, e_age_years, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -a_age_years, c_age_years, -g_age_years, -c_episode_number, d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, -c_age_years, g_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, a_episode_number, c_age_years, -c_episode_number, d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, a_age_years, c_age_years, -c_episode_number, e_age_years, d_age_years, g_age_years, -b_episode_number)+1
+(a_sex_0male_1female, f_age_years, b_age_years, b_episode_number, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years)-0
+(-b_age_years, -f_age_years, -g_age_years, c_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, -a_age_years, c_age_years, -g_age_years, -a_episode_number, -c_episode_number, d_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, b_episode_number, -g_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, a_age_years, -a_episode_number, e_age_years, c_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, c_episode_number, g_age_years)-3
+(-e_age_years, f_age_years, a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, -f_age_years, a_age_years, b_episode_number, -g_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years)+0
+(a_sex_0male_1female, b_age_years, -f_age_years, b_episode_number, -g_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, -c_age_years)+0
+(a_sex_0male_1female, -e_age_years, b_age_years, -f_age_years, b_episode_number, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, g_age_years)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, -f_age_years, a_age_years, -g_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years)+0
+(a_sex_0male_1female, f_age_years, -a_age_years, a_episode_number, -c_episode_number, e_age_years, d_age_years, -c_age_years, g_age_years, -b_episode_number)-1
+(a_sex_0male_1female, -b_age_years, f_age_years, b_episode_number, -g_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, b_episode_number, -a_age_years, -a_episode_number, c_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, f_age_years, a_age_years, b_episode_number, -g_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, -c_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, a_age_years, -g_age_years, c_age_years, -a_episode_number, -d_age_years, c_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -c_age_years)-0
+(a_sex_0male_1female, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years)-0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years)-0
+(-b_age_years, f_age_years, -c_episode_number, e_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -c_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -f_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -g_age_years, c_age_years, -c_episode_number, e_age_years, -d_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -g_age_years, c_age_years, -c_episode_number, -b_episode_number, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, b_episode_number, -a_age_years, -a_episode_number, -c_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, b_episode_number, -a_age_years, -a_episode_number, -c_age_years, g_age_years, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, e_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years, g_age_years, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -g_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -b_episode_number, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, -a_sex_0male_1female, d_age_years)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(-e_age_years, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female)-0
+(-e_age_years, b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(b_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -g_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_age_years, d_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, c_age_years, -g_age_years, -a_episode_number, -c_episode_number, d_age_years)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years)-0
+(a_sex_0male_1female, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, g_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-e_age_years, b_age_years, -a_age_years, c_age_years, -a_episode_number, c_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, -c_age_years, g_age_years)+0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -e_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, -f_age_years, -a_episode_number, e_age_years, c_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, c_age_years, e_age_years, -a_episode_number, -c_episode_number, d_age_years)-0
+(-e_age_years, -f_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, e_age_years, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years)+0
+(-b_age_years, -f_age_years, -g_age_years, c_age_years, -c_episode_number, e_age_years, -b_episode_number, -a_sex_0male_1female, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(-b_age_years, f_age_years, -g_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -g_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, a_age_years, -g_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, a_age_years, -g_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female)-0
+(-e_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, -e_age_years, -f_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, a_age_years, -g_age_years, -c_episode_number, e_age_years, -d_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(b_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, g_age_years)-0
+(-f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-e_age_years, b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -g_age_years, c_age_years, -a_episode_number, e_age_years, -d_age_years, -b_episode_number)-0
+(-f_age_years, b_episode_number, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, a_age_years, -c_episode_number, -c_age_years, g_age_years, -b_episode_number)+0
+(-e_age_years, b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, c_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -f_age_years, a_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, a_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -e_age_years, -f_age_years, a_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -e_age_years, b_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years, g_age_years)-0
+(a_sex_0male_1female, -e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, c_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, f_age_years, a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, a_age_years, c_age_years, -c_episode_number, e_age_years, -d_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(-b_age_years, -e_age_years, -f_age_years, a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(a_sex_0male_1female, -e_age_years, b_age_years, -f_age_years, b_episode_number, -a_age_years, -a_episode_number, -d_age_years, g_age_years)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, c_age_years, -a_episode_number, -c_episode_number, -b_episode_number, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -g_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, a_age_years, -g_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, d_age_years)+0
+(b_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, -a_sex_0male_1female)-0
+(b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(a_sex_0male_1female, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(-e_age_years, b_age_years, f_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -a_age_years, -g_age_years, -a_episode_number, c_episode_number, -c_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years, g_age_years)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -f_age_years, -g_age_years, -c_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -g_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(a_sex_0male_1female, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -e_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -b_episode_number)-0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -b_episode_number)-0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -g_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -g_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, f_age_years, -g_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, d_age_years)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female)-0
+(-e_age_years, -f_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-e_age_years, -f_age_years, -a_age_years, -c_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, d_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, d_age_years, -a_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -g_age_years, -a_episode_number, -c_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, c_episode_number, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, c_episode_number, d_age_years)+0
+(f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-e_age_years, -a_age_years, c_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -b_episode_number)-0
+(-e_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, f_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -f_age_years, -a_age_years, c_age_years, -g_age_years, -a_episode_number, -d_age_years)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, e_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, e_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, f_age_years, c_age_years, -c_episode_number, e_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, f_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -a_episode_number, c_episode_number, g_age_years, -a_sex_0male_1female)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, g_age_years, d_age_years)-0
+(-b_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years, g_age_years)-0
+(-b_age_years, -a_age_years, c_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years)-0
+(-b_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, d_age_years, -c_episode_number, e_age_years, -b_episode_number)+0
+(-b_age_years, -f_age_years, -a_age_years, d_age_years, -a_episode_number, e_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, d_age_years, -a_episode_number, e_age_years, -c_episode_number, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -c_episode_number, -a_sex_0male_1female)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, c_episode_number, d_age_years)+0
+(-b_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, c_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, g_age_years, d_age_years)+0
+(-f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, d_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, d_age_years)-0
+(-f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -c_age_years, d_age_years)-0
+(-f_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, d_age_years)-0
+(-e_age_years, b_age_years, -a_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, g_age_years)-0
+(a_sex_0male_1female, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-e_age_years, f_age_years, b_age_years, -g_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, d_age_years)+0
+(-f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, g_age_years, -b_episode_number)-0
+(b_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, f_age_years, b_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number)+0
+(a_sex_0male_1female, b_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)+0
+(a_sex_0male_1female, b_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years)+0
+(a_sex_0male_1female, b_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, g_age_years)+0
+(a_sex_0male_1female, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years, d_age_years)+0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, d_age_years, -a_episode_number, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -g_age_years, -a_age_years, -a_episode_number, e_age_years, d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -e_age_years, f_age_years, -a_age_years, d_age_years, -a_episode_number, -c_episode_number, -b_episode_number)-0
+(-b_age_years, -a_age_years, -g_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, d_age_years, -c_episode_number, -a_episode_number, g_age_years, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, d_age_years, -a_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-e_age_years, b_age_years, -a_age_years, -c_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years, -a_sex_0male_1female)-0
+(a_sex_0male_1female, b_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, c_episode_number, g_age_years)+0
+(a_sex_0male_1female, -e_age_years, f_age_years, b_age_years, -a_age_years, c_age_years, -c_episode_number, -b_episode_number)+0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, -c_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -a_episode_number, c_episode_number, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, d_age_years, g_age_years, -b_episode_number)-0
+(-f_age_years, -g_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-f_age_years, -g_age_years, -c_episode_number, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, g_age_years, -a_sex_0male_1female)-0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years, -a_sex_0male_1female)-0
+(-b_age_years, f_age_years, -a_age_years, d_age_years, -a_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)-0
+(-e_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, b_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, d_age_years)+0
+(a_sex_0male_1female, -e_age_years, f_age_years, b_age_years, -a_age_years, d_age_years, -c_episode_number, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, d_age_years, -c_episode_number, -a_episode_number, g_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)-0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years, g_age_years)-0
+(-b_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, e_age_years, -a_sex_0male_1female, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, c_age_years, -a_episode_number, -d_age_years, g_age_years)+0
+(-e_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-e_age_years, b_age_years, -a_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -f_age_years, -g_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_episode_number, -c_age_years, g_age_years, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, d_age_years, -a_episode_number, c_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, c_age_years, -a_episode_number, g_age_years, d_age_years)-0
+(-e_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, c_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-e_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(a_sex_0male_1female, -a_age_years, d_age_years, -a_episode_number, e_age_years, c_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years, -a_sex_0male_1female)+0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, c_episode_number, -c_age_years, d_age_years)+0
+(-e_age_years, f_age_years, b_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years)-0
+(-b_age_years, -e_age_years, f_age_years, c_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, a_age_years, -g_age_years, -a_episode_number, e_age_years, -c_episode_number, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, a_age_years, -a_episode_number, e_age_years, -c_episode_number, -a_sex_0male_1female, d_age_years)+0
+(a_sex_0male_1female, b_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years, -c_age_years)-0
+(a_sex_0male_1female, -b_age_years, a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, a_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -e_age_years, a_age_years, -a_episode_number, -c_age_years, g_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, c_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_age_years, -g_age_years, -c_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -g_age_years, -c_episode_number, -b_episode_number)+0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -f_age_years, -g_age_years, -c_episode_number, -a_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -f_age_years, -g_age_years, -a_episode_number, -c_episode_number, -c_age_years)+0
+(-b_age_years, -f_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-f_age_years, -a_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -f_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -g_age_years, -a_episode_number, -d_age_years)+0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_age_years, -g_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-g_age_years, -a_age_years, -c_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-f_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)+0
+(-b_age_years, -f_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(-e_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(-e_age_years, -f_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -e_age_years, -f_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -c_episode_number, -a_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(-e_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-a_age_years, -a_episode_number, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)-0
+(-g_age_years, -a_age_years, -c_episode_number, e_age_years, -a_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(a_sex_0male_1female, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-f_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number)+0
+(-f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, g_age_years, -b_episode_number)+0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -a_episode_number, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-f_age_years, -a_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)+0
+(-f_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, g_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years)+0
+(f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(f_age_years, -a_age_years, -g_age_years, -c_episode_number, -d_age_years, -c_age_years, -b_episode_number)+0
+(f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number)+0
+(-a_age_years, -g_age_years, -c_episode_number, e_age_years, -d_age_years, -c_age_years, -b_episode_number)+0
+(-b_age_years, -g_age_years, -c_episode_number, -a_episode_number, e_age_years, -d_age_years, -c_age_years)+0
+(-b_age_years, f_age_years, -c_episode_number, e_age_years, -a_episode_number, -d_age_years, -c_age_years)+0
+(-b_age_years, -g_age_years, -c_episode_number, -a_episode_number, e_age_years, -d_age_years, -a_sex_0male_1female)+0
+(-g_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -d_age_years, -a_sex_0male_1female)+0
+(f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -a_sex_0male_1female)+0
+(-a_age_years, -g_age_years, -c_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -g_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years, -a_sex_0male_1female)+0
+(f_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -c_episode_number, e_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -d_age_years, -b_episode_number)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, g_age_years, -b_episode_number)-0
+(-a_age_years, -a_episode_number, e_age_years, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_episode_number, -c_episode_number, -c_age_years, g_age_years, -b_episode_number)-0
+(-b_age_years, f_age_years, -a_episode_number, -c_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -b_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -b_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -c_episode_number, -b_episode_number, d_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, -c_age_years, -b_episode_number, -a_sex_0male_1female, d_age_years)-0
+(-b_age_years, -e_age_years, -a_episode_number, -c_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)-0
+(-b_age_years, -a_age_years, -a_episode_number, -c_episode_number, -b_episode_number, g_age_years, d_age_years)-0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -a_episode_number, -c_episode_number, -c_age_years, g_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -f_age_years, -c_episode_number, -a_episode_number, g_age_years, -b_episode_number)-0
+(-e_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_age_years, -b_episode_number, d_age_years)-0
+(f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, d_age_years)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -a_episode_number, -c_age_years, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -a_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -c_episode_number, -b_episode_number, g_age_years, d_age_years)+0
+(f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, g_age_years, d_age_years)+0
+(-b_age_years, -e_age_years, -a_age_years, -c_episode_number, -b_episode_number, g_age_years, d_age_years)+0
+(-e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, d_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years, d_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, -c_episode_number, -b_episode_number, g_age_years, d_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -a_age_years, -c_episode_number, -b_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, f_age_years, -a_episode_number, -c_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, d_age_years)+0
+(-b_age_years, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number)+0
+(a_sex_0male_1female, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, d_age_years)+0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_age_years, d_age_years)+0
+(-a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, g_age_years, d_age_years)+0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, g_age_years, d_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, e_age_years, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, c_episode_number, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, c_episode_number, g_age_years, -a_sex_0male_1female, d_age_years)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years)+0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -c_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, c_age_years, -c_episode_number, -b_episode_number)+0
+(-b_age_years, -e_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, -f_age_years, -c_episode_number, -a_episode_number, -d_age_years, -b_episode_number)-0
+(-e_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(-e_age_years, -a_age_years, c_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(-e_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)+0
+(-e_age_years, -f_age_years, -a_age_years, c_age_years, -a_episode_number, -d_age_years, g_age_years)+0
+(-b_age_years, -e_age_years, -a_age_years, c_age_years, -c_episode_number, g_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, c_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, g_age_years, -b_episode_number)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years)+0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -c_episode_number, g_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -a_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-f_age_years, -g_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years)+0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(a_sex_0male_1female, -f_age_years, -g_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -f_age_years, c_age_years, -a_episode_number, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, f_age_years, -g_age_years, -a_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(a_sex_0male_1female, f_age_years, -g_age_years, -a_age_years, -c_episode_number, e_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number)+0
+(-b_age_years, f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -g_age_years, -a_episode_number, -c_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_age_years, -g_age_years, -a_episode_number)+0
+(a_sex_0male_1female, f_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number, d_age_years)+0
+(f_age_years, -a_age_years, -c_episode_number, e_age_years, -c_age_years, -b_episode_number, d_age_years)+0
+(a_sex_0male_1female, f_age_years, -g_age_years, -a_age_years, -c_episode_number, -c_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, -g_age_years, -c_episode_number, -d_age_years, -b_episode_number)+0
+(-e_age_years, f_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(-b_age_years, -a_age_years, -a_episode_number, e_age_years, -b_episode_number, g_age_years, d_age_years)-0
+(a_sex_0male_1female, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, g_age_years)+0
+(-f_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -b_episode_number)-0
+(b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years)+0
+(-e_age_years, b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(b_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years, -c_age_years, g_age_years)+0
+(-b_age_years, -g_age_years, c_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years)+0
+(a_sex_0male_1female, b_age_years, f_age_years, -a_age_years, -g_age_years, -c_episode_number, -b_episode_number)+0
+(b_age_years, -a_age_years, -a_episode_number, -c_episode_number, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-e_age_years, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years)+0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years)+0
+(b_age_years, -f_age_years, -a_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -a_sex_0male_1female, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number, -b_episode_number)-0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -b_episode_number, d_age_years)-0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -g_age_years, -a_episode_number, -b_episode_number)-0
+(-e_age_years, b_age_years, -a_age_years, -a_episode_number, -d_age_years, g_age_years, -a_sex_0male_1female)+0
+(b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, g_age_years)+0
+(-e_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, g_age_years, -a_sex_0male_1female)+0
+(-e_age_years, b_age_years, f_age_years, -a_age_years, c_age_years, -a_episode_number, -b_episode_number)-0
+(a_sex_0male_1female, b_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_episode_number, -d_age_years)+0
+(b_age_years, -f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_episode_number, -d_age_years)+0
+(-e_age_years, b_age_years, -a_episode_number, -d_age_years, -c_age_years, g_age_years, -a_sex_0male_1female)+0
+(-b_age_years, -f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years)+0
+(-b_age_years, -e_age_years, -f_age_years, -g_age_years, -a_episode_number, -b_episode_number)+0
+(-b_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years)+0
+(-b_age_years, -a_age_years, -g_age_years, -c_episode_number, -c_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_age_years, -g_age_years, -a_episode_number, -c_age_years)+0
+(-b_age_years, -e_age_years, -f_age_years, -c_episode_number, -a_episode_number, -d_age_years)+0
+(-e_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)+0
+(-b_age_years, -g_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years)+0
+(-f_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -a_age_years, -a_episode_number, -c_episode_number)+0
+(a_sex_0male_1female, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years)+0
+(a_sex_0male_1female, -b_age_years, -e_age_years, -f_age_years, -a_episode_number, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years)+0
+(a_sex_0male_1female, -e_age_years, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years)+0
+(a_sex_0male_1female, -a_age_years, -c_episode_number, -a_episode_number, -d_age_years, -c_age_years)+0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -e_age_years, f_age_years, -a_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, -b_episode_number)-0
+(-f_age_years, -a_age_years, -a_episode_number, e_age_years, -c_age_years, -b_episode_number)-0
+(-b_age_years, -f_age_years, -a_age_years, -a_episode_number, -c_age_years, -b_episode_number)-0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years)+0
+(-a_age_years, -c_episode_number, e_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female)+0
+(-f_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years)+0
+(-a_age_years, -c_episode_number, e_age_years, -a_episode_number, -d_age_years, -c_age_years)+0
+(-b_age_years, f_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_age_years)+0
+(-b_age_years, f_age_years, -g_age_years, -a_episode_number, e_age_years, -b_episode_number)+0
+(-g_age_years, -a_age_years, -c_episode_number, -a_episode_number, e_age_years, -c_age_years)+0
+(-b_age_years, -a_age_years, -c_episode_number, -a_episode_number, -c_age_years, d_age_years)+0
+(-b_age_years, -a_age_years, d_age_years, -c_episode_number, -c_age_years, -b_episode_number)+0
+(-f_age_years, -g_age_years, -a_age_years, -a_episode_number, d_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -a_age_years, -c_episode_number, -a_episode_number, d_age_years)+0
+(a_sex_0male_1female, -b_age_years, -g_age_years, -a_age_years, -a_episode_number, -c_episode_number)+0
+(a_sex_0male_1female, -b_age_years, f_age_years, -a_age_years, -a_episode_number, -c_episode_number)+0
+(a_sex_0male_1female, -e_age_years, -a_age_years, c_age_years, -a_episode_number, -c_episode_number)+0
+(-e_age_years, b_age_years, -a_age_years, -c_episode_number, -a_episode_number, g_age_years)+0
+(-b_age_years, -a_episode_number, -c_episode_number, -c_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_episode_number, -c_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_episode_number, -c_episode_number, -b_episode_number)+0
+(-b_age_years, -a_episode_number, -c_age_years, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -a_episode_number, -c_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -g_age_years, -a_episode_number, -a_sex_0male_1female, -b_episode_number)+0
+(-b_age_years, -a_episode_number, -d_age_years, -c_age_years, -b_episode_number)+0
+(-b_age_years, -c_episode_number, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -f_age_years, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -e_age_years, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -g_age_years, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, -a_episode_number, -c_episode_number, g_age_years, -b_episode_number)+0
+(-a_age_years, -a_episode_number, -d_age_years, g_age_years, -b_episode_number)+0
+(a_sex_0male_1female, -b_age_years, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -a_episode_number, -c_age_years, -b_episode_number)+0
+(f_age_years, -a_age_years, -a_episode_number, g_age_years, -b_episode_number)+0
+(f_age_years, -a_age_years, -a_episode_number, -d_age_years, -b_episode_number)+0
+(-b_age_years, f_age_years, -a_episode_number, -c_episode_number, -b_episode_number)+0
+(-b_age_years, -a_age_years, -a_episode_number, -b_episode_number)+0
+(-b_episode_number, -a_age_years, -a_episode_number, -c_age_years)+0
+(-b_episode_number, -a_age_years, -c_episode_number, -a_episode_number)+0
+(-e_age_years, -a_age_years, -a_episode_number, -b_episode_number)+0
+(-b_episode_number, -a_age_years, -a_episode_number, -a_sex_0male_1female)+0
