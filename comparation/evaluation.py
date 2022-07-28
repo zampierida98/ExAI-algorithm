@@ -207,7 +207,7 @@ def get_parser():
     parser.add_argument('--dataset_path', required=True)
     parser.add_argument('--sep', default=',')
     parser.add_argument('--output_var_name_verbose', action='store_true')
-    parser.set_defaults(output_var_name_verbose=False)
+    parser.set_defaults(output_var_name_verbose=True)
     parser.add_argument('--class_column_name', required=True)
     parser.add_argument('--pos_class_value', required=True)
     parser.add_argument('--neg_class_value', required=True)

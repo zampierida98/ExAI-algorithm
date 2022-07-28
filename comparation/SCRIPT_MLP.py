@@ -12,11 +12,17 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 
 # VARIABLES
+MISSING = "?"
+
 DATASET_PATH = "../dataset/cell_samples.csv"
 CLASS_COLUMN = "Class"
-MISSING = "?"
 POS_CLASS = 2
 NEG_CLASS = 4
+
+DATASET_PATH = "../dataset/sepsis_survival_dataset/s41598-020-73558-3_sepsis_survival_study_cohort.csv"
+CLASS_COLUMN = "hospital_outcome_1alive_0dead"
+POS_CLASS = 1
+NEG_CLASS = 0
 
 POS_CLASS = 0  # dopo il Label Encoding
 NEG_CLASS = 1  # dopo il Label Encoding
@@ -27,16 +33,8 @@ CLASS_COLUMN = "class"
 DATASET_PATH = "../dataset/agaricus-lepiota.data"
 CLASS_COLUMN = "class"
 
-DATASET_PATH = "../dataset/Balloons/yellow-small+adult-stretch.data"
-CLASS_COLUMN = "inflated"
-
 DATASET_PATH = "../dataset/car.data"
 CLASS_COLUMN = "class"
-
-DATASET_PATH = "../dataset/sepsis_survival_dataset/s41598-020-73558-3_sepsis_survival_study_cohort.csv"
-CLASS_COLUMN = "hospital_outcome_1alive_0dead"
-POS_CLASS = 1
-NEG_CLASS = 0
 
 
 if __name__ == "__main__":
@@ -70,6 +68,24 @@ if __name__ == "__main__":
 
     # Fit data onto the model
     clf.fit(X_train, y_train)
+
+    # dimensione = somma fanout totale dei nodi * numero nodi
+    # https://scikit-learn.org/stable/modules/neural_networks_supervised.html
+    #print(clf.coefs_, len(clf.coefs_), clf.n_layers_, clf.n_outputs_)  # pesi, layer con frecce in ingresso, input+hiddens+output, output
+    fanout = 0
+    nodes = 0
+    #zero = []
+    for i in range(len(clf.coefs_)):
+        #print(clf.coefs_[i].shape)
+        #for j in clf.coefs_[i]:
+            #zero.append(0 in j or 0.0 in j)
+
+        if i != 0:
+            fanout += (clf.coefs_[i].shape[0] * clf.coefs_[i].shape[1])
+        nodes += clf.coefs_[i].shape[1]
+        #print(fanout, nodes)
+    #print(True in zero)
+    print("dimension:", fanout * nodes)
 
     # Make prediction on test dataset
     ypred = clf.predict(X_test)
