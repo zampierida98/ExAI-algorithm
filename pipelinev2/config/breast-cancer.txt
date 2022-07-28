@@ -3,5 +3,6 @@
 --class_column_name=class
 --pos_class_value=no-recurrence-events
 --neg_class_value=recurrence-events
---threshold=1
 --output_path=./results/results_breast-cancer.txt
+--threshold=0.9
+--bool_debug_preprocessing

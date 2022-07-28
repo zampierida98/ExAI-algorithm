@@ -4,5 +4,6 @@
 --pos_class_value=acc
 --neg_class_value=unacc
 --threshold=1
+--output_var_name_verbose
 --output_path=./results/results_car.txt
 --output_path_sup_rel=./results/sup_rel_car.txt

@@ -67,11 +67,11 @@ def p3(dataset, bool_debug=False):
         r *= dataset[column].nunique(dropna=True)
 
     if bool_debug:
-        print(f">>> R={R}, r={r}, R/r={R/r}, N={N}, N^2={N**2}")
+        print(f">>> R={R}, r={r}, R/r={R/r}, N={N}, Nln(N)={N*np.log(N)}")
 
     if R/r < N:
         mark = 'exemplified'
-    elif R/r > N**2:
+    elif R/r > N*np.log(N):     #N**2:
         mark = 'proportional'
     return mark
 
@@ -252,6 +252,9 @@ def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_
 
         mark = p3(dataset, bool_debug=bool_debug)
         print('mark =', mark)
+
+        # mark proportional ad ogni dataset a vedere se cambiano le performance
+        mark='proportional'
 
         print(">>", "Decisione 1")
         # ### D1 ### # When the dataset is marked as exemplified, go to step P5

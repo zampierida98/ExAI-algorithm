@@ -5,5 +5,6 @@
 --neg_class_value=-1
 --bool_debug_preprocessing
 --threshold=1
+--output_var_name_verbose
 --output_path=./results/results_746.txt
 --output_path_sup_rel=./results/sup_rel_746.txt

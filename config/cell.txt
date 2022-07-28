@@ -1,5 +1,6 @@
 --dataset_path=./dataset/cell_samples.csv
 --sep=,
+--output_var_name_verbose
 --class_column_name=Class
 --pos_class_value=2
 --neg_class_value=4

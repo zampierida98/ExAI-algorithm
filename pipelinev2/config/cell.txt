@@ -3,7 +3,7 @@
 --class_column_name=Class
 --pos_class_value=2
 --neg_class_value=4
---threshold=1
+--threshold=0.9
 --output_path=./results/results_cell_samples.txt
 --bool_debug_preprocessing
 --output_path_sup_rel=./results/sup_rel_cell_samples.txt
