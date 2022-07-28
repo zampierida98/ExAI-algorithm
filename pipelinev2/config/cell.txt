@@ -7,4 +7,5 @@
 --output_path=./results/results_cell_samples.txt
 --bool_debug_preprocessing
 --output_path_sup_rel=./results/sup_rel_cell_samples.txt
+--output_var_name_verbose
 --output_path_clear_rules=./results/clear_rules_cell_samples.txt

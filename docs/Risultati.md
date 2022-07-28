@@ -64,7 +64,18 @@ Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colo
 ## Risultati sul dataset `kr-vs-kp`
 Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) è una sequenza di 36 attributi che formano una descrizione della scacchiera. L'ultimo attributo (il 37esimo) è la classe: White-can-win ("won"), White-cannot-win ("nowin").
 
-Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1758 regole (più 3 coppie di superiorità).
+Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1771 regole.
+
+Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza:
+```
+[[1607.    0.]
+ [   0. 1428.]
+ [  62.   99.]]
+
+ACCURACY=0.9496245306633292
+PRECISION=1.0
+RECALL=0.9628520071899341
+```
 
 
 ## Risultati sul dataset `agaricus-lepiota`
@@ -152,7 +163,7 @@ Output:
 R=19051, r=1010, R/r=18.862376237623764, N=3, N^2=9
 mark = proportional
 ```
-L'applicazione dell'algoritmo permette di passare da 19051 a 544 regole.
+L'applicazione dell'algoritmo permette di passare da 19051 a 646 regole (il numero di coppie di superiorità varia a seconda della threshold utilizzata).
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```

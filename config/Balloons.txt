@@ -1,6 +1,5 @@
 --dataset_path=./dataset/Balloons/yellow-small+adult-stretch.data
 --sep=,
---output_var_name_verbose
 --class_column_name=inflated
 --pos_class_value=T
 --neg_class_value=F
@@ -8,4 +7,5 @@
 --threshold=1
 --output_path=./results/results_Balloons.txt
 --output_path_sup_rel=./results/sup_rel_Balloons.txt
+--output_var_name_verbose
 --output_path_clear_rules=./results/clear_rules_Balloons.txt
