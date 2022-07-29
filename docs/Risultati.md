@@ -76,22 +76,18 @@ RECALL=0,79868708971553
 ```
 
 
-
-
-
 ## Risultati sul dataset `kr-vs-kp`
 Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) è una sequenza di 36 attributi che formano una descrizione della scacchiera. L'ultimo attributo (il 37esimo) è la classe: White-can-win ("won"), White-cannot-win ("nowin").
 
 Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
-    ```
-    R=3196, r=103079215104, R/r=3.1005280713240303e-08, N=36, Nln(N)=129.00668178441995
-    mark = exemplified
-    ```
+```
+R=3196, r=103079215104, R/r=3.1005280713240303e-08, N=36, Nln(N)=129.00668178441995
+mark = exemplified
+```
 
 L'applicazione dell'algoritmo permette di passare da 3196 a 1771 regole.
 
-
-Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza:
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[  0.   0.]
  [  0.   0.]
@@ -101,6 +97,8 @@ ACCURACY=0.0
 PRECISION=0.0
 RECALL=0.0
 ```
+
+Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato anche valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza.
 
 Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
 ```
@@ -119,10 +117,10 @@ Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene desc
 
 
 Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
-    ```
-    R=8124, r=54854914867200, R/r=1.4809976498309493e-10, N=21, Nln(N)=63.9349711922 
-    mark = exemplified
-    ```
+```
+R=8124, r=54854914867200, R/r=1.4809976498309493e-10, N=21, Nln(N)=63.9349711922 
+mark = exemplified
+```
 
 L'applicazione dell'algoritmo permette di passare da 8124 a 173 regole.
 
@@ -139,13 +137,13 @@ RECALL=0,0233306516492357
 
 Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
 ```
-[[- - ]
- [- - ]
- [- - ]]
+[[4068.    0.]
+ [   0. 3866.]
+ [  12.    0.]]
 
-    ACCURACY= -
-    PRECISION= -
-    RECALL= -
+ACCURACY=0.9984898061917946
+PRECISION=1.0
+RECALL=0.9970588235294118
 ```
 
 
@@ -153,10 +151,10 @@ Di seguito proponiamo la consueta matrice di confusione con training set uguale 
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
 
 Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
-    ```
-    R= - , r= - , R/r= - , N= - , Nln(N)= - 
-    mark = exemplified
-    ```
+```
+R=1728, r=1728, R/r=1.0, N=6, N^2=36
+mark = exemplified
+```
 
 L'applicazione dell'algoritmo permette di passare da 1728 a 91 regole.
 
@@ -173,16 +171,17 @@ RECALL=0,342857142857142
 
 Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
 ```
-[[- -]
- [- -]
- [- -]]
+[[ 518.    0.]
+ [   0. 1210.]
+ [   0.    0.]]
 
 ACCURACY=1.0
 PRECISION=1.0
 RECALL=1.0
 ```
 
-### Dataset proportional
+
+## Dataset proportional
 [Sepsis survival minimal clinical records Data Set](https://archive.ics.uci.edu/ml/datasets/Sepsis+survival+minimal+clinical+records): raccolta di dataset contenenti record sanitari (con informazioni minime) di ricoveri di pazienti con sepsi.
 
 Ogni dataset presenta 4 informazioni cliniche:
@@ -191,12 +190,11 @@ Ogni dataset presenta 4 informazioni cliniche:
 - `episode_number`: valore intero
 - `hospital_outcome_1alive_0dead`: valore binario (classe)
 
-
 Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
-    ```
-    R=19051, r=1010, R/r=18.862376237623764, N=3, Nln(N)=3.295836866004329
-    mark = proportional
-    ```
+```
+R=19051, r=1010, R/r=18.862376237623764, N=3, Nln(N)=3.295836866004329
+mark = proportional
+```
 
 L'applicazione dell'algoritmo permette di passare da 19051 a 646 regole (il numero di coppie di superiorità varia a seconda della threshold utilizzata).
 
@@ -214,18 +212,30 @@ RECALL=0,0943029779887786
 
 Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
 ```
-[[1290 1]
- [82 34]
- [14073 3571]]
+[[ 1290.    1.]
+ [   82.   34.]
+ [14073. 3571.]]
 
 ACCURACY=0,0694976641646107
 PRECISION=0,999225406661502
 RECALL=0,0835221754613143
 ```
 
+Per cercare di migliorare i risultati è stata apportata una modifica a `MRP3` tale per cui quando si aggiunge una nuova regola essa prende frequenza pari a 0 (se è nuova) oppure aumenta di 1 la sua frequenza (se era già presente). Con questo tipo di modifica i risultati migliorano (a fronte di un numero maggiore di coppie di superiorità):
+```
+[[15272. 3540.] 
+ [  166.   57.] 
+ [    7.    9.]]
+
+ACCURACY=0.8046296782321138
+PRECISION=0.8118222411226876
+RECALL=0.9887989640660408
+```
+
+
 
 ## Altri risultati
-Sono stati selezionati ulteriori 3 dataset per verificare il comportamento dell'algoritmo nei diversi casi previsti (exemplified, proporitonal, nessuno dei due).
+Sono stati selezionati ulteriori dataset per verificare il comportamento dell'algoritmo nei diversi casi previsti (exemplified, proporitonal, nessuno dei due).
 
 ### Dataset exemplified
 [Balloons Data Set](https://archive.ics.uci.edu/ml/datasets/Balloons): quattro dataset che rappresentano diverse condizioni di un esperimento.
