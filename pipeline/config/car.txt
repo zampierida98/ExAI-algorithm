@@ -1,9 +1,0 @@
---dataset_path=./dataset/car.data
---sep=,
---class_column_name=class
---pos_class_value=acc
---neg_class_value=unacc
---threshold=1
---output_path=./results/results_car.txt
---output_path_sup_rel=./results/sup_rel_car.txt
---output_path_clear_rules=./results/clear_rules_car.txt

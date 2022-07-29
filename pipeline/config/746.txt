@@ -1,9 +1,0 @@
---dataset_path=./dataset/746Data.txt
---sep=,
---class_column_name=flag
---pos_class_value=1
---neg_class_value=-1
---bool_debug_preprocessing
---threshold=1
---output_path=./results/results_746.txt
---output_path_sup_rel=./results/sup_rel_746.txt

@@ -134,7 +134,7 @@ def p5(dataset, bool_debug=False):
     # rimuovo i nan
     return dataset, shannon_map
 
-def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
+def p6(dataset, var_name_verbose, pos_class_value):
     '''
     Calcolo:When the dataset is marked as exemplified, for each row compute the corresponding set of literals, 
             and mark it with positive or negative label, when it derives the class/not class respectively
@@ -173,7 +173,7 @@ def p6(dataset, var_name_verbose, pos_class_value,neg_class_value):
     
     return rules
 
-def p7(dataset, var_name_verbose, pos_class_value,neg_class_value):
+def p7(dataset, var_name_verbose, pos_class_value):
     '''
     Calcolo:For every combination of literals appearing in the input dataset marked as positive (or negative) 
             count the occorrences of the same combination and add the computed number to the bag in correspondence 
@@ -286,12 +286,12 @@ def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_
     rules = None
     if mark == 'exemplified':
         print(">>", "Passo 6")
-        rules = p6(dataset, output_var_name_verbose, pos_class_value, neg_class_value)
+        rules = p6(dataset, output_var_name_verbose, pos_class_value)
     
     #if mark == 'proportional':
     else:
         print(">>", "Passo 7")
-        rules = p7(dataset, output_var_name_verbose, pos_class_value,neg_class_value)
+        rules = p7(dataset, output_var_name_verbose, pos_class_value)
 
     if bool_debug:
         print(rules)
