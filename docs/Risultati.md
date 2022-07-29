@@ -24,7 +24,7 @@ Applicazione dell'algoritmo:
 - Il passo `P2` ha eliminato la colonna in cui era presente il solo valore nullo.
 - Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
     ```
-    R=699, r=720000000, R/r=9.708333333333333e-07, N=9, N^2=81
+    R=699, r=720000000, R/r=9.708333333333333e-07, N=9, Nln(N)=19.775021196025975
     mark = exemplified
     ```
 - Il passo `P5` ha calcolato la Shannon Map secondo cui ogni colonna viene mappata in un certo numero di variabili booleane.
@@ -58,15 +58,51 @@ Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colo
 [[82.  0.]
  [ 0.  0.]
  [56. 67.]]
+
+ACCURACY=0.4
+PRECISION=1.0
+RECALL=0,594202898550724
 ```
+
+Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
+```
+[[365.   0.]
+ [  0.   0.]
+ [ 92. 205.]]
+
+ACCURACY=0,551359516616314
+PRECISION=1.0
+RECALL=0,79868708971553
+```
+
+
+
 
 
 ## Risultati sul dataset `kr-vs-kp`
 Il formato delle istanze di questo [dataset](https://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) è una sequenza di 36 attributi che formano una descrizione della scacchiera. L'ultimo attributo (il 37esimo) è la classe: White-can-win ("won"), White-cannot-win ("nowin").
 
-Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 3196 a 1771 regole.
+Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
+    ```
+    R=3196, r=103079215104, R/r=3.1005280713240303e-08, N=36, Nln(N)=129.00668178441995
+    mark = exemplified
+    ```
+
+L'applicazione dell'algoritmo permette di passare da 3196 a 1771 regole.
+
 
 Inoltre, siccome questo dataset è fatto in maniera tale da contenere tutte le combinazioni degli attributi, esso è stato valutato utilizzando come test set il dataset stesso. Così facendo è possibile verificare in che modo la riduzione del numero di regole impatta su precisione e accuratezza:
+```
+[[  0.   0.]
+ [  0.   0.]
+ [501. 458.]]
+
+ACCURACY=0.0
+PRECISION=0.0
+RECALL=0.0
+```
+
+Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
 ```
 [[1607.    0.]
  [   0. 1428.]
@@ -81,26 +117,110 @@ RECALL=0.9628520071899341
 ## Risultati sul dataset `agaricus-lepiota`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) contiene descrizioni corrispondenti a 23 specie di funghi della famiglia Agaricus-Lepiota. Il dataset è formato da 22 attributi (tutti categorici) più l'informazione della classe: commestibile (edible=e) o velenoso (poisonous=p).
 
-Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 8124 a 173 regole.
+
+Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
+    ```
+    R=8124, r=54854914867200, R/r=1.4809976498309493e-10, N=21, Nln(N)=63.9349711922 
+    mark = exemplified
+    ```
+
+L'applicazione dell'algoritmo permette di passare da 8124 a 173 regole.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[  29.    0.]
  [   0.   19.]
  [1214. 1152.]]
+
+ACCURACY=0,0198840099420049
+PRECISION=1.0
+RECALL=0,0233306516492357
+```
+
+Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
+```
+[[- - ]
+ [- - ]
+ [- - ]]
+
+    ACCURACY= -
+    PRECISION= -
+    RECALL= -
 ```
 
 
 ## Risultati sul dataset `car`
 Questo [dataset](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) contiene valutazioni di veicoli secondo 6 attributi (tutti categorici). L'ultimo attributo è la classe: acceptable (acc) o unacceptable (unacc), dove in acceptable sono state inserite anche le istanze classificate come good e very good (per la natura univariata dell'algoritmo in esame).
 
-Il dataset è di tipo exemplified e l'applicazione dell'algoritmo permette di passare da 1728 a 91 regole.
+Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
+    ```
+    R= - , r= - , R/r= - , N= - , Nln(N)= - 
+    mark = exemplified
+    ```
+
+L'applicazione dell'algoritmo permette di passare da 1728 a 91 regole.
 
 Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
 ```
 [[ 24.   0.]
  [  3. 118.]
  [ 43.   5.]]
+
+ACCURACY=0,735751295336787
+PRECISION=1.0
+RECALL=0,342857142857142
+```
+
+Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
+```
+[[- -]
+ [- -]
+ [- -]]
+
+ACCURACY=1.0
+PRECISION=1.0
+RECALL=1.0
+```
+
+### Dataset proportional
+[Sepsis survival minimal clinical records Data Set](https://archive.ics.uci.edu/ml/datasets/Sepsis+survival+minimal+clinical+records): raccolta di dataset contenenti record sanitari (con informazioni minime) di ricoveri di pazienti con sepsi.
+
+Ogni dataset presenta 4 informazioni cliniche:
+- `age_years`: valore intero
+- `sex_0male_1female`: valore binario
+- `episode_number`: valore intero
+- `hospital_outcome_1alive_0dead`: valore binario (classe)
+
+
+Il passo `P3` ha marcato il dataset come exemplified dopo aver calcolato i valori necessari a prendere tale decisione.
+    ```
+    R=19051, r=1010, R/r=18.862376237623764, N=3, Nln(N)=3.295836866004329
+    mark = proportional
+    ```
+
+L'applicazione dell'algoritmo permette di passare da 19051 a 646 regole (il numero di coppie di superiorità varia a seconda della threshold utilizzata).
+
+
+Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
+```
+[[ 437.   52.]
+ [  85.   13.]
+ [4112. 1017.]]
+ 
+ACCURACY=0,0787263820853743
+PRECISION=0,893660531697341
+RECALL=0,0943029779887786
+```
+
+Di seguito proponiamo la consueta matrice di confusione con training set uguale al test set e pari all'intero dataset.
+```
+[[1290 1]
+ [82 34]
+ [14073 3571]]
+
+ACCURACY=0,0694976641646107
+PRECISION=0,999225406661502
+RECALL=0,0835221754613143
 ```
 
 
@@ -148,26 +268,3 @@ R=746, r=746, R/r=1.0, N=1, N^2=1
 Mark = None. L'algoritmo si ferma e non produce output
 ```
 Il risultato era atteso in quanto l'unico attributo presenta un numero di valori distinti pari al numero delle righe del dataset.
-
-### Dataset proportional
-[Sepsis survival minimal clinical records Data Set](https://archive.ics.uci.edu/ml/datasets/Sepsis+survival+minimal+clinical+records): raccolta di dataset contenenti record sanitari (con informazioni minime) di ricoveri di pazienti con sepsi.
-
-Ogni dataset presenta 4 informazioni cliniche:
-- `age_years`: valore intero
-- `sex_0male_1female`: valore binario
-- `episode_number`: valore intero
-- `hospital_outcome_1alive_0dead`: valore binario (classe)
-
-Output:
-```
-R=19051, r=1010, R/r=18.862376237623764, N=3, N^2=9
-mark = proportional
-```
-L'applicazione dell'algoritmo permette di passare da 19051 a 646 regole (il numero di coppie di superiorità varia a seconda della threshold utilizzata).
-
-Valutazione dell'algorimo attraverso la matrice di confusione (righe=P,N,?; colonne=T,F) utilizzando un test set con dimensione pari al 30% dell'intero dataset:
-```
-[[ 437.   52.]
- [  85.   13.]
- [4112. 1017.]]
-```

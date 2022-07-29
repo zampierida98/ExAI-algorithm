@@ -61,6 +61,19 @@ def split_procedure(dataset, test_size=0.3):
 
     return X_train, X_test
 
+def dimensionality(rules, mark):
+    '''
+    Calcolo: la dimensione della teoria non monotona. N di teoremi * lunghezza del teorema più grande
+    Output: dimensioni del modello
+    '''
+    _max = 0
+    for k in rules:
+        if mark == 'exemplified':
+            _max = max(_max, len(k))
+        else:
+            _max = max(_max, len(k[0]))
+    return len(rules), _max
+
 # MAIN
 if __name__ == "__main__":
     # ################
@@ -91,6 +104,12 @@ if __name__ == "__main__":
     # se il mark è None, per la fase di preprocessing, l'algoritmo deve terminare
     if mark == None:
         exit()
+    
+    # ################
+    # DIMENSIONS
+    # ################
+    length, width = dimensionality(rules, mark)
+    print(f"Dimensionalità del modello: lunghezza={length}, larghezza={width}, dim={length*width}")
 
 
     # ################

@@ -119,6 +119,7 @@ def evaluation(test_adapted, rules, superior_relation, mark):
             evaluation.append('?') # Se non applico nessuna regola allora non conosco la classe
         else:
             class_estimation = '?'
+
             # ciclo sui positivi per trovarne uno che batte tutti i negativi
             for p in pos_evaluation:
                 count = 0
@@ -147,6 +148,9 @@ def evaluation(test_adapted, rules, superior_relation, mark):
                     if count == len(pos_evaluation):
                         class_estimation = '-'
                         break # rompe il ciclo for esterno
+            
+            # if class_estimation != '?':
+            #     print(class_estimation)
             
             evaluation.append(class_estimation)
     return evaluation

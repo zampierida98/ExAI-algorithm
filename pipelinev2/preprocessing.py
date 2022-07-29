@@ -253,9 +253,6 @@ def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_
         mark = p3(dataset, bool_debug=bool_debug)
         print('mark =', mark)
 
-        # mark proportional ad ogni dataset a vedere se cambiano le performance
-        mark='proportional'
-
         print(">>", "Decisione 1")
         # ### D1 ### # When the dataset is marked as exemplified, go to step P5
         if mark == 'exemplified':

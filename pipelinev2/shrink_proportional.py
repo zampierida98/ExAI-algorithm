@@ -59,10 +59,10 @@ def mrp4(r1, r2, occ_r1, occ_r2, threshold):
 
     C1 = r1 == r2
     C1_1 = C1 and occ_r1 > occ_r2
-    C2_1 = r1_over_r2 > threshold
+    C2_1 = r1_over_r2 < threshold
 
     C1_2 = C1 and occ_r2 > occ_r1
-    C2_2 = r2_over_r1 > threshold
+    C2_2 = r2_over_r1 < threshold
     
     # CASO R1 - R2
     if C1_1 and C2_1: # entrambe vere
