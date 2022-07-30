@@ -153,8 +153,8 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                     if mrp3_res != None:
 
                         # se già fosse presente 
-                        #to_add[(mrp3_res, k[1])] = to_add.get( (mrp3_res, k[1]), 0) + 1
-                        to_add[(mrp3_res, k[1])] = 0
+                        to_add[(mrp3_res, k[1])] = to_add.get( (mrp3_res, k[1]), 0) + 1
+                        #to_add[(mrp3_res, k[1])] = 0
 
                         if bool_debug:
                             print(f'r1={k[0]}\nr2={k2[0]}\nMRP3 aggiunge {(mrp3_res, k[1])}, {0}')
