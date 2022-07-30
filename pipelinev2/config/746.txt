@@ -7,4 +7,4 @@
 --threshold=1
 --output_path=./results/results_746.txt
 --output_path_sup_rel=./results/sup_rel_746.txt
---threshold=0.9
+--threshold=0.2
