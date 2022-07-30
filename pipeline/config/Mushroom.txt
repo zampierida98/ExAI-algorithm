@@ -1,0 +1,10 @@
+--dataset_path=./dataset/agaricus-lepiota.data
+--sep=,
+--class_column_name=class
+--pos_class_value=e
+--neg_class_value=p
+--threshold=0.9
+--output_path=./results/results_Mushroom.txt
+--output_path_sup_rel=./results/sup_rel_Mushroom.txt
+--output_path_clear_rules=./results/clear_rules_Mushroom.txt
+--bool_debug_preprocessing

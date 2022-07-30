@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # creazione del dataset
     dataset = pd.read_csv(args.dataset_path, sep=args.sep)
     
-    # applicazione del modello
+    # applicazione del modello e salvataggio di quest'ultimo nella cartella results
     rules, mark, superior_relation, shannon_map = model.model(dataset, args.output_var_name_verbose, args.class_column_name, 
                                 args.pos_class_value, args.neg_class_value, args.null_value, 
                                 args.threshold, args.output_path, args.output_path_sup_rel, 

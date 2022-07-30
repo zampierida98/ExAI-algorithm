@@ -23,16 +23,19 @@ def p0(dataset, bool_debug=False):
 def p1(dataset, bool_debug=False):
     '''
     Calcolo: Se in una colonna un valore è outlier (sotto media-devst) sostituiscilo con NULL
-    Outpit: Same dataset, with some column marked by NULL in places
+    Output: Same dataset, with some column marked by NULL in places
     '''
-    abs_freq = p0(dataset, bool_debug=bool_debug) # frequenze assolute per ogni colonna
+    abs_freq = p0(dataset, bool_debug=bool_debug) # frequenze assolute di ogni valore per ogni colonna
 
     for column in list(dataset.columns):
         mean = abs_freq[column].mean()
         std = abs_freq[column].std()
         if bool_debug:
             print(f">>> colonna={column} -- media:{mean}, std:{std}")
+        # tmp è un dizionario in cui le chiavi sono i valori della colonna che stanno sotto mean - std
+        # mentre il valore è la freq. ass. di queste chiavi (anche se il valore a noi non interessa)
         tmp = abs_freq[column][abs_freq[column] < mean-std].to_dict()
+        # marchiamo con np.NaN tutti i valori che sono le chiavi del diz tmp
         dataset.loc[dataset[column].isin(tmp.keys()), column] = np.NaN
     return dataset
 
@@ -43,6 +46,7 @@ def p2(dataset):
     '''
     col_to_del = []
     for column in list(dataset.columns):
+        # il metodo nunique(dropna=True) ritorna il numero di valori distinti (escluso i Nan) di una colonna
         # <= perché se avessi una colonna di soli NaN non avrei valori e quindi il metodo ritornerebbe 0
         if dataset[column].nunique(dropna=True) <= 1:
             col_to_del.append(column)
@@ -64,6 +68,7 @@ def p3(dataset, bool_debug=False):
     N = len(list(dataset.columns))
 
     for column in list(dataset.columns):
+        # il metodo nunique(dropna=True) ritorna il numero di valori distinti (escluso i Nan) di una colonna
         r *= dataset[column].nunique(dropna=True)
 
     if bool_debug:
@@ -93,14 +98,14 @@ def p4(dataset):
     mean = df_grupped['size'].mean()
     std = df_grupped['size'].std()
 
-    # tengo le righe che verificano ANOVA
+    # tengo le righe che verificano ANOVA cioè che stanno sopra mean - std
     df_grupped = df_grupped.loc[mean-std<=df_grupped['size'], list(dataset.columns)]
 
-    # tengo solo le righe che hanno i valori che appartengono alle righe sopra trovate
+    # tengo solo le righe che hanno i valori appartenenti alle righe di df_grupped
     for column in list(dataset.columns):
         dataset = dataset[dataset[column].isin(list(df_grupped[column].values))]
 
-    # se la original_len == len(dataset) allora non sono state fatte eliminate righe
+    # se la original_len == len(dataset) allora non sono state eliminate righe
     return dataset, original_len != len(dataset)
 
 def p5(dataset, bool_debug=False):
@@ -111,14 +116,14 @@ def p5(dataset, bool_debug=False):
     shannon_map = {}
 
     for column in list(dataset.columns):
-        # genero la lista di valori di ogni colonna
+        # genero la lista di valori distinti di ogni colonna
         list_of_values = list(dataset[column].unique())
-        # rimuovo il np.NaN se presente usando il metodo statico di pandas
+        # rimuovo gli np.NaN se presenti usando il metodo statico di pandas
         list_of_values = [x for x in list_of_values if pd.notnull(x)]
         # n numero di variabili
         n = math.ceil(math.log(len(list_of_values), 2 ) )
         
-        # creo una mappa del tipo valore -- cifra binaria corrispondente
+        # creo una mappa del tipo (valore --> cifra binaria corrispondente)
         _map = {}
         for i in range(len(list_of_values)):
             # zfill riempie aggiungendo in testa degli 0 fino a raggiungere la lunghezza n
@@ -131,7 +136,6 @@ def p5(dataset, bool_debug=False):
         if bool_debug:
             print(f">>> Shannon map per {column}:", _map)
     
-    # rimuovo i nan
     return dataset, shannon_map
 
 def p6(dataset, var_name_verbose, pos_class_value):
@@ -148,9 +152,10 @@ def p6(dataset, var_name_verbose, pos_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
+        # row è una istanza del dataset in forma di lista
         row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
-        # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
+        # l'ultimo elemento della lista è la classe. Controllo se pos_class_value == row[-1]
         if pos_class_value == row[-1]:
             sgn = '+'
         row = row[:-1] # tolgo l'ultimo elemento che è la classe
@@ -188,9 +193,10 @@ def p7(dataset, var_name_verbose, pos_class_value):
 
     # per ogni riga del dataset
     for irow in range(len(dataset)):
+        # row è una istanza del dataset in forma di lista
         row = dataset.iloc[[irow]].values.tolist()[0] # l'ordine è lo stesso di columns_name 
         sgn = '-'
-        # l'ultimo elemento è la classe. Controllo se pos_class_value == row[-1]
+        # l'ultimo elemento della lista è la classe. Controllo se pos_class_value == row[-1]
         if pos_class_value == row[-1]:
             sgn = '+'
         row = row[:-1] # tolgo l'ultimo elemento che è la classe
@@ -224,7 +230,7 @@ def main_preprocessing(dataset, output_var_name_verbose, class_column_name, pos_
     for column in list(dataset.columns):
         dataset[column] = dataset[column].astype(str)
 
-    # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda    
+    # salvo e rimuovo la colonna 'class_column_name' per riaggiungerla quando tornerà comoda (dopo p5)
     class_column = dataset[class_column_name]
     dataset = dataset.drop([class_column_name], axis=1)
 

@@ -7,9 +7,7 @@ import preprocessing as pp
 # FUNCTIONS
 def get_the_inner_set(r1, r2):
     '''
-    Calcolo:the premises of r1 are all premises of r2, 
-            but some premise of r2 is not a premise of r1
-
+    Calcolo: determina, dati due insiemi r1 ed r2 quale fra i due è contenuto nell'altro
     Output: la regola contenuta nell'altra, None se non vale il contenimento
     '''
     diff1 = r1 - r2
@@ -23,15 +21,15 @@ def get_the_inner_set(r1, r2):
 
 def mrp3(r1, r2):
     '''
-    Calcolo:have antecedents that are all the same but one each, 
-            and r1's sole different antecedent is the opposite literal of r2's sole different antecedent
+    Calcolo: date due regole r1 ed r2, esegue l'intersezione delle due solamente se r1 ed r2 sono
+            insiemi diversi per un solo letterale di differenza.
     Output: ritorna l'insieme degli antenati comuni se soddisfa la condizione, altrimenti None
     '''
     diff1 = r1 - r2
     diff2 = r2 - r1
     if len(diff1) == len(diff2) and len(diff1) == 1:
-        e1 = next(iter(diff1))
-        e2 = next(iter(diff2))
+        e1 = next(iter(diff1)) # recupera l'unico elemento dell'insieme diff1
+        e2 = next(iter(diff2)) # recupera l'unico elemento dell'insieme diff2
         # sono stringhe come 'd1', '-d_1'
         if e1 in e2 or e2 in e1:
             return r1.intersection(r2)
@@ -39,11 +37,12 @@ def mrp3(r1, r2):
 
 def mrp4(r1, r2, occ_r1, occ_r2, threshold):
     '''
-    Calcolo: Due condizioni:
-    1 - the premises of r1 are the same of the premises of r2, 
-        and rule r1 occurrences is higher than r2 occurrences
-    2 - the ratio of the number of occurrences of r1 and r2 is lower that a given threshold 
-        (note: the ratio can't be lower than 1, so the minimum threshold is 1)
+    Calcolo: calcolo due condizioni:
+        1 - the premises of r1 are the same of the premises of r2, 
+            and rule r1 occurrences is higher than r2 occurrences
+        2 - the ratio of the number of occurrences of r1 and r2 is lower that a given threshold 
+            (note: the ratio can't be lower than 1, so the minimum threshold is 1)
+        Dalle condizioni poi determino le regole da eliminare (le regole da eliminare sono quelle ritornate da mrp4)
 
     Output: ritorna le regole da eliminare
     '''
@@ -104,7 +103,7 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
 
-    # Se r2 è sup di r1 allora ci sarà (r1, r2)
+    # Se r2 è sup di r1 allora ci sarà una coppia (r1, r2)
     superior_relation = set()
 
     while changings:
@@ -172,11 +171,13 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
                     if mrp4_res != []:
                         # concat di liste
                         # Essendo discordi k[0] e k[1] allora quando aggiungo le coppie alla lista 'to_remove'
-                        # aggiungo il segno corrispondente alla regola da aggiungere
+                        # aggiungo il segno corrispondente alla regola da eliminare
                         to_remove += [(x, k[1] if x == k[0] else k2[1]) for x in mrp4_res]
 
+                        # se elimino una sola regola allora aggiungo la molteplicità della regole eliminata 
+                        # alla regola che sopravvive.
                         if len(mrp4_res) == 1:
-                            # chiave della regola che soppravive
+                            # chiave della regola che sopravvive
                             k_live = (k2 if mrp4_res[0] == k[0] else k)
                             # chiave della regola da eliminare
                             k_dead = (k if mrp4_res[0] == k[0] else k2)
@@ -204,19 +205,14 @@ def main_shrink_proportional(rules, bool_debug=False, threshold=1):
         if len(to_remove) > 0 or len(to_add) > 0:
             changings = True
         
-        # questo aggiornamento viene messo prima della rimozione perché ci possono essere casi come questo:
+        # l'aggiornamento della molteplicità viene messo prima della rimozione perché ci possono essere casi 
+        # come questo:
         # r1 elimina r2 ed r2 elimina r3. Se faccio prima la eliminazione allora dentro rules non avro' né
         # r2 né r3 e quindi l'aggiornamento delle molteplicità darà errore perché non trova r2.
 
         # aggiornamento molteplicità delle regole
         for k in multiplicity_after_remove:
             rules[k] += multiplicity_after_remove[k]
-            '''
-            try:
-                rules[k] += multiplicity_after_remove[k]
-            except:
-                continue
-            '''
         print("> Update: aggiornamento molteplicità delle regole")
         
         # procedura di rimozione degli elementi

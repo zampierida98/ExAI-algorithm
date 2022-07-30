@@ -2,5 +2,5 @@
 /pipeline/__pycache__
 /pipelinev2/__pycache__
 /comparation/__pycache__
-pipeline/results/sup_rel_Sepsis.txt
-pipelinev2/results/sup_rel_Sepsis.txt
+pipeline/results/
+

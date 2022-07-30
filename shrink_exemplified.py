@@ -7,9 +7,7 @@ import preprocessing as pp
 # FUNCTIONS
 def get_the_inner_set(r1, r2):
     '''
-    Calcolo:the premises of r1 are all premises of r2, 
-            but some premise of r2 is not a premise of r1
-
+    Calcolo: determina, dati due insiemi r1 ed r2 quale fra i due è contenuto nell'altro
     Output: la regola contenuta nell'altra, None se non vale il contenimento
     '''
     diff1 = r1 - r2
@@ -23,15 +21,15 @@ def get_the_inner_set(r1, r2):
 
 def mre3(r1, r2):
     '''
-    Calcolo:have antecedents that are all the same but one each, 
-            and r1's sole different antecedent is the opposite literal of r2's sole different antecedent
+    Calcolo: date due regole r1 ed r2, esegue l'intersezione delle due solamente se r1 ed r2 sono
+            insiemi diversi per un solo letterale di differenza.
     Output: ritorna l'insieme degli antenati comuni se soddisfa la condizione, altrimenti None
     '''
     diff1 = r1 - r2
     diff2 = r2 - r1
     if len(diff1) == len(diff2) and len(diff1) == 1:
-        e1 = next(iter(diff1))
-        e2 = next(iter(diff2))
+        e1 = next(iter(diff1)) # recupera l'unico elemento dell'insieme diff1
+        e2 = next(iter(diff2)) # recupera l'unico elemento dell'insieme diff2
         # sono stringhe come 'd1', '-d_1'
         if e1 in e2 or e2 in e1:
             return r1.intersection(r2)
@@ -43,7 +41,7 @@ def main_shrink_exemplified(rules, bool_debug=False):
     changings = True
     i = 1               # conto quante iterazioni vengono fatte
 
-    # Se r2 è sup di r1 allora ci sarà (r1, r2)
+    # Se r2 è sup di r1 allora ci sarà una coppia (r1, r2)
     superior_relation = set()
 
     while changings:
@@ -103,6 +101,8 @@ def main_shrink_exemplified(rules, bool_debug=False):
 
         # UPDATE
         # ######
+        
+        # ripeto il ciclo se ci sono degli aggiornamenti
         if len(to_remove) > 0 or len(to_add) > 0:
             changings = True
         
