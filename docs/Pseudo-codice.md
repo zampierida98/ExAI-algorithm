@@ -23,7 +23,7 @@ Dataset (categorico e univariato, ossia con una sola classe) avente la forma di 
 ## SHRINKING (per dataset proportional)
 * **MRP1**: se le due regole sono concordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima, allora cancello la seconda regola (in realtà devo solo marcarla segnando se ho confrontato quella regola con tutte le regole esistenti e solo in quel caso cancellarla veramente); il numero di volte in cui essa si presenta sarà la somma delle frequenze della prima e della seconda regola.
 * **MRP2**: se le due regole sono discordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con alcuni antecedenti della seconda che non lo sono della prima, allora dico che la regola con più letterali (la seconda) batte l'altra cioè aggiungo una coppia di superiorità.
-* **MRP3**: se le due regole sono concordi e gli antecedenti sono tutti uguali tranne uno che è l'opposto del suo corrispondente, allora aggiungo una nuova regola formata dagli antecedenti in comune e con frequenza pari a 0.
+* **MRP3**: se le due regole sono concordi e gli antecedenti sono tutti uguali tranne uno che è l'opposto del suo corrispondente, allora aggiungo una nuova regola formata dagli antecedenti in comune e con frequenza pari a 0 (se è nuova) oppure aumentata di 1 (se era già presente).
 * **MRP4**
     * *C1*: se le due regole sono discordi e gli antecedenti della prima sono un sottoinsieme degli antecedenti della seconda con le occorrenze della prima che sono maggiori delle occorrenze della seconda.
     * *C2*: se il rapporto tra le occorrenze della prima e della seconda regola è più basso di una threshold (almeno pari a 1).
